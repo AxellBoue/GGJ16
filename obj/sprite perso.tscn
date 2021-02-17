@@ -1,0 +1,76 @@
+[gd_scene load_steps=27 format=2]
+
+[ext_resource path="res://sprites/perso/dos1.png" type="Texture" id=1]
+[ext_resource path="res://sprites/perso/marcheProfil2.png" type="Texture" id=2]
+[ext_resource path="res://sprites/perso/coupPied2.png" type="Texture" id=3]
+[ext_resource path="res://sprites/perso/marcheProfil1.png" type="Texture" id=4]
+[ext_resource path="res://sprites/perso/saut2.png" type="Texture" id=5]
+[ext_resource path="res://sprites/perso/saut5.png" type="Texture" id=6]
+[ext_resource path="res://sprites/perso/dos3.png" type="Texture" id=7]
+[ext_resource path="res://sprites/perso/marcheProfil4.png" type="Texture" id=8]
+[ext_resource path="res://sprites/perso/saut1.png" type="Texture" id=9]
+[ext_resource path="res://sprites/perso/saut7.png" type="Texture" id=10]
+[ext_resource path="res://sprites/perso/marcheFace3.png" type="Texture" id=11]
+[ext_resource path="res://sprites/perso/dos4.png" type="Texture" id=12]
+[ext_resource path="res://sprites/perso/persosProfil.png" type="Texture" id=13]
+[ext_resource path="res://sprites/perso/saut6.png" type="Texture" id=14]
+[ext_resource path="res://sprites/perso/dos2.png" type="Texture" id=15]
+[ext_resource path="res://sprites/perso/marcheFace1.png" type="Texture" id=16]
+[ext_resource path="res://sprites/perso/marcheProfil3.png" type="Texture" id=17]
+[ext_resource path="res://sprites/perso/coupPied1.png" type="Texture" id=18]
+[ext_resource path="res://sprites/perso/coupPied3.png" type="Texture" id=19]
+[ext_resource path="res://sprites/perso/marcheFace2.png" type="Texture" id=20]
+[ext_resource path="res://sprites/perso/marcheFace4.png" type="Texture" id=21]
+[ext_resource path="res://sprites/perso/saut4.png" type="Texture" id=22]
+[ext_resource path="res://sprites/perso/dos.png" type="Texture" id=23]
+[ext_resource path="res://sprites/perso/saut3.png" type="Texture" id=24]
+[ext_resource path="res://sprites/perso/persosFace.png" type="Texture" id=25]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 18 ), ExtResource( 3 ), ExtResource( 19 ) ],
+"loop": false,
+"name": "coupPied",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 23 ) ],
+"loop": true,
+"name": "dosIdle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 1 ), ExtResource( 15 ), ExtResource( 7 ), ExtResource( 12 ) ],
+"loop": true,
+"name": "dosMarche",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 13 ) ],
+"loop": true,
+"name": "droiteIdle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 25 ) ],
+"loop": true,
+"name": "faceIdle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 16 ), ExtResource( 20 ), ExtResource( 11 ), ExtResource( 21 ) ],
+"loop": true,
+"name": "faceMarche",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ), ExtResource( 5 ), ExtResource( 24 ), ExtResource( 22 ), ExtResource( 22 ), ExtResource( 6 ), ExtResource( 6 ), ExtResource( 14 ), ExtResource( 10 ), ExtResource( 10 ), ExtResource( 10 ), ExtResource( 10 ) ],
+"loop": false,
+"name": "saut",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 2 ), ExtResource( 17 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "droiteMarche",
+"speed": 5.0
+} ]
+
+[node name="sprite perso" type="AnimatedSprite"]
+frames = SubResource( 1 )
+animation = "faceIdle"
+playing = true
+offset = Vector2( 0, -90 )

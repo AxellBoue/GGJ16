@@ -1,0 +1,75 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://obj/camera box.tscn" type="PackedScene" id=1]
+[ext_resource path="res://obj/perso.tscn" type="PackedScene" id=2]
+[ext_resource path="res://sprites/decor/fond_map.jpg" type="Texture" id=3]
+[ext_resource path="res://obj/bords4Directions.tscn" type="PackedScene" id=4]
+[ext_resource path="res://obj/decor/sapin brume.tscn" type="PackedScene" id=5]
+[ext_resource path="res://sprites/decor/brume_texture.jpg" type="Texture" id=6]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type canvas_item;
+uniform sampler2D brumeTex : hint_albedo;
+uniform float distancePlayer ;
+
+void fragment (){
+	vec4 tex = texture(TEXTURE, UV);
+	vec4 brume = texture(brumeTex, UV);
+	float mixQuotient = clamp(distancePlayer/400.0,0.0,1.0);
+	vec4 colorAvecBrume =  mix(tex,brume,mixQuotient);
+	COLOR = vec4 (colorAvecBrume.rgb,tex.a);// + vec4(0.1,0.1,0.1,0.0);
+}"
+custom_defines = ""
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = SubResource( 1 )
+shader_param/distancePlayer = 200.0
+shader_param/brumeTex = ExtResource( 6 )
+
+[sub_resource type="ShaderMaterial" id=3]
+shader = SubResource( 1 )
+shader_param/distancePlayer = 542.015
+shader_param/brumeTex = ExtResource( 6 )
+
+[sub_resource type="ShaderMaterial" id=4]
+shader = SubResource( 1 )
+shader_param/distancePlayer = 100.0
+shader_param/brumeTex = ExtResource( 6 )
+
+[node name="scene" type="Node2D"]
+
+[node name="camera box" parent="." instance=ExtResource( 1 )]
+
+[node name="perso" parent="." instance=ExtResource( 2 )]
+position = Vector2( 362.336, 326.315 )
+
+[node name="bords" parent="." instance=ExtResource( 4 )]
+
+[node name="fond_map" type="Sprite" parent="."]
+position = Vector2( 1990.51, 1987.57 )
+z_index = -4000
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="decor" type="Node2D" parent="."]
+
+[node name="sapin brume2" parent="decor" instance=ExtResource( 5 )]
+material = SubResource( 2 )
+position = Vector2( 736.235, 387.963 )
+z_index = 193
+frame = 10
+playing = false
+
+[node name="sapin brume" parent="decor" instance=ExtResource( 5 )]
+material = SubResource( 3 )
+position = Vector2( 532, 740 )
+z_index = 370
+
+[node name="sapin brume3" parent="decor" instance=ExtResource( 5 )]
+material = SubResource( 4 )
+position = Vector2( 317.161, 330.146 )
+z_index = 165
+frame = 8
+playing = false

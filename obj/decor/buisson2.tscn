@@ -1,0 +1,22 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://sprites/decor/buisson02/buissons0005.png" type="Texture" id=1]
+[ext_resource path="res://sprites/decor/buisson02/buissons0000.png" type="Texture" id=2]
+[ext_resource path="res://sprites/decor/buisson02/buissons0001.png" type="Texture" id=3]
+[ext_resource path="res://sprites/decor/buisson02/buissons0002.png" type="Texture" id=4]
+[ext_resource path="res://sprites/decor/buisson02/buissons0003.png" type="Texture" id=5]
+[ext_resource path="res://sprites/decor/buisson02/buissons0004.png" type="Texture" id=6]
+[ext_resource path="res://scripts/z_index.gd" type="Script" id=7]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 1 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="buisson2" type="AnimatedSprite"]
+frames = SubResource( 1 )
+offset = Vector2( 0.840912, -34.4768 )
+script = ExtResource( 7 )

@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scripts/perso.gd" type="Script" id=1]
+[ext_resource path="res://obj/sprite perso.tscn" type="PackedScene" id=2]
+[ext_resource path="res://obj/ParticlesFleurs.tscn" type="PackedScene" id=27]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 25.0
+
+[node name="perso" type="KinematicBody2D"]
+script = ExtResource( 1 )
+particules = ExtResource( 27 )
+
+[node name="sprite perso" parent="." instance=ExtResource( 2 )]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, -10 )
+shape = SubResource( 1 )
+
+[node name="popParicules" type="Node2D" parent="."]
+position = Vector2( 0, -121.436 )
+[connection signal="animation_finished" from="sprite perso" to="." method="fin_anim"]

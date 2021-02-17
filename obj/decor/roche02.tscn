@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://sprites/decor/roches/roche02.PNG" type="Texture" id=1]
+[ext_resource path="res://scripts/z_index.gd" type="Script" id=2]
+
+[node name="roche02" type="Sprite"]
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+offset = Vector2( -4.54688, -60.4923 )
+script = ExtResource( 2 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( -83.4545, -29.8875, -69.184, -3.72491, 97.305, 3.41034, 154.387, -16.8062, 147.252, -45.3471, 17.6281, -50.104, -69.184, -44.1579 )

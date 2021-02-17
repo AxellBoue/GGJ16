@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://sprites/decor/champignons/champis10.png" type="Texture" id=1]
+[ext_resource path="res://scripts/z_index.gd" type="Script" id=2]
+
+[node name="champis10" type="Sprite"]
+texture = ExtResource( 1 )
+offset = Vector2( 1.43495, -18.7549 )
+script = ExtResource( 2 )

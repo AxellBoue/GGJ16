@@ -1,0 +1,31 @@
+extends Area2D
+
+export (String) var numAutreCercle
+var autreCercle 
+onready var perso = get_node("/root/scene/perso")
+onready var timer = get_node("Timer")
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	autreCercle = get_node("../cercle champi"+numAutreCercle)
+	timer.connect("timeout",self,"teleporte")
+	timer.wait_time = 1.2
+
+
+func _on_cercle_champi_body_entered(body):
+	if body.name == "perso":
+		body.entre_zone_interactive(self)
+	
+func _on_cercle_champi_body_exited(body):
+	if body.name == "perso":
+		body.sort_zone_interactive(self)
+
+func area_action(var action):
+	if action == "saut":
+		teleporte_later()
+
+func teleporte_later():
+	timer.start()
+
+func teleporte():
+	perso.global_position = autreCercle.global_position

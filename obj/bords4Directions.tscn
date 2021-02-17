@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://obj/bordTeleporte.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scripts/bordTeleporte.gd" type="Script" id=2]
+
+[node name="bords" type="Node2D"]
+position = Vector2( 2000, 0 )
+
+[node name="zoneTeleporteNord" type="Area2D" parent="." instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+directionPop = "Sud"
+
+[node name="zoneTeleporteSud" type="Area2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 0, 4000 )
+rotation = -3.14159
+script = ExtResource( 2 )
+directionPop = "Nord"
+
+[node name="zoneTeleporteEst" type="Area2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 2000, 2000 )
+rotation = 1.5708
+script = ExtResource( 2 )
+directionPop = "Ouest"
+
+[node name="zoneTeleporteOuest" type="Area2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( -2000, 2000 )
+rotation = -1.5708
+script = ExtResource( 2 )
+directionPop = "Est"
