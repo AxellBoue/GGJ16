@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=41 format=2]
 
 [ext_resource path="res://sprites/boussole/boussoleBrouillonMoche.png" type="Texture" id=1]
 [ext_resource path="res://obj/bords4Directions.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://obj/camera box.tscn" type="PackedScene" id=4]
 [ext_resource path="res://obj/perso.tscn" type="PackedScene" id=5]
 [ext_resource path="res://obj/interactions/cercle champi.tscn" type="PackedScene" id=6]
+[ext_resource path="res://sprites/monstres/lvl1_bleu/monstreBleu030000.png" type="Texture" id=7]
 [ext_resource path="res://obj/interactions/lapin.tscn" type="PackedScene" id=8]
 [ext_resource path="res://sprites/decor/lac2.png" type="Texture" id=9]
 [ext_resource path="res://sprites/decor/fond_map.jpg" type="Texture" id=10]
@@ -27,6 +28,13 @@
 [ext_resource path="res://obj/sprite perso.tscn" type="PackedScene" id=26]
 [ext_resource path="res://sprites/decor/lacMasque.png" type="Texture" id=27]
 [ext_resource path="res://scripts/lac.gd" type="Script" id=28]
+[ext_resource path="res://sprites/monstres/lvl1_bleu/monstreBleu030001.png" type="Texture" id=29]
+[ext_resource path="res://sprites/monstres/lvl1_bleu/monstreBleu030005.png" type="Texture" id=30]
+[ext_resource path="res://sprites/monstres/lvl1_bleu/monstreBleu030004.png" type="Texture" id=31]
+[ext_resource path="res://sprites/monstres/lvl1_bleu/monstreBleu030006.png" type="Texture" id=32]
+[ext_resource path="res://sprites/monstres/lvl1_bleu/monstreBleu030002.png" type="Texture" id=33]
+[ext_resource path="res://sprites/monstres/lvl1_bleu/monstreBleu030003.png" type="Texture" id=34]
+[ext_resource path="res://scripts/monstres/monstreBleu1.gd" type="Script" id=35]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 901.428, 838.482 )
@@ -42,6 +50,17 @@ custom_defines = ""
 
 [sub_resource type="ShaderMaterial" id=3]
 shader = SubResource( 2 )
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ ExtResource( 7 ), ExtResource( 29 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 31 ), ExtResource( 30 ), ExtResource( 32 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 28.5066, 18.3276 )
 
 [node name="scene" type="Node2D"]
 
@@ -67,7 +86,7 @@ stretch_mode = 4
 [node name="camera box" parent="." instance=ExtResource( 4 )]
 
 [node name="perso" parent="." instance=ExtResource( 5 )]
-position = Vector2( 1959.72, 2219.58 )
+position = Vector2( 1680.33, 996.319 )
 z_index = 2000
 
 [node name="decor" type="Node2D" parent="."]
@@ -76,7 +95,7 @@ z_index = 2000
 
 [node name="arbre02" parent="decor/arbres" instance=ExtResource( 11 )]
 position = Vector2( 1057.24, 446.173 )
-frame = 15
+frame = 9
 playing = true
 
 [node name="arbre_simple" parent="decor/arbres" instance=ExtResource( 12 )]
@@ -84,7 +103,7 @@ position = Vector2( 480.993, 824.079 )
 
 [node name="sapin" parent="decor/arbres" instance=ExtResource( 13 )]
 position = Vector2( 245.715, 616.099 )
-frame = 10
+frame = 4
 
 [node name="buissons" type="Node2D" parent="decor"]
 
@@ -215,6 +234,7 @@ __meta__ = {
 }
 
 [node name="reflet sprite perso" parent="decor/lac/Light2D" instance=ExtResource( 26 )]
+visible = false
 light_mask = 2
 material = SubResource( 3 )
 position = Vector2( 270.559, -939.081 )
@@ -233,3 +253,28 @@ __meta__ = {
 }
 
 [node name="lapin" parent="." instance=ExtResource( 8 )]
+
+[node name="monstres" type="Node2D" parent="."]
+
+[node name="montre bleu 1" type="KinematicBody2D" parent="monstres"]
+position = Vector2( 1864.81, 1007.98 )
+scale = Vector2( 0.8, 0.8 )
+script = ExtResource( 35 )
+
+[node name="anim" type="AnimatedSprite" parent="monstres/montre bleu 1"]
+scale = Vector2( 1, 1 )
+frames = SubResource( 4 )
+offset = Vector2( 3.87402, -196.905 )
+
+[node name="Area2D" type="Area2D" parent="monstres/montre bleu 1"]
+scale = Vector2( 1, 1 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="monstres/montre bleu 1/Area2D"]
+position = Vector2( 0.936279, 0 )
+polygon = PoolVector2Array( -32.0361, -73.6996, -86.3499, -54.9707, -119.125, -21.2588, -110.698, 36.8005, -71.3667, 59.2753, -3.94287, 70.5126, 75.6545, 60.2117, 116.858, 28.3727, 113.112, -37.1783, 59.7351, -72.7631 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="monstres/montre bleu 1"]
+position = Vector2( -5.255, 0 )
+shape = SubResource( 5 )
+
+[node name="Timer" type="Timer" parent="monstres/montre bleu 1"]

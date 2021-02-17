@@ -16,4 +16,5 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	material.set_shader_param("distancePlayer", global_position.distance_to(perso.global_position))
+	if not Engine.editor_hint:
+		material.set_shader_param("distancePlayer", global_position.distance_to(perso.global_position))

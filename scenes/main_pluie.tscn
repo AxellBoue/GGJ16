@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://sprites/decor/fond_map.jpg" type="Texture" id=1]
+[ext_resource path="res://obj/popPluie.tscn" type="PackedScene" id=2]
+[ext_resource path="res://obj/camera box.tscn" type="PackedScene" id=3]
+[ext_resource path="res://obj/perso.tscn" type="PackedScene" id=4]
+[ext_resource path="res://obj/bords4Directions.tscn" type="PackedScene" id=5]
+
+[node name="scene" type="Node2D"]
+
+[node name="camera box" parent="." instance=ExtResource( 3 )]
+
+[node name="perso" parent="." instance=ExtResource( 4 )]
+position = Vector2( 418.969, 360.294 )
+
+[node name="bords" parent="." instance=ExtResource( 5 )]
+
+[node name="fond_map" type="Sprite" parent="."]
+position = Vector2( 1990.51, 1987.57 )
+z_index = -4000
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="decor" type="Node2D" parent="."]
+
+[node name="popPluie" parent="." instance=ExtResource( 2 )]
+deltaGouttesMin = 0.03
+deltaGouttesMax = 0.2
