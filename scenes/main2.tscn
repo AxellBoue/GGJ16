@@ -46,6 +46,10 @@ position = Vector2( 418.969, 360.294 )
 
 [node name="bords" parent="." instance=ExtResource( 4 )]
 
+[node name="popPluie" parent="." instance=ExtResource( 7 )]
+deltaGouttesMin = 1.0
+deltaGouttesMax = 3.0
+
 [node name="fond_map" type="Sprite" parent="."]
 position = Vector2( 1990.51, 1987.57 )
 z_index = -4000
@@ -67,7 +71,7 @@ playing = false
 material = SubResource( 3 )
 position = Vector2( 532, 740 )
 z_index = 370
-frame = 3
+frame = 7
 
 [node name="sapin brume3" parent="decor" instance=ExtResource( 5 )]
 material = SubResource( 4 )
@@ -75,7 +79,3 @@ position = Vector2( 317.161, 330.146 )
 z_index = 165
 frame = 8
 playing = false
-
-[node name="popPluie" parent="." instance=ExtResource( 7 )]
-deltaGouttesMin = 1.0
-deltaGouttesMax = 3.0

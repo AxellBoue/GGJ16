@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://sprites/boussole/boussoleBrouillonMoche.png" type="Texture" id=1]
 [ext_resource path="res://obj/bords4Directions.tscn" type="PackedScene" id=2]
@@ -6,7 +6,7 @@
 [ext_resource path="res://obj/camera box.tscn" type="PackedScene" id=4]
 [ext_resource path="res://obj/perso.tscn" type="PackedScene" id=5]
 [ext_resource path="res://obj/interactions/cercle champi.tscn" type="PackedScene" id=6]
-[ext_resource path="res://sprites/monstres/lvl1_bleu/monstreBleu030000.png" type="Texture" id=7]
+[ext_resource path="res://obj/interactions/montre bleu 1.tscn" type="PackedScene" id=7]
 [ext_resource path="res://obj/interactions/lapin.tscn" type="PackedScene" id=8]
 [ext_resource path="res://sprites/decor/lac2.png" type="Texture" id=9]
 [ext_resource path="res://sprites/decor/fond_map.jpg" type="Texture" id=10]
@@ -28,13 +28,8 @@
 [ext_resource path="res://obj/sprite perso.tscn" type="PackedScene" id=26]
 [ext_resource path="res://sprites/decor/lacMasque.png" type="Texture" id=27]
 [ext_resource path="res://scripts/lac.gd" type="Script" id=28]
-[ext_resource path="res://sprites/monstres/lvl1_bleu/monstreBleu030001.png" type="Texture" id=29]
-[ext_resource path="res://sprites/monstres/lvl1_bleu/monstreBleu030005.png" type="Texture" id=30]
-[ext_resource path="res://sprites/monstres/lvl1_bleu/monstreBleu030004.png" type="Texture" id=31]
-[ext_resource path="res://sprites/monstres/lvl1_bleu/monstreBleu030006.png" type="Texture" id=32]
-[ext_resource path="res://sprites/monstres/lvl1_bleu/monstreBleu030002.png" type="Texture" id=33]
-[ext_resource path="res://sprites/monstres/lvl1_bleu/monstreBleu030003.png" type="Texture" id=34]
-[ext_resource path="res://scripts/monstres/monstreBleu1.gd" type="Script" id=35]
+[ext_resource path="res://obj/interactions/monstre losange plante.tscn" type="PackedScene" id=29]
+[ext_resource path="res://obj/interactions/zone_plantation_monstre_losange.tscn" type="PackedScene" id=31]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 901.428, 838.482 )
@@ -50,17 +45,6 @@ custom_defines = ""
 
 [sub_resource type="ShaderMaterial" id=3]
 shader = SubResource( 2 )
-
-[sub_resource type="SpriteFrames" id=4]
-animations = [ {
-"frames": [ ExtResource( 7 ), ExtResource( 29 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 31 ), ExtResource( 30 ), ExtResource( 32 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
-
-[sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 28.5066, 18.3276 )
 
 [node name="scene" type="Node2D"]
 
@@ -86,7 +70,7 @@ stretch_mode = 4
 [node name="camera box" parent="." instance=ExtResource( 4 )]
 
 [node name="perso" parent="." instance=ExtResource( 5 )]
-position = Vector2( 1680.33, 996.319 )
+position = Vector2( 549.074, 1509.51 )
 z_index = 2000
 
 [node name="decor" type="Node2D" parent="."]
@@ -95,7 +79,7 @@ z_index = 2000
 
 [node name="arbre02" parent="decor/arbres" instance=ExtResource( 11 )]
 position = Vector2( 1057.24, 446.173 )
-frame = 9
+frame = 11
 playing = true
 
 [node name="arbre_simple" parent="decor/arbres" instance=ExtResource( 12 )]
@@ -103,7 +87,7 @@ position = Vector2( 480.993, 824.079 )
 
 [node name="sapin" parent="decor/arbres" instance=ExtResource( 13 )]
 position = Vector2( 245.715, 616.099 )
-frame = 4
+frame = 6
 
 [node name="buissons" type="Node2D" parent="decor"]
 
@@ -191,6 +175,50 @@ plante = ExtResource( 25 )
 [node name="zone_plantation_arbre" parent="decor/interactions" instance=ExtResource( 24 )]
 position = Vector2( 1598.39, 781.234 )
 
+[node name="zone monstre losange" type="Node2D" parent="decor/interactions"]
+position = Vector2( 767.764, 1591.65 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="zone_plantation_monstre_losange" parent="decor/interactions/zone monstre losange" instance=ExtResource( 31 )]
+position = Vector2( -195.563, 195.271 )
+
+[node name="zone_plantation_monstre_losange2" parent="decor/interactions/zone monstre losange" instance=ExtResource( 31 )]
+position = Vector2( 275.871, 193.026 )
+num_target = 1
+
+[node name="zone_plantation_monstre_losange3" parent="decor/interactions/zone monstre losange" instance=ExtResource( 31 )]
+position = Vector2( -83.3165, 383.845 )
+num_target = 2
+
+[node name="zone_plantation_monstre_losange4" parent="decor/interactions/zone monstre losange" instance=ExtResource( 31 )]
+position = Vector2( 181.584, 374.865 )
+num_target = 3
+
+[node name="zone_plantation_monstre_losange5" parent="decor/interactions/zone monstre losange" instance=ExtResource( 31 )]
+position = Vector2( 44.644, 565.683 )
+num_target = 4
+
+[node name="plante monstre losange" type="Node2D" parent="decor/interactions/zone monstre losange"]
+position = Vector2( -195.308, -2.24487 )
+
+[node name="plante monstre losange2" type="Node2D" parent="decor/interactions/zone monstre losange"]
+position = Vector2( 280.616, 2.245 )
+
+[node name="plante monstre losange3" type="Node2D" parent="decor/interactions/zone monstre losange"]
+position = Vector2( -83.062, -175.104 )
+
+[node name="plante monstre losange4" type="Node2D" parent="decor/interactions/zone monstre losange"]
+position = Vector2( 175.104, -170.614 )
+
+[node name="plante monstre losange5" type="Node2D" parent="decor/interactions/zone monstre losange"]
+position = Vector2( 49.3887, -334.494 )
+
+[node name="centre" type="Node2D" parent="decor/interactions/zone monstre losange"]
+position = Vector2( 35.636, 68.2593 )
+
 [node name="rochers" type="Node2D" parent="decor"]
 
 [node name="roche01" parent="decor/rochers" instance=ExtResource( 20 )]
@@ -252,29 +280,10 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="lapin" parent="." instance=ExtResource( 8 )]
-
 [node name="monstres" type="Node2D" parent="."]
 
-[node name="montre bleu 1" type="KinematicBody2D" parent="monstres"]
-position = Vector2( 1864.81, 1007.98 )
-scale = Vector2( 0.8, 0.8 )
-script = ExtResource( 35 )
+[node name="montre bleu 1" parent="monstres" instance=ExtResource( 7 )]
 
-[node name="anim" type="AnimatedSprite" parent="monstres/montre bleu 1"]
-scale = Vector2( 1, 1 )
-frames = SubResource( 4 )
-offset = Vector2( 3.87402, -196.905 )
+[node name="lapin" parent="monstres" instance=ExtResource( 8 )]
 
-[node name="Area2D" type="Area2D" parent="monstres/montre bleu 1"]
-scale = Vector2( 1, 1 )
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="monstres/montre bleu 1/Area2D"]
-position = Vector2( 0.936279, 0 )
-polygon = PoolVector2Array( -32.0361, -73.6996, -86.3499, -54.9707, -119.125, -21.2588, -110.698, 36.8005, -71.3667, 59.2753, -3.94287, 70.5126, 75.6545, 60.2117, 116.858, 28.3727, 113.112, -37.1783, 59.7351, -72.7631 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="monstres/montre bleu 1"]
-position = Vector2( -5.255, 0 )
-shape = SubResource( 5 )
-
-[node name="Timer" type="Timer" parent="monstres/montre bleu 1"]
+[node name="monstre losange plante" parent="monstres" instance=ExtResource( 29 )]

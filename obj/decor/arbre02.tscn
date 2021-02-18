@@ -26,15 +26,15 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 21 ), ExtResource( 22 ), ExtResource( 18 ), ExtResource( 20 ), ExtResource( 19 ) ],
-"loop": false,
-"name": "pousse",
-"speed": 0.1
-}, {
 "frames": [ ExtResource( 16 ), ExtResource( 1 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 13 ), ExtResource( 12 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 17 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 21 ), ExtResource( 22 ), ExtResource( 18 ), ExtResource( 20 ), ExtResource( 19 ) ],
+"loop": false,
+"name": "pousse",
+"speed": 0.1
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -47,6 +47,7 @@ offset = Vector2( -1.78861, -158.963 )
 script = ExtResource( 23 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_mask = 2147483649
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2( -0.235962, -4.95534 )
