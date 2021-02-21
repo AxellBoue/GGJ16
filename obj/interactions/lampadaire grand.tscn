@@ -1,0 +1,98 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://scripts/interactions/lampadaire.gd" type="Script" id=1]
+[ext_resource path="res://sprites/objets/lampadaire grand/lampadaire-grand-lumiere.png" type="Texture" id=2]
+[ext_resource path="res://sprites/objets/lampadaire grand/lampadaire-grand.png" type="Texture" id=3]
+[ext_resource path="res://sprites/objets/lampadaire grand/lampadaire-grand-eteint.png" type="Texture" id=4]
+
+[sub_resource type="Animation" id=5]
+resource_name = "allume"
+tracks/0/type = "value"
+tracks/0/path = NodePath("lampadaire-grand:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 3 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("lampadaire-grand/lampadaire-grand-lumiere:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "eteint"
+tracks/0/type = "value"
+tracks/0/path = NodePath("lampadaire-grand:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 4 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("lampadaire-grand/lampadaire-grand-lumiere:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 11.1592, 10 )
+
+[sub_resource type="CircleShape2D" id=4]
+radius = 70.6129
+
+[node name="lampadaire grand" type="StaticBody2D"]
+script = ExtResource( 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/allume = SubResource( 5 )
+anims/eteint = SubResource( 6 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0.753603, -6.08807 )
+shape = SubResource( 3 )
+
+[node name="lampadaire-grand" type="Sprite" parent="."]
+position = Vector2( 0.00802612, -14.3438 )
+texture = ExtResource( 4 )
+offset = Vector2( -4.35223, -154.48 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="lampadaire-grand-lumiere" type="Sprite" parent="lampadaire-grand"]
+visible = false
+self_modulate = Color( 1, 1, 1, 0.768627 )
+position = Vector2( -3.03131, -274.446 )
+z_index = -1
+texture = ExtResource( 2 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 0, -8.73071 )
+shape = SubResource( 4 )

@@ -1,4 +1,4 @@
-extends "res://scripts/zone_plantation.gd"
+extends "res://scripts/interactions/zone_plantation.gd"
 
 
 onready var monstre_losange = get_node("/root/scene/monstres/monstre losange plante")

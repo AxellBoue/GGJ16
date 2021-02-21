@@ -21,12 +21,14 @@ func _input(event):
 	if event.is_action_pressed("saut") && !animBloque:
 		animBloque = true
 		anim.play("saut")
-		reflet.play("saut")
+		if reflet :
+			reflet.play("saut")
 		interaction ("saut")
 	if event.is_action_pressed("pied") && !animBloque:
 		animBloque = true
 		anim.play("coupPied")
-		reflet.play("coupPied")
+		if reflet :
+			reflet.play("coupPied")
 		interaction("pied")
 	if event.is_action_pressed("fleur") && !animBloque:
 		#animBloque = true

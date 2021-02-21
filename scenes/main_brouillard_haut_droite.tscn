@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://obj/camera box.tscn" type="PackedScene" id=1]
 [ext_resource path="res://obj/perso.tscn" type="PackedScene" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://obj/decor/sapin brume.tscn" type="PackedScene" id=5]
 [ext_resource path="res://sprites/decor/brume_texture.jpg" type="Texture" id=6]
 [ext_resource path="res://obj/popPluie.tscn" type="PackedScene" id=7]
+[ext_resource path="res://obj/interactions/lampadaire petit.tscn" type="PackedScene" id=8]
+[ext_resource path="res://obj/interactions/lampadaire grand.tscn" type="PackedScene" id=9]
 
 [sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;
@@ -34,7 +36,7 @@ shader_param/brumeTex = ExtResource( 6 )
 
 [sub_resource type="ShaderMaterial" id=4]
 shader = SubResource( 1 )
-shader_param/distancePlayer = 112.612
+shader_param/distancePlayer = 127.498
 shader_param/brumeTex = ExtResource( 6 )
 
 [node name="scene" type="Node2D"]
@@ -71,11 +73,24 @@ playing = false
 material = SubResource( 3 )
 position = Vector2( 532, 740 )
 z_index = 370
-frame = 7
+frame = 8
 
 [node name="sapin brume3" parent="decor" instance=ExtResource( 5 )]
 material = SubResource( 4 )
-position = Vector2( 317.161, 330.146 )
-z_index = 165
+position = Vector2( 262.984, 308.727 )
+z_index = 154
 frame = 8
 playing = false
+
+[node name="sapin brume4" parent="decor" instance=ExtResource( 5 )]
+material = SubResource( 4 )
+position = Vector2( 262.984, 308.727 )
+z_index = 154
+frame = 8
+playing = false
+
+[node name="lampadaire grand" parent="decor" instance=ExtResource( 9 )]
+position = Vector2( 120.893, 497.875 )
+
+[node name="lampadaire petit" parent="decor" instance=ExtResource( 8 )]
+position = Vector2( 308.251, 591.557 )
