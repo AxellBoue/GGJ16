@@ -1,23 +1,12 @@
 [gd_resource type="ShaderMaterial" load_steps=3 format=2]
 
 [ext_resource path="res://sprites/decor/brume_texture.jpg" type="Texture" id=1]
+[ext_resource path="res://brumeObjetsVerticaux.shader" type="Shader" id=2]
 
-[sub_resource type="Shader" id=1]
-code = "shader_type canvas_item;
-uniform sampler2D brumeTex : hint_albedo;
-uniform float distancePlayer ;
-
-void fragment (){
-	vec4 tex = texture(TEXTURE, UV);
-	vec4 brume = texture(brumeTex, UV);
-	float mixQuotient = clamp(distancePlayer/400.0,0.0,1.0);
-	vec4 colorAvecBrume =  mix(tex,brume,mixQuotient);
-	COLOR = vec4 (colorAvecBrume.rgb,tex.a);// + vec4(0.1,0.1,0.1,0.0);
-}"
-custom_defines = ""
 
 [resource]
 resource_local_to_scene = true
-shader = SubResource( 1 )
+shader = ExtResource( 2 )
 shader_param/distancePlayer = 200.0
+shader_param/global_transform = null
 shader_param/brumeTex = ExtResource( 1 )
