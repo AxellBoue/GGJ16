@@ -1,106 +1,126 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://scripts/interactions/lampadaire.gd" type="Script" id=1]
 [ext_resource path="res://sprites/objets/lampadaire petit/lampadaire-petit-lumiere.png" type="Texture" id=2]
 [ext_resource path="res://sprites/objets/lampadaire petit/lampadaire-petit-allume.png" type="Texture" id=3]
 [ext_resource path="res://sprites/objets/lampadaire petit/lampadaire-petit.png" type="Texture" id=4]
 [ext_resource path="res://sprites/decor/brume_texture.jpg" type="Texture" id=5]
-[ext_resource path="res://brumeObjetsVerticaux.shader" type="Shader" id=6]
+[ext_resource path="res://shaders/lampadaire_brume.shader" type="Shader" id=6]
+[ext_resource path="res://shaders/brumeObjetsVerticaux.shader" type="Shader" id=7]
 
-
-[sub_resource type="ShaderMaterial" id=5]
+[sub_resource type="ShaderMaterial" id=7]
 shader = ExtResource( 6 )
 shader_param/distancePlayer = null
+shader_param/global_transform = Transform2D( 1, 0, 0, 1, 308.251, 591.557 )
 shader_param/brumeTex = ExtResource( 5 )
 
-[sub_resource type="Animation" id=1]
-resource_name = "allume"
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 11.1592, 10 )
+
+[sub_resource type="Animation" id=3]
 tracks/0/type = "value"
-tracks/0/path = NodePath(".:texture")
+tracks/0/path = NodePath("lampadaire-allume:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ ExtResource( 3 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("lampadaire-petit-lumiere:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
+"times": PoolRealArray( 0.1 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ true ]
 }
-
-[sub_resource type="Animation" id=2]
-resource_name = "eteint"
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ ExtResource( 4 ) ]
-}
 tracks/1/type = "value"
-tracks/1/path = NodePath("lampadaire-petit-lumiere:visible")
+tracks/1/path = NodePath("lampadaire-eteint:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0 ),
+"times": PoolRealArray( 0.1 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ false ]
 }
 
-[sub_resource type="CircleShape2D" id=4]
-radius = 70.6129
-
-[sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 11.1592, 10 )
-
-[node name="lampadaire-petit" type="Sprite"]
-material = SubResource( 5 )
-texture = ExtResource( 4 )
-offset = Vector2( -0.148743, -137.775 )
-script = ExtResource( 1 )
-__meta__ = {
-"_edit_group_": true
+[sub_resource type="Animation" id=4]
+tracks/0/type = "value"
+tracks/0/path = NodePath("lampadaire-allume:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("lampadaire-eteint:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
 }
 
-[node name="lampadaire-petit-lumiere" type="Sprite" parent="."]
-visible = false
-self_modulate = Color( 1, 1, 1, 0.768627 )
-position = Vector2( -1.03961, -218.847 )
-z_index = -1
-texture = ExtResource( 2 )
+[sub_resource type="CircleShape2D" id=5]
+radius = 70.6129
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = ExtResource( 6 )
+shader_param/distancePlayer = null
+shader_param/global_transform = null
+shader_param/brumeTex = ExtResource( 5 )
+
+[sub_resource type="ShaderMaterial" id=6]
+shader = ExtResource( 7 )
+shader_param/distancePlayer = null
+shader_param/global_transform = null
+shader_param/brumeTex = ExtResource( 5 )
+
+[node name="lampadaire petit" type="StaticBody2D"]
+material = SubResource( 7 )
+script = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 1.12372, -9.36444 )
+shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/allume = SubResource( 1 )
-anims/eteint = SubResource( 2 )
+anims/allume = SubResource( 3 )
+anims/eteint = SubResource( 4 )
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2( 0, -8.73071 )
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 
-[node name="lampadaire petit" type="StaticBody2D" parent="."]
+[node name="lampadaire-allume" type="Sprite" parent="."]
+visible = false
+material = SubResource( 2 )
+texture = ExtResource( 3 )
+offset = Vector2( -0.148743, -137.775 )
+__meta__ = {
+"_edit_group_": true
+}
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="lampadaire petit"]
-position = Vector2( 1.12372, -9.36444 )
-shape = SubResource( 3 )
+[node name="lampadaire-petit-lumiere" type="Sprite" parent="lampadaire-allume"]
+self_modulate = Color( 1, 1, 1, 0.768627 )
+position = Vector2( -1.03961, -218.847 )
+z_index = -1
+texture = ExtResource( 2 )
+
+[node name="lampadaire-eteint" type="Sprite" parent="."]
+material = SubResource( 6 )
+texture = ExtResource( 4 )
+offset = Vector2( -0.148743, -137.775 )
+__meta__ = {
+"_edit_group_": true
+}

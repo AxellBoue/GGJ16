@@ -102,7 +102,7 @@ playing = false
 material = SubResource( 3 )
 position = Vector2( 627.872, 679.574 )
 z_index = 339
-frame = 5
+frame = 16
 
 [node name="sapin brume3" parent="decor" instance=ExtResource( 5 )]
 material = SubResource( 4 )
@@ -139,8 +139,15 @@ z_index = 614
 frame = 8
 playing = false
 
+[node name="lampadaire-grand" parent="decor" instance=ExtResource( 9 )]
+position = Vector2( 943.787, 392.017 )
+z_index = 196
+
 [node name="lampadaire grand" parent="decor" instance=ExtResource( 9 )]
-position = Vector2( 120.893, 497.875 )
+position = Vector2( 169.001, 534.402 )
+z_index = 267
 
 [node name="lampadaire petit" parent="decor" instance=ExtResource( 8 )]
 position = Vector2( 308.251, 591.557 )
+z_index = 295
+z_as_relative = false

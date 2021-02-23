@@ -9,7 +9,7 @@ onready var anim = $"sprite perso"
 onready var reflet = get_node("/root/scene/decor/lac/Light2D/reflet sprite perso")
 
 var isInArea = false;
-var area; 
+var area : Array; 
 
 export var particules : PackedScene
 
@@ -84,17 +84,18 @@ func fin_anim():
 		
 		
 func entre_zone_interactive(var newzone):
-	isInArea = true;
-	#print("entre dans "+newzone.name)
-	area = newzone
+	isInArea = true
+	area.push_front(newzone)
 
 func sort_zone_interactive(body):
-	isInArea = false;
-	area = null
+	var i = area.find(body)
+	area.remove(i)
+	if area.size() == 0 :
+		isInArea = false
 	
 func interaction (var action):
-	if (isInArea && area.has_method("area_action")):
-		area.area_action(action)
+	if (isInArea && area[0].has_method("area_action")):
+		area[0].area_action(action)
 		
 func set_reflet(b):
 	reflet.visible = b

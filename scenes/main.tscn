@@ -96,7 +96,7 @@ z_index = 2000
 
 [node name="arbre02" parent="decor/arbres" instance=ExtResource( 11 )]
 position = Vector2( 1057.24, 446.173 )
-frame = 3
+frame = 11
 playing = true
 
 [node name="arbre_simple" parent="decor/arbres" instance=ExtResource( 12 )]
@@ -104,7 +104,7 @@ position = Vector2( 480.993, 824.079 )
 
 [node name="sapin" parent="decor/arbres" instance=ExtResource( 13 )]
 position = Vector2( 245.715, 616.099 )
-frame = 15
+frame = 6
 
 [node name="buissons" type="Node2D" parent="decor"]
 

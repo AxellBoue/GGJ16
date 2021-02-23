@@ -29,3 +29,4 @@ func teleporte_later():
 
 func teleporte():
 	perso.global_position = autreCercle.global_position
+	#perso.entre_zone_interactive(autreCercle)
