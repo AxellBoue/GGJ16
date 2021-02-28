@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=2]
+[gd_scene load_steps=59 format=2]
 
 [ext_resource path="res://sprites/boussole/boussoleBrouillonMoche.png" type="Texture" id=1]
 [ext_resource path="res://obj/bords4Directions.tscn" type="PackedScene" id=2]
@@ -39,21 +39,30 @@
 [ext_resource path="res://sprites/monstres/lvl1_losange_petit/Monstreslosangespetit010000.png" type="Texture" id=37]
 [ext_resource path="res://sprites/monstres/lvl1_losange_petit/Monstreslosangespetit010004.png" type="Texture" id=38]
 [ext_resource path="res://sprites/monstres/lvl1_losange_petit/Monstreslosangespetit010002.png" type="Texture" id=39]
+[ext_resource path="res://sprites/decor/flaques-masque.png" type="Texture" id=40]
+[ext_resource path="res://sprites/decor/flaques.png" type="Texture" id=41]
+[ext_resource path="res://obj/interactions/flaque.tscn" type="PackedScene" id=42]
+[ext_resource path="res://sons/4mi.ogg" type="AudioStream" id=43]
+[ext_resource path="res://sons/1fad.ogg" type="AudioStream" id=44]
+[ext_resource path="res://sons/2dod.ogg" type="AudioStream" id=45]
+[ext_resource path="res://sons/3re.ogg" type="AudioStream" id=46]
+[ext_resource path="res://shaders/reflet.shader" type="Shader" id=47]
+[ext_resource path="res://obj/interactions/plante boussole.tscn" type="PackedScene" id=48]
+[ext_resource path="res://obj/interactions/mr ocarina.tscn" type="PackedScene" id=49]
+[ext_resource path="res://sprites/boussole/aiguille1.png" type="Texture" id=50]
+[ext_resource path="res://sprites/boussole/aiguilleDouble.png" type="Texture" id=51]
+[ext_resource path="res://sprites/boussole/aiguilleEtoile.png" type="Texture" id=52]
+[ext_resource path="res://scripts/boussole.gd" type="Script" id=53]
+[ext_resource path="res://sprites/boussole/aiguilleRonde.png" type="Texture" id=54]
 
 [sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 420.653, 191.646 )
+
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 901.428, 838.482 )
 
-[sub_resource type="Shader" id=2]
-code = "shader_type canvas_item;
-
-void fragment(){
-	vec4 text = texture(TEXTURE,UV);
-	COLOR = vec4(text.xyz, text.a * UV.y);
-}"
-custom_defines = ""
-
 [sub_resource type="ShaderMaterial" id=3]
-shader = SubResource( 2 )
+shader = ExtResource( 47 )
 
 [sub_resource type="SpriteFrames" id=4]
 animations = [ {
@@ -72,22 +81,72 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="boussole" type="TextureRect" parent="CanvasLayer/Control"]
+visible = false
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -120.0
-margin_bottom = 135.0
+margin_left = -116.633
+margin_top = -1.6837
+margin_right = 3.36731
+margin_bottom = 133.316
 rect_scale = Vector2( 0.8, 0.8 )
-rect_pivot_offset = Vector2( 100, 0 )
+rect_pivot_offset = Vector2( 59.4229, 54.3115 )
 texture = ExtResource( 1 )
 expand = true
 stretch_mode = 4
+script = ExtResource( 53 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="aiguille 1" type="TextureRect" parent="CanvasLayer/Control/boussole"]
+margin_left = 40.1216
+margin_top = 5.75938
+margin_right = 80.1216
+margin_bottom = 57.7594
+rect_pivot_offset = Vector2( 18.6016, 44.8131 )
+texture = ExtResource( 50 )
+
+[node name="aiguille double" type="TextureRect" parent="CanvasLayer/Control/boussole"]
+visible = false
+margin_left = 42.6271
+margin_top = 5.20566
+margin_right = 82.6271
+margin_bottom = 88.2057
+rect_pivot_offset = Vector2( 15.8136, 44.8409 )
+texture = ExtResource( 51 )
+
+[node name="aiguille etoile" type="TextureRect" parent="CanvasLayer/Control/boussole"]
+visible = false
+margin_left = 34.8315
+margin_top = 20.1005
+margin_right = 87.8315
+margin_bottom = 103.1
+rect_pivot_offset = Vector2( 26.3929, 27.3013 )
+texture = ExtResource( 52 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="aiguille rond" type="TextureRect" parent="CanvasLayer/Control/boussole"]
+visible = false
+margin_left = 44.1223
+margin_top = 34.2223
+margin_right = 97.1223
+margin_bottom = 117.222
+rect_pivot_offset = Vector2( 14.194, 13.2743 )
+texture = ExtResource( 54 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="CanvasLayer/Control/boussole"]
 
 [node name="popPluie" parent="." instance=ExtResource( 3 )]
 
 [node name="camera box" parent="." instance=ExtResource( 4 )]
 
 [node name="perso" parent="." instance=ExtResource( 5 )]
-position = Vector2( 1761.1, 742.459 )
+position = Vector2( 813.359, 2870.81 )
 z_index = 2000
 
 [node name="decor" type="Node2D" parent="."]
@@ -96,7 +155,7 @@ z_index = 2000
 
 [node name="arbre02" parent="decor/arbres" instance=ExtResource( 11 )]
 position = Vector2( 1057.24, 446.173 )
-frame = 11
+frame = 0
 playing = true
 
 [node name="arbre_simple" parent="decor/arbres" instance=ExtResource( 12 )]
@@ -104,7 +163,7 @@ position = Vector2( 480.993, 824.079 )
 
 [node name="sapin" parent="decor/arbres" instance=ExtResource( 13 )]
 position = Vector2( 245.715, 616.099 )
-frame = 6
+frame = 12
 
 [node name="buissons" type="Node2D" parent="decor"]
 
@@ -236,6 +295,50 @@ position = Vector2( 49.3887, -334.494 )
 [node name="centre" type="Node2D" parent="decor/interactions/zone monstre losange"]
 position = Vector2( 35.636, 68.2593 )
 
+[node name="flaques" type="Sprite" parent="decor/interactions"]
+position = Vector2( 710.8, 3641.44 )
+z_index = -3500
+texture = ExtResource( 41 )
+script = ExtResource( 28 )
+
+[node name="flaque" parent="decor/interactions/flaques" instance=ExtResource( 42 )]
+position = Vector2( -311.478, -77.3977 )
+note = ExtResource( 44 )
+
+[node name="flaque2" parent="decor/interactions/flaques" instance=ExtResource( 42 )]
+position = Vector2( -109.489, 47.1936 )
+note = ExtResource( 45 )
+num_note = 2
+
+[node name="flaque3" parent="decor/interactions/flaques" instance=ExtResource( 42 )]
+position = Vector2( 149.132, 49.0813 )
+note = ExtResource( 46 )
+num_note = 3
+
+[node name="flaque4" parent="decor/interactions/flaques" instance=ExtResource( 42 )]
+position = Vector2( 326.58, -89.6682 )
+note = ExtResource( 43 )
+num_note = 4
+
+[node name="Light2D" type="Light2D" parent="decor/interactions/flaques"]
+light_mask = 2
+texture = ExtResource( 40 )
+mode = 3
+range_z_min = -3800
+range_z_max = 0
+range_item_cull_mask = 2
+
+[node name="Area2D" type="Area2D" parent="decor/interactions/flaques"]
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="decor/interactions/flaques/Area2D"]
+visible = false
+position = Vector2( 2.23706, -90.2751 )
+shape = SubResource( 1 )
+
 [node name="rochers" type="Node2D" parent="decor"]
 
 [node name="roche01" parent="decor/rochers" instance=ExtResource( 20 )]
@@ -265,7 +368,7 @@ script = ExtResource( 28 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="decor/lac/Area2D"]
 visible = false
 position = Vector2( -1.48047, -83.749 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="Light2D" type="Light2D" parent="decor/lac"]
 texture = ExtResource( 27 )
@@ -282,8 +385,64 @@ __meta__ = {
 visible = false
 light_mask = 2
 material = SubResource( 3 )
-position = Vector2( 270.559, -939.081 )
+position = Vector2( -2172.3, 920.71 )
 scale = Vector2( 1, -1 )
+
+[node name="zones boussole" type="Node2D" parent="decor"]
+
+[node name="1 droite" type="Node2D" parent="decor/zones boussole"]
+
+[node name="Node2D2" type="Node2D" parent="decor/zones boussole/1 droite" groups=[
+"cibleBoussole",
+]]
+position = Vector2( 2590.4, 2156.98 )
+
+[node name="Node2D" type="Node2D" parent="decor/zones boussole/1 droite" groups=[
+"cibleBoussole",
+]]
+position = Vector2( 3457.22, 856.746 )
+
+[node name="Node2D3" type="Node2D" parent="decor/zones boussole/1 droite" groups=[
+"cibleBoussole",
+]]
+position = Vector2( 3336.27, 3306.03 )
+
+[node name="Node2D4" type="Node2D" parent="decor/zones boussole/1 droite" groups=[
+"cibleBoussole",
+]]
+position = Vector2( 2116.67, 1370.79 )
+
+[node name="Node2D5" type="Node2D" parent="decor/zones boussole/1 droite" groups=[
+"cibleBoussole",
+]]
+position = Vector2( 2116.67, 3497.54 )
+
+[node name="1 gauche" type="Node2D" parent="decor/zones boussole"]
+
+[node name="Node2D6" type="Node2D" parent="decor/zones boussole/1 gauche" groups=[
+"cibleBoussole",
+]]
+position = Vector2( 809.223, 1896.75 )
+
+[node name="Node2D7" type="Node2D" parent="decor/zones boussole/1 gauche" groups=[
+"cibleBoussole",
+]]
+position = Vector2( 345.223, 2680.75 )
+
+[node name="Node2D8" type="Node2D" parent="decor/zones boussole/1 gauche" groups=[
+"cibleBoussole",
+]]
+position = Vector2( 1721.22, 2528.75 )
+
+[node name="Node2D9" type="Node2D" parent="decor/zones boussole/1 gauche" groups=[
+"cibleBoussole",
+]]
+position = Vector2( 1449.22, 3680.75 )
+
+[node name="Node2D10" type="Node2D" parent="decor/zones boussole/1 gauche" groups=[
+"cibleBoussole",
+]]
+position = Vector2( 753.223, 664.746 )
 
 [node name="bords" parent="." instance=ExtResource( 2 )]
 
@@ -302,10 +461,15 @@ __meta__ = {
 [node name="montre bleu 1" parent="monstres" instance=ExtResource( 7 )]
 
 [node name="lapin" parent="monstres" instance=ExtResource( 8 )]
-position = Vector2( 1479.01, 1123.03 )
+position = Vector2( 2080.62, 1935.52 )
 
 [node name="monstre losange plante" parent="monstres" instance=ExtResource( 29 )]
 
 [node name="losange petit" type="AnimatedSprite" parent="monstres"]
 position = Vector2( 1297.96, 1343.61 )
 frames = SubResource( 4 )
+
+[node name="mr ocarina" parent="monstres" instance=ExtResource( 49 )]
+
+[node name="plante boussole" parent="monstres" instance=ExtResource( 48 )]
+position = Vector2( 1066, 2838 )

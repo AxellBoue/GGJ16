@@ -1,11 +1,23 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=17 format=2]
 
-[ext_resource path="res://icon.png" type="Texture" id=1]
+[ext_resource path="res://sprites/monstres/lvl1 lapin/lapinouCaillou0006.png" type="Texture" id=1]
 [ext_resource path="res://scripts/monstres/lapin.gd" type="Script" id=2]
-
+[ext_resource path="res://sprites/monstres/lvl1 lapin/lapinouCaillou0002.png" type="Texture" id=3]
+[ext_resource path="res://sprites/monstres/lvl1 lapin/lapinouCaillou0004.png" type="Texture" id=4]
+[ext_resource path="res://sprites/monstres/lvl1 lapin/lapinouCaillou0000.png" type="Texture" id=5]
+[ext_resource path="res://sprites/monstres/lvl1 lapin/lapinouCaillou0003.png" type="Texture" id=6]
+[ext_resource path="res://sprites/monstres/lvl1 lapin/lapinouCaillou0001.png" type="Texture" id=7]
+[ext_resource path="res://sprites/monstres/lvl1 lapin/lapinouCaillou0009.png" type="Texture" id=8]
+[ext_resource path="res://sprites/monstres/lvl1 lapin/lapinouCaillou0005.png" type="Texture" id=9]
+[ext_resource path="res://sprites/monstres/lvl1 lapin/lapinouCaillou0008.png" type="Texture" id=10]
+[ext_resource path="res://sprites/monstres/lvl1 lapin/lapinouCaillou0007.png" type="Texture" id=11]
+[ext_resource path="res://shaders/reflet.shader" type="Shader" id=12]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 20.0
+
+[sub_resource type="ShaderMaterial" id=4]
+shader = ExtResource( 12 )
 
 [sub_resource type="Animation" id=2]
 resource_name = "saute"
@@ -39,6 +51,42 @@ tracks/1/keys = {
 "method": "fin_saut"
 } ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("icon:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.7, 0.8, 0.9, 1, 1.1 ),
+"transitions": PoolRealArray( 1, 0.812252, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 5 ), ExtResource( 7 ), ExtResource( 3 ), ExtResource( 6 ), ExtResource( 4 ), ExtResource( 9 ), ExtResource( 1 ), ExtResource( 11 ), ExtResource( 10 ), ExtResource( 8 ), ExtResource( 5 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("reflet:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.6, 1.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, 40 ), Vector2( 0, 0 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("reflet:texture")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.7, 0.8, 0.9, 1, 1.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 5 ), ExtResource( 7 ), ExtResource( 3 ), ExtResource( 6 ), ExtResource( 4 ), ExtResource( 9 ), ExtResource( 1 ), ExtResource( 11 ), ExtResource( 10 ), ExtResource( 8 ), ExtResource( 5 ) ]
+}
 
 [sub_resource type="CircleShape2D" id=3]
 radius = 50.0
@@ -50,8 +98,17 @@ script = ExtResource( 2 )
 shape = SubResource( 1 )
 
 [node name="icon" type="Sprite" parent="."]
-scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 1 )
+texture = ExtResource( 5 )
+offset = Vector2( -8.35693, -52.4809 )
+
+[node name="reflet" type="Sprite" parent="."]
+light_mask = 2
+material = SubResource( 4 )
+scale = Vector2( 1, -1 )
+z_index = -1000
+z_as_relative = false
+texture = ExtResource( 5 )
+offset = Vector2( -8.35693, -52.4809 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/saute = SubResource( 2 )

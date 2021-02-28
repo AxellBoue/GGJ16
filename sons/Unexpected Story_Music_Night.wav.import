@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Unexpected Story_Music_Night.wav-59c367bfe898e6eee3e90404e86e483e.sample"
+
+[deps]
+
+source_file="res://sons/Unexpected Story_Music_Night.wav"
+dest_files=[ "res://.import/Unexpected Story_Music_Night.wav-59c367bfe898e6eee3e90404e86e483e.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

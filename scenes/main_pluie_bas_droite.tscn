@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://sprites/decor/fond_map.jpg" type="Texture" id=1]
 [ext_resource path="res://obj/popPluie.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://obj/bords4Directions.tscn" type="PackedScene" id=5]
 [ext_resource path="res://obj/decor/fleur jaune grosse.tscn" type="PackedScene" id=6]
 [ext_resource path="res://obj/interactions/multi blop.tscn" type="PackedScene" id=7]
+[ext_resource path="res://sprites/monstres/lvlPluie_ mr parapluie/mrParapluie.png" type="Texture" id=8]
 
 [node name="scene" type="Node2D"]
 
@@ -36,6 +37,10 @@ deltaGouttesMax = 0.2
 [node name="multi blop2" parent="montres" instance=ExtResource( 7 )]
 position = Vector2( 3673.22, 612.652 )
 scale = Vector2( -1, 1 )
+
+[node name="mrParapluie" type="Sprite" parent="montres"]
+position = Vector2( 2665.8, 712.488 )
+texture = ExtResource( 8 )
 
 [node name="decor" type="Node2D" parent="."]
 

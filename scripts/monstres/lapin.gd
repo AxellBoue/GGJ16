@@ -22,6 +22,7 @@ func _physics_process(delta):
 		mouvement = perso.position - position
 		mouvement = mouvement.normalized() * vitesse
 		move_and_slide(mouvement)
+		z_index = position.y/2
 
 func on_area_body_entered(body):
 	if body == perso:
@@ -32,7 +33,8 @@ func on_area_body_exited(body):
 	if body == perso:
 		body.sort_zone_interactive(self)
 		proche = false
-		$AnimationPlayer.play("saute")
+		if suit:
+			$AnimationPlayer.play("saute")
 
 func area_action(action):
 	if action == "fleur":
@@ -50,5 +52,5 @@ func on_fin_anim(anim):
 	if !proche :
 		$AnimationPlayer.play("saute")
 	
-# saute que si a la fin de l'anim le perso est a distance > distance min
-# autre anim d'idle et à chaque boucle check que le perso est toujours proche, si non repart ?
+func set_reflet(b):
+	$reflet.visible = b
