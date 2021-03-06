@@ -24,6 +24,7 @@ var cible
 var look_at_cible = false
 export var temps_change_cible_min = 25
 export var temps_change_cible_max = 30
+var feedback = preload("res://obj/ParticlesEtoiles.tscn")
 
 
 # Called when the node enters the scene tree for the first time.
@@ -42,9 +43,10 @@ func _process(delta):
 	if look_at_cible :
 		direction = rad2deg( atan2(cible.global_position.x - player.global_position.x,player.global_position.y - cible.global_position.y) )
 		aiguille.rect_rotation = direction
-		#print(player.global_position.distance_to(cible.global_position))
 		if player.global_position.distance_to(cible.global_position) < 10:
 			$Timer.stop()
+			var f = feedback.instance()
+			cible.add_child(f)
 			commence_a_tourner()
 	
 	if tourne :

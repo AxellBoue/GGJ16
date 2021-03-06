@@ -19,4 +19,7 @@ shape = SubResource( 1 )
 
 [node name="popParicules" type="Node2D" parent="."]
 position = Vector2( 0, -121.436 )
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
 [connection signal="animation_finished" from="sprite perso" to="." method="fin_anim"]

@@ -10,12 +10,16 @@ onready var reflet = get_node("/root/scene/decor/lac/Light2D/reflet sprite perso
 
 var isInArea = false;
 var area : Array; 
+var next_action
 
 export var particules : PackedScene
 
+var lapins : Array
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	$Timer.connect("timeout",self,"interaction_later")
+	$Timer.one_shot = true
 
 func _input(event):
 	if event.is_action_pressed("saut") && !animBloque:
@@ -94,8 +98,20 @@ func sort_zone_interactive(body):
 		isInArea = false
 	
 func interaction (var action):
+	next_action = action
 	if (isInArea && area[0].has_method("area_action")):
-		area[0].area_action(action)
+		if action == "fleur" :
+			area[0].area_action(next_action)
+		elif action == "pied":
+			$Timer.wait_time = 0.4
+			$Timer.start()
+		else :
+			$Timer.wait_time = 1.2
+			$Timer.start()
+
+func interaction_later():
+	area[0].area_action(next_action)
+		
 		
 func set_reflet(b):
 	reflet.visible = b

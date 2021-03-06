@@ -22,7 +22,8 @@ func _on_cercle_champi_body_exited(body):
 
 func area_action(var action):
 	if action == "saut":
-		teleporte_later()
+		perso.global_position = autreCercle.global_position
+		#teleporte_later()
 
 func teleporte_later():
 	timer.start()

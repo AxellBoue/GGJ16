@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=2]
+[gd_scene load_steps=60 format=2]
 
 [ext_resource path="res://sprites/boussole/boussoleBrouillonMoche.png" type="Texture" id=1]
 [ext_resource path="res://obj/bords4Directions.tscn" type="PackedScene" id=2]
@@ -54,17 +54,18 @@
 [ext_resource path="res://sprites/boussole/aiguilleEtoile.png" type="Texture" id=52]
 [ext_resource path="res://scripts/boussole.gd" type="Script" id=53]
 [ext_resource path="res://sprites/boussole/aiguilleRonde.png" type="Texture" id=54]
+[ext_resource path="res://obj/interactions/deposeLapin.tscn" type="PackedScene" id=55]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 420.653, 191.646 )
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 901.428, 838.482 )
 
-[sub_resource type="ShaderMaterial" id=3]
+[sub_resource type="ShaderMaterial" id=4]
 shader = ExtResource( 47 )
 
-[sub_resource type="SpriteFrames" id=4]
+[sub_resource type="SpriteFrames" id=5]
 animations = [ {
 "frames": [ ExtResource( 37 ), ExtResource( 34 ), ExtResource( 39 ), ExtResource( 32 ), ExtResource( 38 ), ExtResource( 30 ), ExtResource( 33 ), ExtResource( 36 ), ExtResource( 35 ) ],
 "loop": true,
@@ -146,7 +147,7 @@ __meta__ = {
 [node name="camera box" parent="." instance=ExtResource( 4 )]
 
 [node name="perso" parent="." instance=ExtResource( 5 )]
-position = Vector2( 813.359, 2870.81 )
+position = Vector2( 1834.88, 2100.1 )
 z_index = 2000
 
 [node name="decor" type="Node2D" parent="."]
@@ -155,7 +156,7 @@ z_index = 2000
 
 [node name="arbre02" parent="decor/arbres" instance=ExtResource( 11 )]
 position = Vector2( 1057.24, 446.173 )
-frame = 0
+frame = 5
 playing = true
 
 [node name="arbre_simple" parent="decor/arbres" instance=ExtResource( 12 )]
@@ -163,7 +164,7 @@ position = Vector2( 480.993, 824.079 )
 
 [node name="sapin" parent="decor/arbres" instance=ExtResource( 13 )]
 position = Vector2( 245.715, 616.099 )
-frame = 12
+frame = 0
 
 [node name="buissons" type="Node2D" parent="decor"]
 
@@ -339,6 +340,8 @@ visible = false
 position = Vector2( 2.23706, -90.2751 )
 shape = SubResource( 1 )
 
+[node name="deposeLapin" parent="decor/interactions" instance=ExtResource( 55 )]
+
 [node name="rochers" type="Node2D" parent="decor"]
 
 [node name="roche01" parent="decor/rochers" instance=ExtResource( 20 )]
@@ -368,7 +371,7 @@ script = ExtResource( 28 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="decor/lac/Area2D"]
 visible = false
 position = Vector2( -1.48047, -83.749 )
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 
 [node name="Light2D" type="Light2D" parent="decor/lac"]
 texture = ExtResource( 27 )
@@ -384,7 +387,7 @@ __meta__ = {
 [node name="reflet sprite perso" parent="decor/lac/Light2D" instance=ExtResource( 26 )]
 visible = false
 light_mask = 2
-material = SubResource( 3 )
+material = SubResource( 4 )
 position = Vector2( -2172.3, 920.71 )
 scale = Vector2( 1, -1 )
 
@@ -463,11 +466,16 @@ __meta__ = {
 [node name="lapin" parent="monstres" instance=ExtResource( 8 )]
 position = Vector2( 2080.62, 1935.52 )
 
+[node name="lapin2" parent="monstres" instance=ExtResource( 8 )]
+position = Vector2( 1756.79, 1916.47 )
+
 [node name="monstre losange plante" parent="monstres" instance=ExtResource( 29 )]
+position = Vector2( 811.389, 1683.25 )
 
 [node name="losange petit" type="AnimatedSprite" parent="monstres"]
 position = Vector2( 1297.96, 1343.61 )
-frames = SubResource( 4 )
+frames = SubResource( 5 )
+frame = 1
 
 [node name="mr ocarina" parent="monstres" instance=ExtResource( 49 )]
 

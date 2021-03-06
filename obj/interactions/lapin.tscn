@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://sprites/monstres/lvl1 lapin/lapinouCaillou0006.png" type="Texture" id=1]
 [ext_resource path="res://scripts/monstres/lapin.gd" type="Script" id=2]
@@ -16,11 +16,10 @@
 [sub_resource type="CircleShape2D" id=1]
 radius = 20.0
 
-[sub_resource type="ShaderMaterial" id=4]
+[sub_resource type="ShaderMaterial" id=2]
 shader = ExtResource( 12 )
 
-[sub_resource type="Animation" id=2]
-resource_name = "saute"
+[sub_resource type="Animation" id=3]
 length = 1.7
 tracks/0/type = "value"
 tracks/0/path = NodePath("icon:position")
@@ -88,7 +87,10 @@ tracks/4/keys = {
 "values": [ ExtResource( 5 ), ExtResource( 7 ), ExtResource( 3 ), ExtResource( 6 ), ExtResource( 4 ), ExtResource( 9 ), ExtResource( 1 ), ExtResource( 11 ), ExtResource( 10 ), ExtResource( 8 ), ExtResource( 5 ) ]
 }
 
-[sub_resource type="CircleShape2D" id=3]
+[sub_resource type="CircleShape2D" id=4]
+radius = 50.0
+
+[sub_resource type="CircleShape2D" id=5]
 radius = 50.0
 
 [node name="lapin" type="KinematicBody2D"]
@@ -103,7 +105,7 @@ offset = Vector2( -8.35693, -52.4809 )
 
 [node name="reflet" type="Sprite" parent="."]
 light_mask = 2
-material = SubResource( 4 )
+material = SubResource( 2 )
 scale = Vector2( 1, -1 )
 z_index = -1000
 z_as_relative = false
@@ -111,9 +113,14 @@ texture = ExtResource( 5 )
 offset = Vector2( -8.35693, -52.4809 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/saute = SubResource( 2 )
+anims/saute = SubResource( 3 )
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource( 3 )
+shape = SubResource( 4 )
+
+[node name="AreaFollow" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaFollow"]
+shape = SubResource( 5 )

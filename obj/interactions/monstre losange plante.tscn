@@ -7,7 +7,7 @@
 [ext_resource path="res://sprites/monstres/lvl1_losange_plante/Monstreslosanges010000.png" type="Texture" id=5]
 [ext_resource path="res://scripts/monstres/monstreLosangePlante.gd" type="Script" id=6]
 
-[sub_resource type="SpriteFrames" id=5]
+[sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 5 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 1 ) ],
 "loop": true,
@@ -15,20 +15,21 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 43.3809, 10.7983 )
 
 [node name="monstre losange plante" type="KinematicBody2D"]
-position = Vector2( 768.042, 1585.82 )
 script = ExtResource( 6 )
 
 [node name="monstre losange plante" type="AnimatedSprite" parent="."]
-frames = SubResource( 5 )
-frame = 3
+frames = SubResource( 1 )
+frame = 2
 playing = true
 offset = Vector2( -0.878601, -132.619 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 4 )
+shape = SubResource( 2 )
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="TimerCentre" type="Timer" parent="."]

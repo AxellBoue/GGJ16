@@ -13,12 +13,16 @@ onready var zones_plantation : Array = [
 var arbre = preload("res://obj/decor/arbre02.tscn")
 var arbres_plantes = 0
 onready var centre = get_node("/root/scene/decor/interactions/zone monstre losange/centre")
+var va_au_centre = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	z_as_relative = false
 	$Timer.connect("timeout",self,"next_target")
 	$Timer.one_shot = true
+	$TimerCentre.connect("timeout",self,"retour_au_centre")
+	$TimerCentre.one_shot = true
+	$TimerCentre.wait_time = 10
 
 
 func _physics_process(delta):
@@ -29,24 +33,36 @@ func _physics_process(delta):
 		z_index = global_position.y/2
 		if global_position.distance_to(target[0].global_position) < 5:
 			va_planter = false
-			if arbres_plantes < 5:
+			if arbres_plantes < 5 && !va_au_centre:
 				plante()
-			arbres_plantes += 1
-			if arbres_plantes == 4:
+				arbres_plantes += 1
+			if arbres_plantes == 5:
 				target.append(centre)
+				arbres_plantes += 1
+			else : 
+				$TimerCentre.stop()
+				$TimerCentre.start()
+				print("start")
 			target.remove(0)
 			if target.size() > 0 :
 				$Timer.start()
+				
 
 
 
 func new_target(num_target):
+	$TimerCentre.stop()
+	va_au_centre = false
 	target.append(zones_plantation[num_target])
+	if target.has(centre):
+		target.remove(target.find(centre))
 	va_planter = true
+	print("stop")
 	
 	
 func next_target ():
 	va_planter = true
+	$TimerCentre.stop()
 
 func plante():
 	var p = arbre.instance()
@@ -54,3 +70,10 @@ func plante():
 	target[0].add_child(p)
 	p.z_as_relative = false
 	p.z_index = p.global_position.y/2
+	
+func retour_au_centre():
+	if target.size() == 0 && !va_planter :
+		target.append(centre)
+		va_planter = true
+		va_au_centre = true
+		
