@@ -3,7 +3,7 @@ extends StaticBody2D
 
 # Declare member variables here. Examples:
 # var a = 2
-onready var boussole = get_node("/root/scene/CanvasLayer/Control/boussole")
+onready var boussole = get_node("/root/scene/CanvasLayer/UI/boussole")
 onready var aiguille = $aiguille
 var direction
 var rand = RandomNumberGenerator.new()
