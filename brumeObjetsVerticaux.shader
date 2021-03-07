@@ -1,6 +1,7 @@
 shader_type canvas_item;
 
 uniform sampler2D brumeTex : hint_albedo;
+uniform sampler2D brume_intensity_tex : hint_albedo;
 uniform float distancePlayer ;
 varying vec2 world_pos;
 uniform mat4 global_transform;
@@ -13,8 +14,9 @@ void vertex(){
 void fragment (){
 	vec4 tex = texture(TEXTURE, UV);
 	vec4 fog = texture(brumeTex, world_pos/500.0);
+	vec4 brume_intensity = texture(brume_intensity_tex,world_pos/4000.0);
 	
-	float mixQuotient = clamp(distancePlayer/400.0,0.0,1.0);
+	float mixQuotient = clamp(distancePlayer/400.0,0.0,1.0)*brume_intensity.a;
 	vec4 colorWithFog =  mix(tex,fog,mixQuotient);
 	COLOR = vec4 (colorWithFog.rgb,tex.a);
 	

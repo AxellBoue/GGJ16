@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://obj/camera box.tscn" type="PackedScene" id=1]
 [ext_resource path="res://obj/perso.tscn" type="PackedScene" id=2]
@@ -12,54 +12,49 @@
 [ext_resource path="res://brumeObjetsVerticaux.shader" type="Shader" id=10]
 [ext_resource path="res://scripts/solBrume.gd" type="Script" id=11]
 [ext_resource path="res://shaders/brume_sol.shader" type="Shader" id=12]
+[ext_resource path="res://sprites/decor/brume-map.png" type="Texture" id=13]
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 12 )
 shader_param/player_pos = Vector2( 360, 226 )
 shader_param/global_transform = Transform2D( 1, 0, 0, 1, 1990.51, 1987.57 )
 shader_param/brume_tex = ExtResource( 6 )
+shader_param/brume_intensity_tex = ExtResource( 13 )
 
 [sub_resource type="ShaderMaterial" id=2]
 shader = ExtResource( 10 )
 shader_param/distancePlayer = 409.615
 shader_param/global_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1000, 1000, 0 )
 shader_param/brumeTex = ExtResource( 6 )
+shader_param/brume_intensity_tex = ExtResource( 13 )
 
 [sub_resource type="ShaderMaterial" id=3]
 shader = ExtResource( 10 )
-shader_param/distancePlayer = 526.768
+shader_param/distancePlayer = 128.511
 shader_param/global_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1000, 1000, 0 )
 shader_param/brumeTex = ExtResource( 6 )
+shader_param/brume_intensity_tex = ExtResource( 13 )
 
 [sub_resource type="ShaderMaterial" id=4]
 shader = ExtResource( 10 )
-shader_param/distancePlayer = 127.498
+shader_param/distancePlayer = 760.725
 shader_param/global_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1000, 1000, 0 )
 shader_param/brumeTex = ExtResource( 6 )
+shader_param/brume_intensity_tex = ExtResource( 13 )
 
 [sub_resource type="ShaderMaterial" id=5]
 shader = ExtResource( 10 )
-shader_param/distancePlayer = 673.269
+shader_param/distancePlayer = 763.447
 shader_param/global_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1000, 1000, 0 )
 shader_param/brumeTex = ExtResource( 6 )
+shader_param/brume_intensity_tex = ExtResource( 13 )
 
 [sub_resource type="ShaderMaterial" id=6]
 shader = ExtResource( 10 )
-shader_param/distancePlayer = 257.232
+shader_param/distancePlayer = 989.971
 shader_param/global_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1000, 1000, 0 )
 shader_param/brumeTex = ExtResource( 6 )
-
-[sub_resource type="ShaderMaterial" id=7]
-shader = ExtResource( 10 )
-shader_param/distancePlayer = 1370.96
-shader_param/global_transform = null
-shader_param/brumeTex = ExtResource( 6 )
-
-[sub_resource type="ShaderMaterial" id=8]
-shader = ExtResource( 10 )
-shader_param/distancePlayer = 1028.16
-shader_param/global_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1000, 1000, 0 )
-shader_param/brumeTex = ExtResource( 6 )
+shader_param/brume_intensity_tex = ExtResource( 13 )
 
 [node name="scene" type="Node2D"]
 
@@ -98,45 +93,32 @@ z_index = 193
 frame = 10
 playing = false
 
-[node name="sapin brume" parent="decor" instance=ExtResource( 5 )]
-material = SubResource( 3 )
-position = Vector2( 627.872, 679.574 )
-z_index = 339
-frame = 16
-
 [node name="sapin brume3" parent="decor" instance=ExtResource( 5 )]
-material = SubResource( 4 )
-position = Vector2( 262.984, 308.727 )
-z_index = 154
-frame = 8
+material = SubResource( 3 )
+position = Vector2( 270.235, 317.963 )
+z_index = 158
+frame = 10
 playing = false
 
 [node name="sapin brume4" parent="decor" instance=ExtResource( 5 )]
-material = SubResource( 5 )
-position = Vector2( 886.613, 645.487 )
-z_index = 322
-frame = 8
+material = SubResource( 4 )
+position = Vector2( 1088.23, 445.963 )
+z_index = 222
+frame = 10
 playing = false
 
 [node name="sapin brume5" parent="decor" instance=ExtResource( 5 )]
-material = SubResource( 6 )
-position = Vector2( 574.799, 367.526 )
-z_index = 183
-frame = 8
+material = SubResource( 5 )
+position = Vector2( 608.235, 947.963 )
+z_index = 473
+frame = 10
 playing = false
 
 [node name="sapin brume6" parent="decor" instance=ExtResource( 5 )]
-material = SubResource( 7 )
-position = Vector2( 1285.49, 1237.44 )
-z_index = 618
-frame = 8
-playing = false
-
-[node name="sapin brume7" parent="decor" instance=ExtResource( 5 )]
-material = SubResource( 8 )
-position = Vector2( 131.604, 1228.47 )
-z_index = 614
-frame = 8
+material = SubResource( 6 )
+position = Vector2( 1056.74, 929.275 )
+z_index = 464
+frame = 10
 playing = false
 
 [node name="lampadaire-grand" parent="decor" instance=ExtResource( 9 )]
@@ -150,4 +132,3 @@ z_index = 267
 [node name="lampadaire petit" parent="decor" instance=ExtResource( 8 )]
 position = Vector2( 308.251, 591.557 )
 z_index = 295
-z_as_relative = false

@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=2]
+[gd_scene load_steps=63 format=2]
 
 [ext_resource path="res://sprites/boussole/boussoleBrouillonMoche.png" type="Texture" id=1]
 [ext_resource path="res://obj/bords4Directions.tscn" type="PackedScene" id=2]
@@ -55,17 +55,20 @@
 [ext_resource path="res://scripts/boussole.gd" type="Script" id=53]
 [ext_resource path="res://sprites/boussole/aiguilleRonde.png" type="Texture" id=54]
 [ext_resource path="res://obj/interactions/deposeLapin.tscn" type="PackedScene" id=55]
+[ext_resource path="res://sprites/decor/rond-toteme.png" type="Texture" id=56]
+[ext_resource path="res://scripts/z_index.gd" type="Script" id=57]
+[ext_resource path="res://sprites/decor/totem.png" type="Texture" id=58]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 420.653, 191.646 )
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 901.428, 838.482 )
 
-[sub_resource type="ShaderMaterial" id=4]
+[sub_resource type="ShaderMaterial" id=3]
 shader = ExtResource( 47 )
 
-[sub_resource type="SpriteFrames" id=5]
+[sub_resource type="SpriteFrames" id=4]
 animations = [ {
 "frames": [ ExtResource( 37 ), ExtResource( 34 ), ExtResource( 39 ), ExtResource( 32 ), ExtResource( 38 ), ExtResource( 30 ), ExtResource( 33 ), ExtResource( 36 ), ExtResource( 35 ) ],
 "loop": true,
@@ -156,7 +159,7 @@ z_index = 2000
 
 [node name="arbre02" parent="decor/arbres" instance=ExtResource( 11 )]
 position = Vector2( 1057.24, 446.173 )
-frame = 5
+frame = 8
 playing = true
 
 [node name="arbre_simple" parent="decor/arbres" instance=ExtResource( 12 )]
@@ -164,7 +167,7 @@ position = Vector2( 480.993, 824.079 )
 
 [node name="sapin" parent="decor/arbres" instance=ExtResource( 13 )]
 position = Vector2( 245.715, 616.099 )
-frame = 0
+frame = 3
 
 [node name="buissons" type="Node2D" parent="decor"]
 
@@ -341,6 +344,28 @@ position = Vector2( 2.23706, -90.2751 )
 shape = SubResource( 1 )
 
 [node name="deposeLapin" parent="decor/interactions" instance=ExtResource( 55 )]
+position = Vector2( 2547.96, 2579.53 )
+
+[node name="rond-toteme" type="Sprite" parent="decor/interactions"]
+position = Vector2( 2543.97, 2591.08 )
+z_index = -2500
+z_as_relative = false
+texture = ExtResource( 56 )
+
+[node name="totem" type="StaticBody2D" parent="decor/interactions/rond-toteme"]
+position = Vector2( -3.59961, -67.4988 )
+
+[node name="totem" type="Sprite" parent="decor/interactions/rond-toteme/totem"]
+position = Vector2( 3.26099, 49.6494 )
+z_index = 1286
+z_as_relative = false
+texture = ExtResource( 58 )
+offset = Vector2( -2.26099, -62.6494 )
+script = ExtResource( 57 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="decor/interactions/rond-toteme/totem"]
+position = Vector2( 1.05933, 9.53516 )
+polygon = PoolVector2Array( -57.1284, 34.8169, -61.3662, 51.7683, -42.2959, 58.125, 16.688, 58.887, 70.0071, 40.114, 59.4126, 19.9844, 12.7961, 13.6277, -34.8796, 24.2222 )
 
 [node name="rochers" type="Node2D" parent="decor"]
 
@@ -360,8 +385,8 @@ z_index = 509
 z_as_relative = false
 
 [node name="lac" type="Sprite" parent="decor"]
-position = Vector2( 2524.59, 2506.81 )
-z_index = -2000
+position = Vector2( 2502.37, 2506.81 )
+z_index = -3000
 z_as_relative = false
 texture = ExtResource( 9 )
 script = ExtResource( 28 )
@@ -371,7 +396,7 @@ script = ExtResource( 28 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="decor/lac/Area2D"]
 visible = false
 position = Vector2( -1.48047, -83.749 )
-shape = SubResource( 3 )
+shape = SubResource( 2 )
 
 [node name="Light2D" type="Light2D" parent="decor/lac"]
 texture = ExtResource( 27 )
@@ -387,7 +412,7 @@ __meta__ = {
 [node name="reflet sprite perso" parent="decor/lac/Light2D" instance=ExtResource( 26 )]
 visible = false
 light_mask = 2
-material = SubResource( 4 )
+material = SubResource( 3 )
 position = Vector2( -2172.3, 920.71 )
 scale = Vector2( 1, -1 )
 
@@ -474,7 +499,7 @@ position = Vector2( 811.389, 1683.25 )
 
 [node name="losange petit" type="AnimatedSprite" parent="monstres"]
 position = Vector2( 1297.96, 1343.61 )
-frames = SubResource( 5 )
+frames = SubResource( 4 )
 frame = 1
 
 [node name="mr ocarina" parent="monstres" instance=ExtResource( 49 )]

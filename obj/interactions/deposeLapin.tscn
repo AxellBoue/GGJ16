@@ -1,9 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://icon.png" type="Texture" id=1]
 [ext_resource path="res://scripts/interactions/deposeLapin.gd" type="Script" id=2]
 
-[sub_resource type="CircleShape2D" id=2]
+[sub_resource type="CircleShape2D" id=1]
 radius = 149.286
 
 [node name="deposeLapin" type="Area2D"]
@@ -11,22 +10,22 @@ position = Vector2( 1764.44, 1534.75 )
 script = ExtResource( 2 )
 
 [node name="Node2D" type="Node2D" parent="."]
-position = Vector2( -119.055, -39.6849 )
+position = Vector2( -104.784, 15.0187 )
 
 [node name="Node2D2" type="Node2D" parent="."]
-position = Vector2( 2.3811, -115.88 )
+position = Vector2( -75.512, -89.1228 )
 
 [node name="Node2D3" type="Node2D" parent="."]
-position = Vector2( 113.499, -34.129 )
+position = Vector2( 68.3091, -88.2379 )
 
 [node name="Node2D4" type="Node2D" parent="."]
-position = Vector2( 60.3212, 103.181 )
+position = Vector2( 108.484, 28.2611 )
 
 [node name="Node2D5" type="Node2D" parent="."]
-position = Vector2( -92.0693, 81.7512 )
-
-[node name="icon" type="Sprite" parent="."]
-texture = ExtResource( 1 )
+position = Vector2( -8.23019, 105.535 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 2 )
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
