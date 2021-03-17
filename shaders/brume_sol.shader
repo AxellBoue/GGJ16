@@ -17,6 +17,7 @@ void fragment(){
 	vec4 tex_intensity_brume = texture(brume_intensity_tex,world_pos/4000.0);
 	vec2 distance_perso_vec = player_pos - world_pos;
 	float distance_perso = sqrt(pow(distance_perso_vec.x,2.0)+ pow(distance_perso_vec.y,2));
-	COLOR = mix(tex_sol, tex_brume, clamp(1.0,0.0,distance_perso/400.0)*tex_intensity_brume.a);
+	COLOR.rgb = mix(tex_sol, tex_brume, clamp(1.0,0.0,distance_perso/400.0)*tex_intensity_brume.a).rgb;
+	COLOR.a = tex_sol.a;
 	
 }

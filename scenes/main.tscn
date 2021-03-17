@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=2]
+[gd_scene load_steps=59 format=2]
 
 [ext_resource path="res://obj/UI.tscn" type="PackedScene" id=1]
 [ext_resource path="res://obj/bords4Directions.tscn" type="PackedScene" id=2]
@@ -49,6 +49,7 @@
 [ext_resource path="res://shaders/reflet.shader" type="Shader" id=47]
 [ext_resource path="res://obj/interactions/plante boussole.tscn" type="PackedScene" id=48]
 [ext_resource path="res://obj/interactions/mr ocarina.tscn" type="PackedScene" id=49]
+[ext_resource path="res://scripts/scene.gd" type="Script" id=50]
 [ext_resource path="res://obj/interactions/deposeLapin.tscn" type="PackedScene" id=55]
 [ext_resource path="res://sprites/decor/rond-toteme.png" type="Texture" id=56]
 [ext_resource path="res://scripts/z_index.gd" type="Script" id=57]
@@ -72,6 +73,7 @@ animations = [ {
 } ]
 
 [node name="scene" type="Node2D"]
+script = ExtResource( 50 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -79,11 +81,17 @@ animations = [ {
 
 [node name="popPluie" parent="." instance=ExtResource( 3 )]
 
-[node name="camera box" parent="." instance=ExtResource( 4 )]
-
 [node name="perso" parent="." instance=ExtResource( 5 )]
-position = Vector2( 1834.88, 2100.1 )
+position = Vector2( 183.078, 2162.33 )
 z_index = 2000
+
+[node name="bords" parent="." instance=ExtResource( 2 )]
+scene_nord = 2
+scene_sud = 2
+scene_est = 1
+scene_ouest = 1
+
+[node name="camera box" parent="." instance=ExtResource( 4 )]
 
 [node name="decor" type="Node2D" parent="."]
 
@@ -91,7 +99,7 @@ z_index = 2000
 
 [node name="arbre02" parent="decor/arbres" instance=ExtResource( 11 )]
 position = Vector2( 1057.24, 446.173 )
-frame = 14
+frame = 13
 playing = true
 
 [node name="arbre_simple" parent="decor/arbres" instance=ExtResource( 12 )]
@@ -99,7 +107,7 @@ position = Vector2( 480.993, 824.079 )
 
 [node name="sapin" parent="decor/arbres" instance=ExtResource( 13 )]
 position = Vector2( 245.715, 616.099 )
-frame = 9
+frame = 8
 
 [node name="buissons" type="Node2D" parent="decor"]
 
@@ -404,8 +412,6 @@ position = Vector2( 1449.22, 3680.75 )
 ]]
 position = Vector2( 753.223, 664.746 )
 
-[node name="bords" parent="." instance=ExtResource( 2 )]
-
 [node name="sol" type="Node2D" parent="."]
 z_index = -4000
 
@@ -422,9 +428,24 @@ __meta__ = {
 
 [node name="lapin" parent="monstres" instance=ExtResource( 8 )]
 position = Vector2( 2080.62, 1935.52 )
+reflet = true
 
 [node name="lapin2" parent="monstres" instance=ExtResource( 8 )]
 position = Vector2( 1756.79, 1916.47 )
+num_pr_save = 2
+reflet = true
+
+[node name="lapin3" parent="monstres" instance=ExtResource( 8 )]
+position = Vector2( 4296.71, 202.446 )
+num_pr_save = 3
+
+[node name="lapin4" parent="monstres" instance=ExtResource( 8 )]
+position = Vector2( 4296.71, 621.053 )
+num_pr_save = 4
+
+[node name="lapin5" parent="monstres" instance=ExtResource( 8 )]
+position = Vector2( 4302.37, 428.72 )
+num_pr_save = 5
 
 [node name="monstre losange plante" parent="monstres" instance=ExtResource( 29 )]
 position = Vector2( 811.389, 1683.25 )

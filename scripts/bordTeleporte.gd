@@ -11,7 +11,8 @@ func _ready():
 
 func _on_body_entered(body):
 	if body.name == "perso":
-		if directionPop == "Nord" || directionPop == "Sud":
-			body.global_position = Vector2(body.global_position.x,lieuPop.global_position.y)
-		else :
-			body.global_position = Vector2(lieuPop.global_position.x,body.global_position.y)
+		pass
+		#if directionPop == "Nord" || directionPop == "Sud":
+		#	body.global_position = Vector2(body.global_position.x,lieuPop.global_position.y)
+		#else :
+		#	body.global_position = Vector2(lieuPop.global_position.x,body.global_position.y)

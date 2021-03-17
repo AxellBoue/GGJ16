@@ -20,6 +20,7 @@ var lapins : Array
 func _ready():
 	$Timer.connect("timeout",self,"interaction_later")
 	$Timer.one_shot = true
+	get_node("/root/scene/bords").set_position_perso(self)
 
 func _input(event):
 	if event.is_action_pressed("saut") && !animBloque:
@@ -92,10 +93,11 @@ func entre_zone_interactive(var newzone):
 	area.push_front(newzone)
 
 func sort_zone_interactive(body):
-	var i = area.find(body)
-	area.remove(i)
-	if area.size() == 0 :
-		isInArea = false
+	if area.has(body):
+		var i = area.find(body)
+		area.remove(i)
+		if area.size() == 0 :
+			isInArea = false
 	
 func interaction (var action):
 	next_action = action

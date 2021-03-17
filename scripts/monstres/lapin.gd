@@ -1,11 +1,16 @@
 extends KinematicBody2D
 
+enum states {depart,follow,totem}
+export var state = states.depart
+export var num_pr_save = 1
+export var reflet = false
+
 onready var perso = get_node("/root/scene/perso")
 
 var target
 var suit = false
-export var vitesse = 120
-export var distanceMin = 80
+var vitesse = 120
+var distanceMin = 80
 var mouvement
 var en_lair = false
 var proche = false
@@ -26,6 +31,19 @@ func _ready():
 	area_follow.connect("body_exited",self,"on_area_follow_body_exited")
 	area_follow.get_node("CollisionShape2D").shape = area_follow.get_node("CollisionShape2D").shape.duplicate()
 	$AnimationPlayer.connect("animation_finished",self,"on_fin_anim")
+	# initialise la position et l'etat
+	set_reflet(reflet)
+	var a = get_node("/root/Autoload")
+	if a.etat_lapins[num_pr_save-1] != 0:
+		state = a.etat_lapins[num_pr_save-1]
+	if state == states.follow :
+		position = perso.get_node("zones pop lapins/pop"+ str(num_pr_save)).global_position
+		start_follow()
+	if state == states.totem :
+		if a.scene_lapins[num_pr_save-1] == get_node("/root/scene").num_scene :
+			global_position = a.position_lapins[num_pr_save - 1]
+		else : 
+			global_position = Vector2(-600,200)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
@@ -49,16 +67,21 @@ func on_area_body_exited(body):
 
 func area_action(action):
 	if action == "fleur":
-		perso.lapins.append(self)
-		area_follow.get_node("CollisionShape2D").shape.radius = area_sizes[perso.lapins.size()-1]
-		num = perso.lapins.size()-1
-		target = perso
-		$Area2D/CollisionShape2D.disabled = true
-		arrive = false
-		perso.sort_zone_interactive(self)
-		suit = true
+		start_follow()
 		$AnimationPlayer.play("saute")
-		
+
+func start_follow():
+	perso.lapins.append(self)
+	area_follow.get_node("CollisionShape2D").shape.radius = area_sizes[perso.lapins.size()-1]
+	num = perso.lapins.size()-1
+	target = perso
+	$Area2D/CollisionShape2D.disabled = true
+	arrive = false
+	perso.sort_zone_interactive(self)
+	state = states.follow
+	suit = true
+	
+	
 func on_area_follow_body_entered(body):
 	if body == perso:
 		proche = true
@@ -86,7 +109,15 @@ func set_reflet(b):
 func stop_follow(new_targets):
 	suit = false
 	$Area2D/CollisionShape2D.disabled = false
-	target = new_targets[num]
+	target = new_targets[num_pr_save]
 	depose = true
+	state = states.totem
+	get_node("/root/Autoload").scene_lapins[num_pr_save-1] = get_node("/root/scene").num_scene
+	get_node("/root/Autoload").position_lapins[num_pr_save-1] = new_targets[num_pr_save].global_position
 	if !$AnimationPlayer.is_playing() :
 		$AnimationPlayer.play("saute")
+
+func save_states():
+	get_node("/root/Autoload").etat_lapins[num_pr_save-1] = state
+		
+		

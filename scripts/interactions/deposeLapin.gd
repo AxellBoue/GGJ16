@@ -1,6 +1,5 @@
 extends Area2D
 
-
 onready var perso = get_node("/root/scene/perso")
 onready var targets : Array  = [$Node2D,$Node2D2,$Node2D3,$Node2D4,$Node2D5]
 
@@ -22,7 +21,6 @@ func on_area_body_exited(body):
 
 func area_action(action):
 	if action == "saut":
-		print ("saut")
 		for l in perso.lapins :
 			l.stop_follow(targets)
 		perso.lapins.clear()

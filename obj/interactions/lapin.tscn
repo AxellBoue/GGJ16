@@ -93,7 +93,9 @@ radius = 50.0
 [sub_resource type="CircleShape2D" id=5]
 radius = 50.0
 
-[node name="lapin" type="KinematicBody2D"]
+[node name="lapin" type="KinematicBody2D" groups=[
+"lapin",
+]]
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -107,7 +109,7 @@ offset = Vector2( -8.35693, -52.4809 )
 light_mask = 2
 material = SubResource( 2 )
 scale = Vector2( 1, -1 )
-z_index = -1000
+z_index = -3000
 z_as_relative = false
 texture = ExtResource( 5 )
 offset = Vector2( -8.35693, -52.4809 )
