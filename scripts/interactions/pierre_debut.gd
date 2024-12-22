@@ -1,17 +1,17 @@
-extends Sprite
+extends Sprite2D
 
 
-export var num_pierre = 1
+@export var num_pierre = 1
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	z_index = global_position.y/2
-	$Area2D.connect("body_entered",self,"on_body_entered")
-	$Area2D.connect("body_exited",self,"on_body_exited")
+	$Area2D.connect("body_entered", Callable(self, "on_body_entered"))
+	$Area2D.connect("body_exited", Callable(self, "on_body_exited"))
 	
 	
-func area_action(var action):
+func area_action(action):
 	if num_pierre == 1 && action == "saut":
 		print("blop")
 	if num_pierre == 2 && action == "pied":

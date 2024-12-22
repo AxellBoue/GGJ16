@@ -1,13 +1,13 @@
 extends Area2D
 
-onready var pop_pluie = get_node("/root/scene/popPluie")
-export var _min : float = 1
-export var _max : float = 1
+@onready var pop_pluie = get_node("/root/scene/popPluie")
+@export var _min : float = 1
+@export var _max : float = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	connect("body_entered",self,"on_area_body_entered")
-	connect("body_exited",self,"on_area_body_exited")
+	connect("body_entered", Callable(self, "on_area_body_entered"))
+	connect("body_exited", Callable(self, "on_area_body_exited"))
 
 func on_area_body_entered(body):
 	if body.name == "perso":

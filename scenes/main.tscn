@@ -1,461 +1,1274 @@
-[gd_scene load_steps=59 format=2]
+[gd_scene load_steps=148 format=3 uid="uid://34utgxkcp3bq"]
 
-[ext_resource path="res://obj/UI.tscn" type="PackedScene" id=1]
-[ext_resource path="res://obj/bords4Directions.tscn" type="PackedScene" id=2]
-[ext_resource path="res://obj/popPluie.tscn" type="PackedScene" id=3]
-[ext_resource path="res://obj/camera box.tscn" type="PackedScene" id=4]
-[ext_resource path="res://obj/perso.tscn" type="PackedScene" id=5]
-[ext_resource path="res://obj/interactions/cercle champi.tscn" type="PackedScene" id=6]
-[ext_resource path="res://obj/interactions/montre bleu 1.tscn" type="PackedScene" id=7]
-[ext_resource path="res://obj/interactions/lapin.tscn" type="PackedScene" id=8]
-[ext_resource path="res://sprites/decor/lac2.png" type="Texture" id=9]
-[ext_resource path="res://sprites/decor/fond_map.jpg" type="Texture" id=10]
-[ext_resource path="res://obj/decor/arbre02.tscn" type="PackedScene" id=11]
-[ext_resource path="res://obj/decor/arbre_simple.tscn" type="PackedScene" id=12]
-[ext_resource path="res://obj/decor/sapin.tscn" type="PackedScene" id=13]
-[ext_resource path="res://obj/decor/buisson1.tscn" type="PackedScene" id=14]
-[ext_resource path="res://obj/decor/buisson2.tscn" type="PackedScene" id=15]
-[ext_resource path="res://sprites/decor/roche_début/pierre02.png" type="Texture" id=16]
-[ext_resource path="res://sprites/decor/roche_début/pierre01.png" type="Texture" id=17]
-[ext_resource path="res://sprites/decor/roche_début/pierre03.png" type="Texture" id=18]
-[ext_resource path="res://scripts/interactions/pierre_debut.gd" type="Script" id=19]
-[ext_resource path="res://obj/decor/roche01.tscn" type="PackedScene" id=20]
-[ext_resource path="res://obj/decor/roche03.tscn" type="PackedScene" id=21]
-[ext_resource path="res://obj/decor/roche02.tscn" type="PackedScene" id=22]
-[ext_resource path="res://obj/interactions/zone_plantation_fleur.tscn" type="PackedScene" id=23]
-[ext_resource path="res://obj/interactions/zone_plantation_arbre.tscn" type="PackedScene" id=24]
-[ext_resource path="res://obj/interactions/fleurs-a-planter 1.tscn" type="PackedScene" id=25]
-[ext_resource path="res://obj/sprite perso.tscn" type="PackedScene" id=26]
-[ext_resource path="res://sprites/decor/lacMasque.png" type="Texture" id=27]
-[ext_resource path="res://scripts/lac.gd" type="Script" id=28]
-[ext_resource path="res://obj/interactions/monstre losange plante.tscn" type="PackedScene" id=29]
-[ext_resource path="res://sprites/monstres/lvl1_losange_petit/Monstreslosangespetit010005.png" type="Texture" id=30]
-[ext_resource path="res://obj/interactions/zone_plantation_monstre_losange.tscn" type="PackedScene" id=31]
-[ext_resource path="res://sprites/monstres/lvl1_losange_petit/Monstreslosangespetit010003.png" type="Texture" id=32]
-[ext_resource path="res://sprites/monstres/lvl1_losange_petit/Monstreslosangespetit010006.png" type="Texture" id=33]
-[ext_resource path="res://sprites/monstres/lvl1_losange_petit/Monstreslosangespetit010001.png" type="Texture" id=34]
-[ext_resource path="res://sprites/monstres/lvl1_losange_petit/Monstreslosangespetit010008.png" type="Texture" id=35]
-[ext_resource path="res://sprites/monstres/lvl1_losange_petit/Monstreslosangespetit010007.png" type="Texture" id=36]
-[ext_resource path="res://sprites/monstres/lvl1_losange_petit/Monstreslosangespetit010000.png" type="Texture" id=37]
-[ext_resource path="res://sprites/monstres/lvl1_losange_petit/Monstreslosangespetit010004.png" type="Texture" id=38]
-[ext_resource path="res://sprites/monstres/lvl1_losange_petit/Monstreslosangespetit010002.png" type="Texture" id=39]
-[ext_resource path="res://sprites/decor/flaques-masque.png" type="Texture" id=40]
-[ext_resource path="res://sprites/decor/flaques.png" type="Texture" id=41]
-[ext_resource path="res://obj/interactions/flaque.tscn" type="PackedScene" id=42]
-[ext_resource path="res://sons/4mi.ogg" type="AudioStream" id=43]
-[ext_resource path="res://sons/1fad.ogg" type="AudioStream" id=44]
-[ext_resource path="res://sons/2dod.ogg" type="AudioStream" id=45]
-[ext_resource path="res://sons/3re.ogg" type="AudioStream" id=46]
-[ext_resource path="res://shaders/reflet.shader" type="Shader" id=47]
-[ext_resource path="res://obj/interactions/plante boussole.tscn" type="PackedScene" id=48]
-[ext_resource path="res://obj/interactions/mr ocarina.tscn" type="PackedScene" id=49]
-[ext_resource path="res://scripts/scene.gd" type="Script" id=50]
-[ext_resource path="res://obj/interactions/deposeLapin.tscn" type="PackedScene" id=55]
-[ext_resource path="res://sprites/decor/rond-toteme.png" type="Texture" id=56]
-[ext_resource path="res://scripts/z_index.gd" type="Script" id=57]
-[ext_resource path="res://sprites/decor/totem.png" type="Texture" id=58]
+[ext_resource type="PackedScene" path="res://obj/UI.tscn" id="1"]
+[ext_resource type="PackedScene" path="res://obj/bords4Directions.tscn" id="2"]
+[ext_resource type="PackedScene" path="res://obj/popPluie.tscn" id="3"]
+[ext_resource type="PackedScene" path="res://obj/camera box.tscn" id="4"]
+[ext_resource type="PackedScene" uid="uid://ifpmleci5qhg" path="res://obj/perso.tscn" id="5"]
+[ext_resource type="PackedScene" path="res://obj/interactions/cercle champi.tscn" id="6"]
+[ext_resource type="PackedScene" path="res://obj/interactions/montre bleu 1.tscn" id="7"]
+[ext_resource type="PackedScene" path="res://obj/interactions/lapin.tscn" id="8"]
+[ext_resource type="Texture2D" uid="uid://d1fpu71hyp5sh" path="res://sprites/decor/arbre_bouge02/arbre02_bouge0000.png" id="8_q4px3"]
+[ext_resource type="Texture2D" uid="uid://bjj417jo3u7u6" path="res://sprites/decor/lac2.png" id="9"]
+[ext_resource type="Texture2D" uid="uid://gnjxkcypudvg" path="res://sprites/decor/arbre_bouge02/arbre02_bouge0001.png" id="9_wj3t1"]
+[ext_resource type="Texture2D" uid="uid://d3kjs3vkwr1jx" path="res://sprites/decor/fond_map.jpg" id="10"]
+[ext_resource type="Texture2D" uid="uid://v8et48d0pnve" path="res://sprites/decor/arbre_bouge02/arbre02_bouge0002.png" id="10_cjstj"]
+[ext_resource type="PackedScene" path="res://obj/decor/arbre02.tscn" id="11"]
+[ext_resource type="Texture2D" uid="uid://bl5f5e8xgauem" path="res://sprites/decor/arbre_bouge02/arbre02_bouge0003.png" id="11_e8jql"]
+[ext_resource type="PackedScene" path="res://obj/decor/arbre_simple.tscn" id="12"]
+[ext_resource type="Texture2D" uid="uid://dirm3x2k8fhey" path="res://sprites/decor/arbre_bouge02/arbre02_bouge0004.png" id="12_d31ke"]
+[ext_resource type="PackedScene" path="res://obj/decor/sapin.tscn" id="13"]
+[ext_resource type="Texture2D" uid="uid://c0xg1tx1rebyv" path="res://sprites/decor/arbre_bouge02/arbre02_bouge0005.png" id="13_73h6v"]
+[ext_resource type="PackedScene" path="res://obj/decor/buisson1.tscn" id="14"]
+[ext_resource type="Texture2D" uid="uid://crpb4dlmt7d4y" path="res://sprites/decor/arbre_bouge02/arbre02_bouge0006.png" id="14_naerf"]
+[ext_resource type="PackedScene" path="res://obj/decor/buisson2.tscn" id="15"]
+[ext_resource type="Texture2D" uid="uid://bagnvs0ikeggr" path="res://sprites/decor/arbre_bouge02/arbre02_bouge0007.png" id="15_esn1e"]
+[ext_resource type="Texture2D" uid="uid://dn4y8v8p57kta" path="res://sprites/decor/roche_début/pierre02.png" id="16"]
+[ext_resource type="Texture2D" uid="uid://bdgs3kv1lohv6" path="res://sprites/decor/arbre_bouge02/arbre02_bouge0008.png" id="16_uke6c"]
+[ext_resource type="Texture2D" uid="uid://crt1y6750b8dw" path="res://sprites/decor/roche_début/pierre01.png" id="17"]
+[ext_resource type="Texture2D" uid="uid://ybud7i3a84ea" path="res://sprites/decor/arbre_bouge02/arbre02_bouge0009.png" id="17_ooi1x"]
+[ext_resource type="Texture2D" uid="uid://5gsuybe02b8r" path="res://sprites/decor/roche_début/pierre03.png" id="18"]
+[ext_resource type="Texture2D" uid="uid://cltuwr3r8tkms" path="res://sprites/decor/arbre_bouge02/arbre02_bouge0010.png" id="18_kqllt"]
+[ext_resource type="Script" path="res://scripts/interactions/pierre_debut.gd" id="19"]
+[ext_resource type="Texture2D" uid="uid://bagudj41ch23u" path="res://sprites/decor/arbre_bouge02/arbre02_bouge0011.png" id="19_4skqm"]
+[ext_resource type="PackedScene" path="res://obj/decor/roche01.tscn" id="20"]
+[ext_resource type="Texture2D" uid="uid://bkmwjx7d74efd" path="res://sprites/decor/arbre_bouge02/arbre02_bouge0012.png" id="20_3asog"]
+[ext_resource type="PackedScene" path="res://obj/decor/roche03.tscn" id="21"]
+[ext_resource type="Texture2D" uid="uid://d0drfjoftlny0" path="res://sprites/decor/arbre_bouge02/arbre02_bouge0013.png" id="21_ongts"]
+[ext_resource type="PackedScene" path="res://obj/decor/roche02.tscn" id="22"]
+[ext_resource type="Texture2D" uid="uid://blosi6338q3cu" path="res://sprites/decor/arbre_bouge02/arbre02_bouge0014.png" id="22_r12af"]
+[ext_resource type="PackedScene" path="res://obj/interactions/zone_plantation_fleur.tscn" id="23"]
+[ext_resource type="Texture2D" uid="uid://bbmfej5wnm8kt" path="res://sprites/decor/arbre_bouge02/arbre02_bouge0015.png" id="23_30dtr"]
+[ext_resource type="PackedScene" uid="uid://60djagnqfwnv" path="res://obj/interactions/zone_plantation_arbre.tscn" id="24"]
+[ext_resource type="Texture2D" uid="uid://bqvrfbr0cqjt0" path="res://sprites/decor/arbre_bouge02/arbre02_bouge0016.png" id="24_m1181"]
+[ext_resource type="PackedScene" path="res://obj/interactions/fleurs-a-planter 1.tscn" id="25"]
+[ext_resource type="Texture2D" uid="uid://clh3uwli4i71a" path="res://sprites/decor/arbre_plantation_02/plantation_020000.png" id="25_p3cvn"]
+[ext_resource type="Texture2D" uid="uid://fc05i7vakqcy" path="res://sprites/decor/nenuphares2.png" id="26"]
+[ext_resource type="Texture2D" uid="uid://bae2sjg5p34fb" path="res://sprites/decor/arbre_plantation_02/plantation_020001.png" id="26_urqxy"]
+[ext_resource type="Texture2D" uid="uid://vy02p737ulax" path="res://sprites/decor/lacMasque.png" id="27"]
+[ext_resource type="Texture2D" uid="uid://dd2ssg0y64n0u" path="res://sprites/decor/arbre_plantation_02/plantation_020002.png" id="27_s6keq"]
+[ext_resource type="Script" path="res://scripts/lac.gd" id="28"]
+[ext_resource type="Texture2D" uid="uid://bb4odslqaxmng" path="res://sprites/decor/arbre_plantation_02/plantation_020003.png" id="28_8ke1w"]
+[ext_resource type="PackedScene" path="res://obj/interactions/monstre losange plante.tscn" id="29"]
+[ext_resource type="Texture2D" uid="uid://dly5r51u5k604" path="res://sprites/decor/arbre_plantation_02/plantation_020004.png" id="29_lkf61"]
+[ext_resource type="Texture2D" uid="uid://bp3lprurgyamm" path="res://sprites/monstres/lvl1_losange_petit/Monstreslosangespetit010005.png" id="30"]
+[ext_resource type="PackedScene" uid="uid://w4ddjknwk2jp" path="res://obj/interactions/zone_plantation_monstre_losange.tscn" id="31"]
+[ext_resource type="Texture2D" uid="uid://cswnwxpijerx6" path="res://sprites/decor/arbre_simple/arbre_simple0000.png" id="31_sgkp1"]
+[ext_resource type="Texture2D" uid="uid://bglppvyc57vkj" path="res://sprites/monstres/lvl1_losange_petit/Monstreslosangespetit010003.png" id="32"]
+[ext_resource type="Texture2D" uid="uid://xykkx3f4s8hu" path="res://sprites/decor/arbre_simple/arbre_simple0001.png" id="32_c2nm4"]
+[ext_resource type="Texture2D" uid="uid://4qwg2i0to2h1" path="res://sprites/monstres/lvl1_losange_petit/Monstreslosangespetit010006.png" id="33"]
+[ext_resource type="Texture2D" uid="uid://bhe38aywf2mkf" path="res://sprites/decor/arbre_simple/arbre_simple0002.png" id="33_jp3sr"]
+[ext_resource type="Texture2D" uid="uid://cdveiwpeg8ut7" path="res://sprites/monstres/lvl1_losange_petit/Monstreslosangespetit010001.png" id="34"]
+[ext_resource type="Texture2D" uid="uid://b07aqjacn1oqm" path="res://sprites/decor/arbre_simple/arbre_simple0003.png" id="34_2vcwq"]
+[ext_resource type="Texture2D" uid="uid://gkpbp8skejot" path="res://sprites/monstres/lvl1_losange_petit/Monstreslosangespetit010008.png" id="35"]
+[ext_resource type="Texture2D" uid="uid://1c2quvdyanpn" path="res://sprites/decor/arbre_simple/arbre_simple0004.png" id="35_kqxj8"]
+[ext_resource type="Texture2D" uid="uid://j7txdhpw0a" path="res://sprites/monstres/lvl1_losange_petit/Monstreslosangespetit010007.png" id="36"]
+[ext_resource type="Texture2D" uid="uid://cwq5xf8r4l6y7" path="res://sprites/decor/arbre_simple/arbre_simple0005.png" id="36_tko51"]
+[ext_resource type="Texture2D" uid="uid://x6edst4rvvw8" path="res://sprites/monstres/lvl1_losange_petit/Monstreslosangespetit010000.png" id="37"]
+[ext_resource type="Texture2D" uid="uid://b6ptkvbono8r5" path="res://sprites/decor/arbre_simple/arbre_simple0006.png" id="37_6r7jl"]
+[ext_resource type="Texture2D" uid="uid://c20snov5gu0yi" path="res://sprites/monstres/lvl1_losange_petit/Monstreslosangespetit010004.png" id="38"]
+[ext_resource type="Texture2D" uid="uid://xq07j02tem30" path="res://sprites/decor/arbre_simple/arbre_simple0007.png" id="38_oiabr"]
+[ext_resource type="Texture2D" uid="uid://vgxm5vwasvhi" path="res://sprites/monstres/lvl1_losange_petit/Monstreslosangespetit010002.png" id="39"]
+[ext_resource type="Texture2D" uid="uid://cvjmq21n7dw0v" path="res://sprites/decor/arbre_simple/arbre_simple0008.png" id="39_8tjee"]
+[ext_resource type="Texture2D" uid="uid://c7u6odj5idg7u" path="res://sprites/decor/flaques-masque.png" id="40"]
+[ext_resource type="Texture2D" uid="uid://bv24jbglj48wj" path="res://sprites/decor/arbre_simple/arbre_simple0009.png" id="40_8g86p"]
+[ext_resource type="Texture2D" uid="uid://c3gwx5mw7yqvg" path="res://sprites/decor/flaques.png" id="41"]
+[ext_resource type="Texture2D" uid="uid://jmi01su3i52l" path="res://sprites/decor/arbre_simple/arbre_simple0010.png" id="41_r8bsq"]
+[ext_resource type="PackedScene" path="res://obj/interactions/flaque.tscn" id="42"]
+[ext_resource type="Texture2D" uid="uid://cxg5pb3otvwgm" path="res://sprites/decor/arbre_simple/arbre_simple0011.png" id="42_31sq1"]
+[ext_resource type="AudioStream" uid="uid://bstk5xaxit841" path="res://sons/4mi.ogg" id="43"]
+[ext_resource type="Texture2D" uid="uid://diwir8k0ops3o" path="res://sprites/decor/arbre_simple/arbre_simple0012.png" id="43_nrx4l"]
+[ext_resource type="AudioStream" uid="uid://ch5cim257r72o" path="res://sons/1fad.ogg" id="44"]
+[ext_resource type="Texture2D" uid="uid://bhxt4bp2hn2ky" path="res://sprites/decor/arbre_simple/arbre_simple0013.png" id="44_yeuhf"]
+[ext_resource type="AudioStream" uid="uid://dowmukpdfc3k7" path="res://sons/2dod.ogg" id="45"]
+[ext_resource type="Texture2D" uid="uid://dmsv0eefdjvjn" path="res://sprites/decor/arbre_simple/arbre_simple0014.png" id="45_knaxk"]
+[ext_resource type="AudioStream" uid="uid://b3w0sgj364wbi" path="res://sons/3re.ogg" id="46"]
+[ext_resource type="Texture2D" uid="uid://dbonnfhqk2dni" path="res://sprites/decor/arbre_simple/arbre_simple0015.png" id="46_btb2a"]
+[ext_resource type="Texture2D" uid="uid://dewi1k8vxutc1" path="res://sprites/decor/herbes-lac.png" id="47"]
+[ext_resource type="Texture2D" uid="uid://b1qq4fe3v60ps" path="res://sprites/decor/arbre_simple/arbre_simple0016.png" id="47_mqqai"]
+[ext_resource type="PackedScene" path="res://obj/interactions/plante boussole.tscn" id="48"]
+[ext_resource type="Texture2D" uid="uid://cjptwentckbmg" path="res://sprites/decor/arbre_simple/arbre_simple0017.png" id="48_db07t"]
+[ext_resource type="PackedScene" path="res://obj/interactions/mr ocarina.tscn" id="49"]
+[ext_resource type="Texture2D" uid="uid://co51kclodaatn" path="res://sprites/decor/arbre_simple/arbre_simple0018.png" id="49_3wx83"]
+[ext_resource type="Script" path="res://scripts/scene.gd" id="50"]
+[ext_resource type="Texture2D" uid="uid://dbikyijrejtl4" path="res://sprites/decor/arbre_simple/arbre_simple0019.png" id="50_ofui5"]
+[ext_resource type="PackedScene" path="res://obj/decor/roseau2.tscn" id="51"]
+[ext_resource type="Texture2D" uid="uid://jgb3nxgadq6" path="res://sprites/decor/arbre_simple/arbre_simple0020.png" id="51_evd7o"]
+[ext_resource type="Texture2D" uid="uid://wb1hh8fnvlg0" path="res://sprites/decor/arbre_simple/arbre_simple0021.png" id="52_b2vq2"]
+[ext_resource type="Texture2D" uid="uid://bokh7gqou83xs" path="res://sprites/decor/arbre_simple/arbre_simple0022.png" id="53_preee"]
+[ext_resource type="Texture2D" uid="uid://r4bjmrlfy6dh" path="res://sprites/decor/arbre_simple/arbre_simple0023.png" id="54_5f2ov"]
+[ext_resource type="PackedScene" path="res://obj/interactions/deposeLapin.tscn" id="55"]
+[ext_resource type="Texture2D" uid="uid://byb63xuaxg3n5" path="res://sprites/decor/arbre_simple/arbre_simple0024.png" id="55_kr3pf"]
+[ext_resource type="Texture2D" uid="uid://wsxly4nx458d" path="res://sprites/decor/rond-toteme.png" id="56"]
+[ext_resource type="Texture2D" uid="uid://d26i8f6gqvxco" path="res://sprites/decor/arbre_simple/arbre_simple0025.png" id="56_sb4ti"]
+[ext_resource type="Script" path="res://scripts/z_index.gd" id="57"]
+[ext_resource type="Texture2D" uid="uid://81nl0x4fudfr" path="res://sprites/decor/arbre_simple/arbre_simple0026.png" id="57_yfc7h"]
+[ext_resource type="Texture2D" uid="uid://ca5p8v43c8ix3" path="res://sprites/decor/totem.png" id="58"]
+[ext_resource type="Texture2D" uid="uid://b6frgou2jai5a" path="res://sprites/decor/arbre_simple/arbre_simple0027.png" id="58_w3gws"]
+[ext_resource type="Texture2D" uid="uid://dnvlloeaxlutg" path="res://sprites/decor/sapin_bouge/sapin_bouge0000.png" id="60_tbi8n"]
+[ext_resource type="Texture2D" uid="uid://dohhprbvhc5co" path="res://sprites/decor/sapin_bouge/sapin_bouge0001.png" id="61_hbgu4"]
+[ext_resource type="Texture2D" uid="uid://bk4qwn7w3hitl" path="res://sprites/decor/sapin_bouge/sapin_bouge0002.png" id="62_nj423"]
+[ext_resource type="Texture2D" uid="uid://beasgxdtbvxps" path="res://sprites/decor/sapin_bouge/sapin_bouge0003.png" id="63_rpckx"]
+[ext_resource type="Texture2D" uid="uid://c7lliqtaqjj50" path="res://sprites/decor/sapin_bouge/sapin_bouge0004.png" id="64_30dif"]
+[ext_resource type="Texture2D" uid="uid://b62sfs7slg5jc" path="res://sprites/decor/sapin_bouge/sapin_bouge0005.png" id="65_tdw5m"]
+[ext_resource type="Texture2D" uid="uid://er8oenusnlyy" path="res://sprites/decor/sapin_bouge/sapin_bouge0006.png" id="66_ynesg"]
+[ext_resource type="Texture2D" uid="uid://b7oskxatx626d" path="res://sprites/decor/sapin_bouge/sapin_bouge0007.png" id="67_7wnif"]
+[ext_resource type="Texture2D" uid="uid://xqund6fcrj20" path="res://sprites/decor/sapin_bouge/sapin_bouge0008.png" id="68_1rhqh"]
+[ext_resource type="Texture2D" uid="uid://bci1gpljtqtyq" path="res://sprites/decor/sapin_bouge/sapin_bouge0009.png" id="69_nmgys"]
+[ext_resource type="Texture2D" uid="uid://8q07ax3ogj3" path="res://sprites/decor/sapin_bouge/sapin_bouge0010.png" id="70_jlgoy"]
+[ext_resource type="Texture2D" uid="uid://dqvl046ipa7p0" path="res://sprites/decor/sapin_bouge/sapin_bouge0011.png" id="71_kxk7j"]
+[ext_resource type="Texture2D" uid="uid://dbo3h427dtovh" path="res://sprites/decor/sapin_bouge/sapin_bouge0012.png" id="72_hfh3k"]
+[ext_resource type="Texture2D" uid="uid://du3wd3y00bgl7" path="res://sprites/decor/sapin_bouge/sapin_bouge0013.png" id="73_thqck"]
+[ext_resource type="Texture2D" uid="uid://daymuqjt3ppx" path="res://sprites/decor/sapin_bouge/sapin_bouge0014.png" id="74_hvd5s"]
+[ext_resource type="Texture2D" uid="uid://cmyvhh0v2wodb" path="res://sprites/decor/sapin_bouge/sapin_bouge0015.png" id="75_5cvok"]
+[ext_resource type="Texture2D" uid="uid://dr7lu0700t4sr" path="res://sprites/decor/sapin_bouge/sapin_bouge0016.png" id="76_an3im"]
+[ext_resource type="Texture2D" uid="uid://dhldd8w6mra5m" path="res://sprites/decor/sapin_plantation/sapin0001.png" id="77_o05u7"]
+[ext_resource type="Texture2D" uid="uid://b2s7xcglpjqpe" path="res://sprites/decor/sapin_plantation/sapin0002.png" id="78_vjkn6"]
+[ext_resource type="Texture2D" uid="uid://0blx82katp8w" path="res://sprites/decor/sapin_plantation/sapin0003.png" id="79_113p0"]
+[ext_resource type="Texture2D" uid="uid://clkrnpotutnc0" path="res://sprites/decor/sapin_plantation/sapin0004.png" id="80_63ppm"]
+[ext_resource type="Texture2D" uid="uid://muj6hd3jumkn" path="res://sprites/decor/sapin_plantation/sapin0005.png" id="81_dvyls"]
+[ext_resource type="Texture2D" uid="uid://chx08hkasiiyt" path="res://sprites/decor/buisson02/buissons0000.png" id="83_l4np3"]
+[ext_resource type="Texture2D" uid="uid://dkq2gboy0uk8y" path="res://sprites/decor/buisson02/buissons0001.png" id="84_gs4nx"]
+[ext_resource type="Texture2D" uid="uid://xatirvkoaxon" path="res://sprites/decor/buisson02/buissons0002.png" id="85_8nr76"]
+[ext_resource type="Texture2D" uid="uid://ck1ydi7qnraqd" path="res://sprites/decor/buisson02/buissons0003.png" id="86_mos58"]
+[ext_resource type="Texture2D" uid="uid://wan6rb3ulybp" path="res://sprites/decor/buisson02/buissons0004.png" id="87_w4nu0"]
+[ext_resource type="Texture2D" uid="uid://tt15xpdmp4e8" path="res://sprites/decor/buisson02/buissons0005.png" id="88_jex1a"]
+[ext_resource type="Texture2D" uid="uid://bg64th2bvke0" path="res://sprites/decor/buisson01/buissons0000.png" id="90_bpuky"]
+[ext_resource type="Texture2D" uid="uid://c5rr32ww51qul" path="res://sprites/decor/buisson01/buissons0001.png" id="91_xilbp"]
+[ext_resource type="Texture2D" uid="uid://ilhxeg5ohiwy" path="res://sprites/decor/buisson01/buissons0002.png" id="92_3xwo2"]
+[ext_resource type="Texture2D" uid="uid://be4bsdrqnkx1" path="res://sprites/decor/buisson01/buissons0003.png" id="93_20n6j"]
+[ext_resource type="Texture2D" uid="uid://bjh2f1g7euqt3" path="res://sprites/decor/buisson01/buissons0004.png" id="94_fdrsn"]
+[ext_resource type="Texture2D" uid="uid://pfil0rjdab4g" path="res://sprites/decor/buisson01/buissons0005.png" id="95_aodqo"]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 420.653, 191.646 )
-
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 901.428, 838.482 )
-
-[sub_resource type="ShaderMaterial" id=3]
-shader = ExtResource( 47 )
-
-[sub_resource type="SpriteFrames" id=4]
-animations = [ {
-"frames": [ ExtResource( 37 ), ExtResource( 34 ), ExtResource( 39 ), ExtResource( 32 ), ExtResource( 38 ), ExtResource( 30 ), ExtResource( 33 ), ExtResource( 36 ), ExtResource( 35 ) ],
+[sub_resource type="SpriteFrames" id="1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_q4px3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_wj3t1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_cjstj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_e8jql")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_d31ke")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_73h6v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_naerf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_esn1e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_uke6c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_ooi1x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_kqllt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_4skqm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_3asog")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_ongts")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_r12af")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_30dtr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_m1181")
+}],
 "loop": true,
-"name": "default",
+"name": &"default",
 "speed": 5.0
-} ]
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("25_p3cvn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_urqxy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_s6keq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_8ke1w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_lkf61")
+}],
+"loop": false,
+"name": &"pousse",
+"speed": 0.1
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_iakwv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("31_sgkp1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_c2nm4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_jp3sr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_2vcwq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_kqxj8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_tko51")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_6r7jl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_oiabr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_8tjee")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_8g86p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_r8bsq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_31sq1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_nrx4l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_yeuhf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_knaxk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_btb2a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_mqqai")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_db07t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_3wx83")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_ofui5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_evd7o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_b2vq2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_preee")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_5f2ov")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_kr3pf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_sb4ti")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_yfc7h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_w3gws")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0183s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("60_tbi8n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_hbgu4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_nj423")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_rpckx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_30dif")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_tdw5m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_ynesg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_7wnif")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_1rhqh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_nmgys")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_jlgoy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_kxk7j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_hfh3k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73_thqck")
+}, {
+"duration": 1.0,
+"texture": ExtResource("74_hvd5s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("75_5cvok")
+}, {
+"duration": 1.0,
+"texture": ExtResource("76_an3im")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("77_o05u7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("78_vjkn6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("79_113p0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("80_63ppm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("81_dvyls")
+}],
+"loop": false,
+"name": &"pousse",
+"speed": 0.1
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gq1c5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("83_l4np3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("84_gs4nx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("85_8nr76")
+}, {
+"duration": 1.0,
+"texture": ExtResource("86_mos58")
+}, {
+"duration": 1.0,
+"texture": ExtResource("87_w4nu0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("88_jex1a")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_03rsf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("90_bpuky")
+}, {
+"duration": 1.0,
+"texture": ExtResource("91_xilbp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("92_3xwo2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("93_20n6j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("94_fdrsn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("95_aodqo")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xxy3p"]
+size = Vector2(841.306, 383.292)
+
+[sub_resource type="RectangleShape2D" id="2"]
+size = Vector2(1802.86, 1676.96)
+
+[sub_resource type="SpriteFrames" id="3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("37")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="scene" type="Node2D"]
-script = ExtResource( 50 )
+script = ExtResource("50")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="UI" parent="CanvasLayer" instance=ExtResource( 1 )]
+[node name="UI" parent="CanvasLayer" instance=ExtResource("1")]
+layout_mode = 3
+anchors_preset = 15
+offset_top = 4.00452
+offset_bottom = 4.00452
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="popPluie" parent="." instance=ExtResource( 3 )]
+[node name="popPluie" parent="." instance=ExtResource("3")]
 
-[node name="perso" parent="." instance=ExtResource( 5 )]
-position = Vector2( 183.078, 2162.33 )
+[node name="perso" parent="." instance=ExtResource("5")]
 z_index = 2000
+position = Vector2(1977.36, 328.789)
 
-[node name="bords" parent="." instance=ExtResource( 2 )]
+[node name="bords" parent="." instance=ExtResource("2")]
 scene_nord = 2
 scene_sud = 2
 scene_est = 1
 scene_ouest = 1
 
-[node name="camera box" parent="." instance=ExtResource( 4 )]
+[node name="camera box" parent="." instance=ExtResource("4")]
 
 [node name="decor" type="Node2D" parent="."]
 
 [node name="arbres" type="Node2D" parent="decor"]
 
-[node name="arbre02" parent="decor/arbres" instance=ExtResource( 11 )]
-position = Vector2( 1057.24, 446.173 )
+[node name="arbre02" parent="decor/arbres" instance=ExtResource("11")]
+position = Vector2(1059.13, 446.173)
+sprite_frames = SubResource("1")
+frame = 15
+
+[node name="arbre07" parent="decor/arbres" instance=ExtResource("11")]
+position = Vector2(658.925, 317.806)
+sprite_frames = SubResource("1")
+frame = 15
+
+[node name="arbre03" parent="decor/arbres" instance=ExtResource("11")]
+position = Vector2(94.6604, 3938.67)
+sprite_frames = SubResource("1")
+frame = 14
+
+[node name="arbre04" parent="decor/arbres" instance=ExtResource("11")]
+position = Vector2(1793.03, 3656.45)
+sprite_frames = SubResource("1")
 frame = 13
-playing = true
 
-[node name="arbre_simple" parent="decor/arbres" instance=ExtResource( 12 )]
-position = Vector2( 480.993, 824.079 )
+[node name="arbre05" parent="decor/arbres" instance=ExtResource("11")]
+position = Vector2(2039.98, 3847.96)
+sprite_frames = SubResource("1")
+frame = 12
 
-[node name="sapin" parent="decor/arbres" instance=ExtResource( 13 )]
-position = Vector2( 245.715, 616.099 )
+[node name="arbre06" parent="decor/arbres" instance=ExtResource("11")]
+position = Vector2(1631.76, 3958.83)
+sprite_frames = SubResource("1")
+frame = 12
+
+[node name="arbre_simple" parent="decor/arbres" instance=ExtResource("12")]
+position = Vector2(449.338, 649.356)
+sprite_frames = SubResource("SpriteFrames_iakwv")
+frame = 0
+
+[node name="arbre_simple10" parent="decor/arbres" instance=ExtResource("12")]
+position = Vector2(256.788, 851.345)
+sprite_frames = SubResource("SpriteFrames_iakwv")
+frame = 0
+
+[node name="arbre_simple3" parent="decor/arbres" instance=ExtResource("12")]
+position = Vector2(740.288, 1041.42)
+sprite_frames = SubResource("SpriteFrames_iakwv")
+frame = 0
+
+[node name="arbre_simple11" parent="decor/arbres" instance=ExtResource("12")]
+position = Vector2(1459.41, 907.071)
+sprite_frames = SubResource("SpriteFrames_iakwv")
+frame = 0
+
+[node name="arbre_simple4" parent="decor/arbres" instance=ExtResource("12")]
+position = Vector2(3216.99, 1925.19)
+sprite_frames = SubResource("SpriteFrames_iakwv")
+frame = 0
+
+[node name="arbre_simple7" parent="decor/arbres" instance=ExtResource("12")]
+position = Vector2(376.802, 3382.7)
+sprite_frames = SubResource("SpriteFrames_iakwv")
+frame = 0
+
+[node name="arbre_simple8" parent="decor/arbres" instance=ExtResource("12")]
+position = Vector2(364.815, 2828.33)
+sprite_frames = SubResource("SpriteFrames_iakwv")
+frame = 0
+
+[node name="arbre_simple9" parent="decor/arbres" instance=ExtResource("12")]
+position = Vector2(1585.94, 2533.16)
+sprite_frames = SubResource("SpriteFrames_iakwv")
+frame = 0
+
+[node name="arbre_simple6" parent="decor/arbres" instance=ExtResource("12")]
+position = Vector2(3388.04, 1714.94)
+sprite_frames = SubResource("SpriteFrames_iakwv")
+frame = 0
+
+[node name="arbre_simple5" parent="decor/arbres" instance=ExtResource("12")]
+position = Vector2(3569.78, 2010.72)
+scale = Vector2(-1, 1)
+sprite_frames = SubResource("SpriteFrames_iakwv")
+frame = 0
+
+[node name="arbre_simple2" parent="decor/arbres" instance=ExtResource("12")]
+position = Vector2(3795.25, 492.953)
+sprite_frames = SubResource("SpriteFrames_iakwv")
+frame = 0
+
+[node name="sapin" parent="decor/arbres" instance=ExtResource("13")]
+position = Vector2(2840.66, 1405.2)
+sprite_frames = SubResource("SpriteFrames_0183s")
+frame = 10
+
+[node name="sapin7" parent="decor/arbres" instance=ExtResource("13")]
+position = Vector2(189.341, 1786.51)
+sprite_frames = SubResource("SpriteFrames_0183s")
+frame = 9
+
+[node name="sapin8" parent="decor/arbres" instance=ExtResource("13")]
+position = Vector2(317.631, 2082.29)
+sprite_frames = SubResource("SpriteFrames_0183s")
 frame = 8
+
+[node name="sapin9" parent="decor/arbres" instance=ExtResource("13")]
+position = Vector2(143.015, 2417.27)
+sprite_frames = SubResource("SpriteFrames_0183s")
+frame = 8
+
+[node name="sapin2" parent="decor/arbres" instance=ExtResource("13")]
+position = Vector2(3258.38, 427.108)
+sprite_frames = SubResource("SpriteFrames_0183s")
+frame = 9
+
+[node name="sapin14" parent="decor/arbres" instance=ExtResource("13")]
+position = Vector2(3107.36, 181.701)
+sprite_frames = SubResource("SpriteFrames_0183s")
+frame = 9
+
+[node name="sapin15" parent="decor/arbres" instance=ExtResource("13")]
+position = Vector2(2826.09, 330.833)
+sprite_frames = SubResource("SpriteFrames_0183s")
+frame = 9
+
+[node name="sapin3" parent="decor/arbres" instance=ExtResource("13")]
+position = Vector2(3426.19, 278.776)
+sprite_frames = SubResource("SpriteFrames_0183s")
+frame = 9
+
+[node name="sapin4" parent="decor/arbres" instance=ExtResource("13")]
+position = Vector2(3893.66, 566.451)
+sprite_frames = SubResource("SpriteFrames_0183s")
+frame = 8
+
+[node name="sapin5" parent="decor/arbres" instance=ExtResource("13")]
+position = Vector2(2825.55, 747.929)
+sprite_frames = SubResource("SpriteFrames_0183s")
+frame = 8
+
+[node name="sapin10" parent="decor/arbres" instance=ExtResource("13")]
+position = Vector2(1535.52, 300.872)
+sprite_frames = SubResource("SpriteFrames_0183s")
+frame = 8
+
+[node name="sapin16" parent="decor/arbres" instance=ExtResource("13")]
+position = Vector2(2148.46, 170.801)
+sprite_frames = SubResource("SpriteFrames_0183s")
+frame = 7
+
+[node name="sapin17" parent="decor/arbres" instance=ExtResource("13")]
+position = Vector2(2337.33, 79.9296)
+sprite_frames = SubResource("SpriteFrames_0183s")
+frame = 7
+
+[node name="sapin11" parent="decor/arbres" instance=ExtResource("13")]
+position = Vector2(1270.2, 459.069)
+sprite_frames = SubResource("SpriteFrames_0183s")
+frame = 7
+
+[node name="sapin6" parent="decor/arbres" instance=ExtResource("13")]
+position = Vector2(3153.5, 1014.44)
+sprite_frames = SubResource("SpriteFrames_0183s")
+frame = 7
+
+[node name="sapin12" parent="decor/arbres" instance=ExtResource("13")]
+position = Vector2(3893.5, 1282.51)
+sprite_frames = SubResource("SpriteFrames_0183s")
+frame = 7
+
+[node name="sapin13" parent="decor/arbres" instance=ExtResource("13")]
+position = Vector2(3719.83, 1476.94)
+sprite_frames = SubResource("SpriteFrames_0183s")
+frame = 6
 
 [node name="buissons" type="Node2D" parent="decor"]
 
-[node name="buisson2" parent="decor/buissons" instance=ExtResource( 15 )]
-position = Vector2( 493.606, 1068.78 )
-z_index = 534
+[node name="buisson2" parent="decor/buissons" instance=ExtResource("15")]
+z_index = 373
 z_as_relative = false
+position = Vector2(545.787, 747.41)
+sprite_frames = SubResource("SpriteFrames_gq1c5")
 
-[node name="buisson1" parent="decor/buissons" instance=ExtResource( 14 )]
-position = Vector2( 530.606, 1110.82 )
-z_index = 555
+[node name="buisson18" parent="decor/buissons" instance=ExtResource("15")]
+z_index = 252
 z_as_relative = false
+position = Vector2(1298.56, 504.16)
+scale = Vector2(1.48999, 1.48999)
+sprite_frames = SubResource("SpriteFrames_gq1c5")
+
+[node name="buisson1" parent="decor/buissons" instance=ExtResource("14")]
+z_index = 353
+z_as_relative = false
+position = Vector2(483.516, 707.19)
+sprite_frames = SubResource("SpriteFrames_03rsf")
+
+[node name="buisson3" parent="decor/buissons" instance=ExtResource("15")]
+z_index = 202
+z_as_relative = false
+position = Vector2(768.236, 404.377)
+sprite_frames = SubResource("SpriteFrames_gq1c5")
+
+[node name="buisson4" parent="decor/buissons" instance=ExtResource("14")]
+z_index = 219
+z_as_relative = false
+position = Vector2(879.44, 439.938)
+scale = Vector2(1.38377, 1.38377)
+sprite_frames = SubResource("SpriteFrames_03rsf")
+
+[node name="buisson13" parent="decor/buissons" instance=ExtResource("15")]
+z_index = 435
+z_as_relative = false
+position = Vector2(2339.81, 870.515)
+sprite_frames = SubResource("SpriteFrames_gq1c5")
+
+[node name="buisson16" parent="decor/buissons" instance=ExtResource("15")]
+z_index = 401
+z_as_relative = false
+position = Vector2(2522.47, 803.216)
+sprite_frames = SubResource("SpriteFrames_gq1c5")
+
+[node name="buisson14" parent="decor/buissons" instance=ExtResource("14")]
+z_index = 457
+z_as_relative = false
+position = Vector2(2421.64, 915.886)
+sprite_frames = SubResource("SpriteFrames_03rsf")
+
+[node name="buisson17" parent="decor/buissons" instance=ExtResource("14")]
+z_index = 464
+z_as_relative = false
+position = Vector2(2351.11, 928.24)
+sprite_frames = SubResource("SpriteFrames_03rsf")
+
+[node name="buisson15" parent="decor/buissons" instance=ExtResource("14")]
+z_index = 456
+z_as_relative = false
+position = Vector2(2281.17, 913.413)
+sprite_frames = SubResource("SpriteFrames_03rsf")
+
+[node name="buisson5" parent="decor/buissons" instance=ExtResource("15")]
+z_index = 1441
+z_as_relative = false
+position = Vector2(589.673, 2882.96)
+sprite_frames = SubResource("SpriteFrames_gq1c5")
+
+[node name="buisson10" parent="decor/buissons" instance=ExtResource("15")]
+z_index = 1290
+z_as_relative = false
+position = Vector2(1350.81, 2581.8)
+sprite_frames = SubResource("SpriteFrames_gq1c5")
+
+[node name="buisson11" parent="decor/buissons" instance=ExtResource("15")]
+z_index = 1486
+z_as_relative = false
+position = Vector2(1604.03, 2972.86)
+sprite_frames = SubResource("SpriteFrames_gq1c5")
+
+[node name="buisson6" parent="decor/buissons" instance=ExtResource("14")]
+z_index = 1461
+z_as_relative = false
+position = Vector2(692.835, 2923.2)
+scale = Vector2(1.38377, 1.38377)
+sprite_frames = SubResource("SpriteFrames_03rsf")
+
+[node name="buisson20" parent="decor/buissons" instance=ExtResource("15")]
+z_index = 1887
+z_as_relative = false
+position = Vector2(301.451, 3774.28)
+scale = Vector2(1.245, 1.245)
+sprite_frames = SubResource("SpriteFrames_gq1c5")
+
+[node name="buisson22" parent="decor/buissons" instance=ExtResource("15")]
+z_index = 1684
+z_as_relative = false
+position = Vector2(262.251, 3368.04)
+scale = Vector2(1.245, 1.245)
+sprite_frames = SubResource("SpriteFrames_gq1c5")
+
+[node name="buisson21" parent="decor/buissons" instance=ExtResource("15")]
+z_index = 1964
+z_as_relative = false
+position = Vector2(230.179, 3929.3)
+sprite_frames = SubResource("SpriteFrames_gq1c5")
+
+[node name="buisson19" parent="decor/buissons" instance=ExtResource("14")]
+z_index = 1897
+z_as_relative = false
+position = Vector2(343.603, 3794.5)
+sprite_frames = SubResource("SpriteFrames_03rsf")
+
+[node name="buisson23" parent="decor/buissons" instance=ExtResource("14")]
+z_index = 266
+z_as_relative = false
+position = Vector2(1355.66, 532.023)
+scale = Vector2(1.1, 1.1)
+sprite_frames = SubResource("SpriteFrames_03rsf")
+
+[node name="buisson12" parent="decor/buissons" instance=ExtResource("14")]
+z_index = 1475
+z_as_relative = false
+position = Vector2(1663.23, 2950.1)
+scale = Vector2(1.38377, 1.38377)
+sprite_frames = SubResource("SpriteFrames_03rsf")
+
+[node name="buisson9" parent="decor/buissons" instance=ExtResource("14")]
+z_index = 1327
+z_as_relative = false
+position = Vector2(1523.26, 2655)
+scale = Vector2(1.38377, 1.38377)
+sprite_frames = SubResource("SpriteFrames_03rsf")
+
+[node name="buisson7" parent="decor/buissons" instance=ExtResource("15")]
+z_index = 1378
+z_as_relative = false
+position = Vector2(460.818, 2757.1)
+sprite_frames = SubResource("SpriteFrames_gq1c5")
+
+[node name="buisson8" parent="decor/buissons" instance=ExtResource("14")]
+z_index = 1435
+z_as_relative = false
+position = Vector2(781.602, 2870.76)
+sprite_frames = SubResource("SpriteFrames_03rsf")
 
 [node name="interactions" type="Node2D" parent="decor"]
 
 [node name="pierres debut" type="Node2D" parent="decor/interactions"]
-position = Vector2( 1988.91, 395.113 )
+position = Vector2(1988.91, 395.113)
 
-[node name="pierre01" type="Sprite" parent="decor/interactions/pierres debut"]
-position = Vector2( -261.559, 83.2211 )
-texture = ExtResource( 17 )
-offset = Vector2( 0, -136.154 )
-script = ExtResource( 19 )
+[node name="pierre01" type="Sprite2D" parent="decor/interactions/pierres debut"]
+position = Vector2(-261.559, 83.2211)
+texture = ExtResource("17")
+offset = Vector2(0, -136.154)
+script = ExtResource("19")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="decor/interactions/pierres debut/pierre01"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="decor/interactions/pierres debut/pierre01/StaticBody2D"]
-polygon = PoolVector2Array( -108.897, -9.974, -29.2203, 10.2426, 30.24, -2.83875, 58.781, 4.29651, 99.2141, -13.5416, 87.3219, -73.002, 5.2666, -86.0832, -73.2209, -74.1912, -101.762, -50.407 )
+polygon = PackedVector2Array(-108.897, -9.974, -29.2203, 10.2426, 30.24, -2.83875, 58.781, 4.29651, 99.2141, -13.5416, 87.3219, -73.002, 5.2666, -86.0832, -73.2209, -74.1912, -101.762, -50.407)
 
 [node name="Area2D" type="Area2D" parent="decor/interactions/pierres debut/pierre01"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="decor/interactions/pierres debut/pierre01/Area2D"]
-polygon = PoolVector2Array( -128.678, -112.924, -166.862, -47.8699, -149.891, 28.4977, -76.3519, 58.1962, 103.253, 56.782, 172.55, -5.44342, 161.236, -81.811, 96.1821, -129.894, -39.5824, -141.208 )
+polygon = PackedVector2Array(-128.678, -112.924, -166.862, -47.8699, -149.891, 28.4977, -76.3519, 58.1962, 103.253, 56.782, 172.55, -5.44342, 161.236, -81.811, 96.1821, -129.894, -39.5824, -141.208)
 
-[node name="pierre02" type="Sprite" parent="decor/interactions/pierres debut"]
-position = Vector2( 35.4412, 270.111 )
-texture = ExtResource( 16 )
-offset = Vector2( -0.666016, -138.835 )
-script = ExtResource( 19 )
+[node name="pierre02" type="Sprite2D" parent="decor/interactions/pierres debut"]
+position = Vector2(35.4412, 270.111)
+texture = ExtResource("16")
+offset = Vector2(-0.666016, -138.835)
+script = ExtResource("19")
 num_pierre = 2
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="decor/interactions/pierres debut/pierre02"]
-position = Vector2( 0.650391, -2.79938 )
+position = Vector2(0.650391, -2.79938)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="decor/interactions/pierres debut/pierre02/StaticBody2D2"]
-polygon = PoolVector2Array( -108.897, -9.974, -29.2203, 10.2426, 30.24, -2.83875, 58.781, 4.29651, 99.2141, -13.5416, 87.3219, -73.002, 5.2666, -86.0832, -73.2209, -74.1912, -101.762, -50.407 )
+polygon = PackedVector2Array(-108.897, -9.974, -29.2203, 10.2426, 30.24, -2.83875, 58.781, 4.29651, 99.2141, -13.5416, 87.3219, -73.002, 5.2666, -86.0832, -73.2209, -74.1912, -101.762, -50.407)
 
 [node name="Area2D" type="Area2D" parent="decor/interactions/pierres debut/pierre02"]
-position = Vector2( -0.015625, -3.04181 )
+position = Vector2(-0.015625, -3.04181)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="decor/interactions/pierres debut/pierre02/Area2D"]
-polygon = PoolVector2Array( -128.678, -112.924, -166.862, -47.8699, -149.891, 28.4977, -76.3519, 58.1962, 103.253, 56.782, 172.55, -5.44342, 161.236, -81.811, 96.1821, -129.894, -39.5824, -141.208 )
+polygon = PackedVector2Array(-128.678, -112.924, -166.862, -47.8699, -149.891, 28.4977, -76.3519, 58.1962, 103.253, 56.782, 172.55, -5.44342, 161.236, -81.811, 96.1821, -129.894, -39.5824, -141.208)
 
-[node name="pierre03" type="Sprite" parent="decor/interactions/pierres debut"]
-position = Vector2( 265.958, 56.5645 )
-texture = ExtResource( 18 )
-offset = Vector2( -4.26001, -141.533 )
-script = ExtResource( 19 )
+[node name="pierre03" type="Sprite2D" parent="decor/interactions/pierres debut"]
+position = Vector2(265.958, 56.5645)
+texture = ExtResource("18")
+offset = Vector2(-4.26001, -141.533)
+script = ExtResource("19")
 num_pierre = 2
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="decor/interactions/pierres debut/pierre03"]
-position = Vector2( -1.41235, -5.75845 )
+position = Vector2(-1.41235, -5.75845)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="decor/interactions/pierres debut/pierre03/StaticBody2D2"]
-polygon = PoolVector2Array( -108.897, -9.974, -29.2203, 10.2426, 30.24, -2.83875, 58.781, 4.29651, 99.2141, -13.5416, 87.3219, -73.002, 5.2666, -86.0832, -73.2209, -74.1912, -101.762, -50.407 )
+polygon = PackedVector2Array(-108.897, -9.974, -29.2203, 10.2426, 30.24, -2.83875, 58.781, 4.29651, 99.2141, -13.5416, 87.3219, -73.002, 5.2666, -86.0832, -73.2209, -74.1912, -101.762, -50.407)
 
 [node name="Area2D" type="Area2D" parent="decor/interactions/pierres debut/pierre03"]
-position = Vector2( -1.42993, -1.62759 )
+position = Vector2(-1.42993, -1.62759)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="decor/interactions/pierres debut/pierre03/Area2D"]
-polygon = PoolVector2Array( -128.678, -112.924, -166.862, -47.8699, -149.891, 28.4977, -76.3519, 58.1962, 103.253, 56.782, 172.55, -5.44342, 161.236, -81.811, 96.1821, -129.894, -39.5824, -141.208 )
+polygon = PackedVector2Array(-128.678, -112.924, -166.862, -47.8699, -149.891, 28.4977, -76.3519, 58.1962, 103.253, 56.782, 172.55, -5.44342, 161.236, -81.811, 96.1821, -129.894, -39.5824, -141.208)
 
-[node name="cercle champi1" parent="decor/interactions" instance=ExtResource( 6 )]
-position = Vector2( 1020, 680 )
+[node name="cercle champi1" parent="decor/interactions" instance=ExtResource("6")]
+position = Vector2(1020, 680)
 numAutreCercle = "2"
 
-[node name="cercle champi2" parent="decor/interactions" instance=ExtResource( 6 )]
-position = Vector2( 3482.62, 554.443 )
+[node name="cercle champi2" parent="decor/interactions" instance=ExtResource("6")]
+position = Vector2(3482.62, 554.443)
 numAutreCercle = "1"
 
-[node name="zone_plantation_fleur" parent="decor/interactions" instance=ExtResource( 23 )]
-position = Vector2( 1395.89, 585.264 )
-plante = ExtResource( 25 )
+[node name="zone_plantation_fleur" parent="decor/interactions" instance=ExtResource("23")]
+position = Vector2(1723.89, 1097.26)
+plante = ExtResource("25")
 
-[node name="zone_plantation_arbre" parent="decor/interactions" instance=ExtResource( 24 )]
-position = Vector2( 1598.39, 781.234 )
+[node name="zone_plantation_fleur2" parent="decor/interactions" instance=ExtResource("23")]
+position = Vector2(1889.89, 1097.26)
+plante = ExtResource("25")
+
+[node name="zone_plantation_fleur3" parent="decor/interactions" instance=ExtResource("23")]
+position = Vector2(2061.89, 1101.26)
+plante = ExtResource("25")
+
+[node name="zone_plantation_arbre" parent="decor/interactions" instance=ExtResource("24")]
+position = Vector2(3702.53, 971.17)
 
 [node name="zone monstre losange" type="Node2D" parent="decor/interactions"]
-position = Vector2( 767.764, 1591.65 )
-__meta__ = {
-"_edit_group_": true,
-"_edit_lock_": true
-}
+position = Vector2(767.764, 1591.65)
 
-[node name="zone_plantation_monstre_losange" parent="decor/interactions/zone monstre losange" instance=ExtResource( 31 )]
-position = Vector2( -195.563, 195.271 )
+[node name="zone_plantation_monstre_losange" parent="decor/interactions/zone monstre losange" instance=ExtResource("31")]
+position = Vector2(-195.563, 195.271)
 
-[node name="zone_plantation_monstre_losange2" parent="decor/interactions/zone monstre losange" instance=ExtResource( 31 )]
-position = Vector2( 275.871, 193.026 )
+[node name="zone_plantation_monstre_losange2" parent="decor/interactions/zone monstre losange" instance=ExtResource("31")]
+position = Vector2(275.871, 193.026)
 num_target = 1
 
-[node name="zone_plantation_monstre_losange3" parent="decor/interactions/zone monstre losange" instance=ExtResource( 31 )]
-position = Vector2( -83.3165, 383.845 )
+[node name="zone_plantation_monstre_losange3" parent="decor/interactions/zone monstre losange" instance=ExtResource("31")]
+position = Vector2(-83.3165, 383.845)
 num_target = 2
 
-[node name="zone_plantation_monstre_losange4" parent="decor/interactions/zone monstre losange" instance=ExtResource( 31 )]
-position = Vector2( 181.584, 374.865 )
+[node name="zone_plantation_monstre_losange4" parent="decor/interactions/zone monstre losange" instance=ExtResource("31")]
+position = Vector2(181.584, 374.865)
 num_target = 3
 
-[node name="zone_plantation_monstre_losange5" parent="decor/interactions/zone monstre losange" instance=ExtResource( 31 )]
-position = Vector2( 44.644, 565.683 )
+[node name="zone_plantation_monstre_losange5" parent="decor/interactions/zone monstre losange" instance=ExtResource("31")]
+position = Vector2(44.644, 565.683)
 num_target = 4
 
 [node name="plante monstre losange" type="Node2D" parent="decor/interactions/zone monstre losange"]
-position = Vector2( -195.308, -2.24487 )
+position = Vector2(-195.308, -2.24487)
 
 [node name="plante monstre losange2" type="Node2D" parent="decor/interactions/zone monstre losange"]
-position = Vector2( 280.616, 2.245 )
+position = Vector2(280.616, 2.245)
 
 [node name="plante monstre losange3" type="Node2D" parent="decor/interactions/zone monstre losange"]
-position = Vector2( -83.062, -175.104 )
+position = Vector2(-83.062, -175.104)
 
 [node name="plante monstre losange4" type="Node2D" parent="decor/interactions/zone monstre losange"]
-position = Vector2( 175.104, -170.614 )
+position = Vector2(175.104, -170.614)
 
 [node name="plante monstre losange5" type="Node2D" parent="decor/interactions/zone monstre losange"]
-position = Vector2( 49.3887, -334.494 )
+position = Vector2(49.3887, -334.494)
 
 [node name="centre" type="Node2D" parent="decor/interactions/zone monstre losange"]
-position = Vector2( 35.636, 68.2593 )
+position = Vector2(35.636, 68.2593)
 
-[node name="flaques" type="Sprite" parent="decor/interactions"]
-position = Vector2( 710.8, 3641.44 )
+[node name="flaques" type="Sprite2D" parent="decor/interactions"]
 z_index = -3500
-texture = ExtResource( 41 )
-script = ExtResource( 28 )
+position = Vector2(710.8, 3641.44)
+texture = ExtResource("41")
+script = ExtResource("28")
 
-[node name="flaque" parent="decor/interactions/flaques" instance=ExtResource( 42 )]
-position = Vector2( -311.478, -77.3977 )
-note = ExtResource( 44 )
+[node name="flaque" parent="decor/interactions/flaques" instance=ExtResource("42")]
+position = Vector2(-311.478, -77.3977)
+note = ExtResource("44")
 
-[node name="flaque2" parent="decor/interactions/flaques" instance=ExtResource( 42 )]
-position = Vector2( -109.489, 47.1936 )
-note = ExtResource( 45 )
+[node name="flaque2" parent="decor/interactions/flaques" instance=ExtResource("42")]
+position = Vector2(-109.489, 47.1936)
+note = ExtResource("45")
 num_note = 2
 
-[node name="flaque3" parent="decor/interactions/flaques" instance=ExtResource( 42 )]
-position = Vector2( 149.132, 49.0813 )
-note = ExtResource( 46 )
+[node name="flaque3" parent="decor/interactions/flaques" instance=ExtResource("42")]
+position = Vector2(149.132, 49.0813)
+note = ExtResource("46")
 num_note = 3
 
-[node name="flaque4" parent="decor/interactions/flaques" instance=ExtResource( 42 )]
-position = Vector2( 326.58, -89.6682 )
-note = ExtResource( 43 )
+[node name="flaque4" parent="decor/interactions/flaques" instance=ExtResource("42")]
+position = Vector2(326.58, -89.6682)
+note = ExtResource("43")
 num_note = 4
 
-[node name="Light2D" type="Light2D" parent="decor/interactions/flaques"]
+[node name="PointLight2D" type="PointLight2D" parent="decor/interactions/flaques"]
 light_mask = 2
-texture = ExtResource( 40 )
-mode = 3
 range_z_min = -3800
 range_z_max = 0
 range_item_cull_mask = 2
+texture = ExtResource("40")
 
 [node name="Area2D" type="Area2D" parent="decor/interactions/flaques"]
-__meta__ = {
-"_edit_group_": true,
-"_edit_lock_": true
-}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="decor/interactions/flaques/Area2D"]
 visible = false
-position = Vector2( 2.23706, -90.2751 )
-shape = SubResource( 1 )
+position = Vector2(2.23706, -90.2751)
+shape = SubResource("RectangleShape2D_xxy3p")
 
-[node name="deposeLapin" parent="decor/interactions" instance=ExtResource( 55 )]
-position = Vector2( 2547.96, 2579.53 )
+[node name="deposeLapin" parent="decor/interactions" instance=ExtResource("55")]
+position = Vector2(2547.96, 2579.53)
 
-[node name="rond-toteme" type="Sprite" parent="decor/interactions"]
-position = Vector2( 2543.97, 2591.08 )
+[node name="rond-toteme" type="Sprite2D" parent="decor/interactions"]
 z_index = -2500
 z_as_relative = false
-texture = ExtResource( 56 )
+position = Vector2(2543.97, 2591.08)
+texture = ExtResource("56")
 
 [node name="totem" type="StaticBody2D" parent="decor/interactions/rond-toteme"]
-position = Vector2( -3.59961, -67.4988 )
+position = Vector2(-3.59961, -67.4988)
 
-[node name="totem" type="Sprite" parent="decor/interactions/rond-toteme/totem"]
-position = Vector2( 3.26099, 49.6494 )
+[node name="totem" type="Sprite2D" parent="decor/interactions/rond-toteme/totem"]
 z_index = 1286
 z_as_relative = false
-texture = ExtResource( 58 )
-offset = Vector2( -2.26099, -62.6494 )
-script = ExtResource( 57 )
+position = Vector2(3.26099, 49.6494)
+texture = ExtResource("58")
+offset = Vector2(-2.26099, -62.6494)
+script = ExtResource("57")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="decor/interactions/rond-toteme/totem"]
-position = Vector2( 1.05933, 9.53516 )
-polygon = PoolVector2Array( -57.1284, 34.8169, -61.3662, 51.7683, -42.2959, 58.125, 16.688, 58.887, 70.0071, 40.114, 59.4126, 19.9844, 12.7961, 13.6277, -34.8796, 24.2222 )
+position = Vector2(1.05933, 9.53516)
+polygon = PackedVector2Array(-57.1284, 34.8169, -61.3662, 51.7683, -42.2959, 58.125, 16.688, 58.887, 70.0071, 40.114, 59.4126, 19.9844, 12.7961, 13.6277, -34.8796, 24.2222)
 
 [node name="rochers" type="Node2D" parent="decor"]
 
-[node name="roche01" parent="decor/rochers" instance=ExtResource( 20 )]
-position = Vector2( 972.861, 1143.91 )
-z_index = 571
+[node name="roche01" parent="decor/rochers" instance=ExtResource("20")]
+z_index = 161
 z_as_relative = false
+position = Vector2(1404.4, 323.395)
 
-[node name="roche03" parent="decor/rochers" instance=ExtResource( 21 )]
-position = Vector2( 922.971, 983.552 )
-z_index = 491
+[node name="roche03" parent="decor/rochers" instance=ExtResource("21")]
+z_index = 282
 z_as_relative = false
+position = Vector2(1506.55, 564.786)
 
-[node name="roche02" parent="decor/rochers" instance=ExtResource( 22 )]
-position = Vector2( 1250.82, 1019.19 )
-z_index = 509
+[node name="roche07" parent="decor/rochers" instance=ExtResource("21")]
+z_index = 543
 z_as_relative = false
+position = Vector2(679.111, 1086.14)
 
-[node name="lac" type="Sprite" parent="decor"]
-position = Vector2( 2502.37, 2506.81 )
+[node name="roche02" parent="decor/rochers" instance=ExtResource("22")]
+z_index = 637
+z_as_relative = false
+position = Vector2(265.289, 1274.82)
+
+[node name="roche13" parent="decor/rochers" instance=ExtResource("22")]
+z_index = 251
+z_as_relative = false
+position = Vector2(2572.12, 502.733)
+
+[node name="roche14" parent="decor/rochers" instance=ExtResource("22")]
+z_index = 103
+z_as_relative = false
+position = Vector2(3028.95, 206.357)
+scale = Vector2(-0.5, 0.5)
+
+[node name="roche08" parent="decor/rochers" instance=ExtResource("20")]
+z_index = 1520
+z_as_relative = false
+position = Vector2(155.607, 3041.09)
+scale = Vector2(0.502637, 0.502637)
+
+[node name="roche09" parent="decor/rochers" instance=ExtResource("21")]
+z_index = 1759
+z_as_relative = false
+position = Vector2(96.5035, 3518.76)
+
+[node name="roche11" parent="decor/rochers" instance=ExtResource("21")]
+z_index = 1338
+z_as_relative = false
+position = Vector2(1368.57, 2676.71)
+
+[node name="roche10" parent="decor/rochers" instance=ExtResource("22")]
+z_index = 1553
+z_as_relative = false
+position = Vector2(81.8509, 3107.89)
+
+[node name="roche12" parent="decor/rochers" instance=ExtResource("22")]
+z_index = 1301
+z_as_relative = false
+position = Vector2(1455.43, 2603.4)
+scale = Vector2(0.584224, 0.606389)
+
+[node name="roche04" parent="decor/rochers" instance=ExtResource("20")]
+z_index = 301
+z_as_relative = false
+position = Vector2(2993.89, 602.265)
+scale = Vector2(-0.36301, 0.362318)
+
+[node name="roche05" parent="decor/rochers" instance=ExtResource("21")]
+z_index = 234
+z_as_relative = false
+position = Vector2(3191.25, 468.769)
+scale = Vector2(0.374268, 0.374268)
+
+[node name="roche06" parent="decor/rochers" instance=ExtResource("22")]
+z_index = 435
+z_as_relative = false
+position = Vector2(3829.41, 870.858)
+
+[node name="lac" type="Sprite2D" parent="decor"]
 z_index = -3000
 z_as_relative = false
-texture = ExtResource( 9 )
-script = ExtResource( 28 )
+position = Vector2(2617.21, 2474.82)
+texture = ExtResource("9")
+script = ExtResource("28")
 
 [node name="Area2D" type="Area2D" parent="decor/lac"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="decor/lac/Area2D"]
 visible = false
-position = Vector2( -1.48047, -83.749 )
-shape = SubResource( 2 )
+position = Vector2(-1.48047, -83.749)
+shape = SubResource("2")
 
-[node name="Light2D" type="Light2D" parent="decor/lac"]
-texture = ExtResource( 27 )
-mode = 3
+[node name="PointLight2D" type="PointLight2D" parent="decor/lac"]
 range_z_min = -3800
 range_z_max = 0
 range_item_cull_mask = 2
-__meta__ = {
-"_edit_group_": true,
-"_edit_lock_": true
-}
+texture = ExtResource("27")
 
-[node name="reflet sprite perso" parent="decor/lac/Light2D" instance=ExtResource( 26 )]
-visible = false
-light_mask = 2
-material = SubResource( 3 )
-position = Vector2( -2172.3, 920.71 )
-scale = Vector2( 1, -1 )
+[node name="nenuphares2" type="Sprite2D" parent="decor/lac"]
+position = Vector2(-589.397, 100.133)
+texture = ExtResource("26")
+
+[node name="nenuphares4" type="Sprite2D" parent="decor/lac"]
+position = Vector2(204.183, 306.666)
+texture = ExtResource("26")
+
+[node name="nenuphares3" type="Sprite2D" parent="decor/lac"]
+position = Vector2(68.3652, -509.364)
+scale = Vector2(-1, 1)
+texture = ExtResource("26")
 
 [node name="zones boussole" type="Node2D" parent="decor"]
 
 [node name="1 droite" type="Node2D" parent="decor/zones boussole"]
 
-[node name="Node2D2" type="Node2D" parent="decor/zones boussole/1 droite" groups=[
-"cibleBoussole",
-]]
-position = Vector2( 2590.4, 2156.98 )
+[node name="Node2D2" type="Node2D" parent="decor/zones boussole/1 droite" groups=["cibleBoussole"]]
+position = Vector2(2590.4, 2156.98)
 
-[node name="Node2D" type="Node2D" parent="decor/zones boussole/1 droite" groups=[
-"cibleBoussole",
-]]
-position = Vector2( 3457.22, 856.746 )
+[node name="Node2D" type="Node2D" parent="decor/zones boussole/1 droite" groups=["cibleBoussole"]]
+position = Vector2(3457.22, 856.746)
 
-[node name="Node2D3" type="Node2D" parent="decor/zones boussole/1 droite" groups=[
-"cibleBoussole",
-]]
-position = Vector2( 3336.27, 3306.03 )
+[node name="Node2D3" type="Node2D" parent="decor/zones boussole/1 droite" groups=["cibleBoussole"]]
+position = Vector2(3336.27, 3306.03)
 
-[node name="Node2D4" type="Node2D" parent="decor/zones boussole/1 droite" groups=[
-"cibleBoussole",
-]]
-position = Vector2( 2116.67, 1370.79 )
+[node name="Node2D4" type="Node2D" parent="decor/zones boussole/1 droite" groups=["cibleBoussole"]]
+position = Vector2(2116.67, 1370.79)
 
-[node name="Node2D5" type="Node2D" parent="decor/zones boussole/1 droite" groups=[
-"cibleBoussole",
-]]
-position = Vector2( 2116.67, 3497.54 )
+[node name="Node2D5" type="Node2D" parent="decor/zones boussole/1 droite" groups=["cibleBoussole"]]
+position = Vector2(2116.67, 3497.54)
 
 [node name="1 gauche" type="Node2D" parent="decor/zones boussole"]
 
-[node name="Node2D6" type="Node2D" parent="decor/zones boussole/1 gauche" groups=[
-"cibleBoussole",
-]]
-position = Vector2( 809.223, 1896.75 )
+[node name="Node2D6" type="Node2D" parent="decor/zones boussole/1 gauche" groups=["cibleBoussole"]]
+position = Vector2(809.223, 1896.75)
 
-[node name="Node2D7" type="Node2D" parent="decor/zones boussole/1 gauche" groups=[
-"cibleBoussole",
-]]
-position = Vector2( 345.223, 2680.75 )
+[node name="Node2D7" type="Node2D" parent="decor/zones boussole/1 gauche" groups=["cibleBoussole"]]
+position = Vector2(345.223, 2680.75)
 
-[node name="Node2D8" type="Node2D" parent="decor/zones boussole/1 gauche" groups=[
-"cibleBoussole",
-]]
-position = Vector2( 1721.22, 2528.75 )
+[node name="Node2D8" type="Node2D" parent="decor/zones boussole/1 gauche" groups=["cibleBoussole"]]
+position = Vector2(1721.22, 2528.75)
 
-[node name="Node2D9" type="Node2D" parent="decor/zones boussole/1 gauche" groups=[
-"cibleBoussole",
-]]
-position = Vector2( 1449.22, 3680.75 )
+[node name="Node2D9" type="Node2D" parent="decor/zones boussole/1 gauche" groups=["cibleBoussole"]]
+position = Vector2(1449.22, 3680.75)
 
-[node name="Node2D10" type="Node2D" parent="decor/zones boussole/1 gauche" groups=[
-"cibleBoussole",
-]]
-position = Vector2( 753.223, 664.746 )
+[node name="Node2D10" type="Node2D" parent="decor/zones boussole/1 gauche" groups=["cibleBoussole"]]
+position = Vector2(753.223, 664.746)
 
 [node name="sol" type="Node2D" parent="."]
 z_index = -4000
 
-[node name="fond_map" type="Sprite" parent="sol"]
-position = Vector2( 2000, 2000 )
-texture = ExtResource( 10 )
-__meta__ = {
-"_edit_lock_": true
-}
+[node name="fond_map" type="Sprite2D" parent="sol"]
+position = Vector2(2000, 2000)
+texture = ExtResource("10")
 
 [node name="monstres" type="Node2D" parent="."]
 
-[node name="montre bleu 1" parent="monstres" instance=ExtResource( 7 )]
+[node name="montre bleu 1" parent="monstres" instance=ExtResource("7")]
+position = Vector2(1901.59, 1015.74)
 
-[node name="lapin" parent="monstres" instance=ExtResource( 8 )]
-position = Vector2( 2080.62, 1935.52 )
+[node name="lapin" parent="monstres" instance=ExtResource("8")]
+position = Vector2(1706.44, 1935.52)
 reflet = true
 
-[node name="lapin2" parent="monstres" instance=ExtResource( 8 )]
-position = Vector2( 1756.79, 1916.47 )
+[node name="lapin2" parent="monstres" instance=ExtResource("8")]
+position = Vector2(2419.62, 2661.26)
 num_pr_save = 2
 reflet = true
 
-[node name="lapin3" parent="monstres" instance=ExtResource( 8 )]
-position = Vector2( 4296.71, 202.446 )
+[node name="lapin3" parent="monstres" instance=ExtResource("8")]
+position = Vector2(4296.71, 202.446)
 num_pr_save = 3
 
-[node name="lapin4" parent="monstres" instance=ExtResource( 8 )]
-position = Vector2( 4296.71, 621.053 )
+[node name="lapin4" parent="monstres" instance=ExtResource("8")]
+position = Vector2(4296.71, 621.053)
 num_pr_save = 4
 
-[node name="lapin5" parent="monstres" instance=ExtResource( 8 )]
-position = Vector2( 4302.37, 428.72 )
+[node name="lapin5" parent="monstres" instance=ExtResource("8")]
+position = Vector2(4302.37, 428.72)
 num_pr_save = 5
 
-[node name="monstre losange plante" parent="monstres" instance=ExtResource( 29 )]
-position = Vector2( 811.389, 1683.25 )
+[node name="monstre losange plante" parent="monstres" instance=ExtResource("29")]
+position = Vector2(811.389, 1683.25)
 
-[node name="losange petit" type="AnimatedSprite" parent="monstres"]
-position = Vector2( 1297.96, 1343.61 )
-frames = SubResource( 4 )
-frame = 1
+[node name="losange petit" type="AnimatedSprite2D" parent="monstres"]
+position = Vector2(848.781, 233.614)
+sprite_frames = SubResource("3")
+frame = 2
 
-[node name="mr ocarina" parent="monstres" instance=ExtResource( 49 )]
+[node name="mr ocarina" parent="monstres" instance=ExtResource("49")]
 
-[node name="plante boussole" parent="monstres" instance=ExtResource( 48 )]
-position = Vector2( 1066, 2838 )
+[node name="plante boussole" parent="monstres" instance=ExtResource("48")]
+position = Vector2(1066, 2838)
+
+[node name="herbes-lac" type="Sprite2D" parent="."]
+position = Vector2(2257.44, 2202.61)
+texture = ExtResource("47")
+
+[node name="herbes-lac2" type="Sprite2D" parent="."]
+position = Vector2(2783.07, 2886.82)
+scale = Vector2(-1, 1)
+texture = ExtResource("47")
+
+[node name="roseau2" parent="." instance=ExtResource("51")]
+z_index = 1134
+z_as_relative = false
+
+[node name="roseau3" parent="." instance=ExtResource("51")]
+z_index = 1118
+z_as_relative = false
+position = Vector2(1886.83, 2236.46)
+
+[node name="roseau4" parent="." instance=ExtResource("51")]
+z_index = 1140
+z_as_relative = false
+position = Vector2(1983.05, 2281)
+
+[node name="roseau5" parent="." instance=ExtResource("51")]
+z_index = 1242
+z_as_relative = false
+position = Vector2(1799.52, 2484.13)
+
+[node name="roseau6" parent="." instance=ExtResource("51")]
+z_index = 1097
+z_as_relative = false
+position = Vector2(3089.55, 2195.48)
+
+[node name="roseau7" parent="." instance=ExtResource("51")]
+z_index = 1189
+z_as_relative = false
+position = Vector2(3369.29, 2379)
+
+[node name="roseau8" parent="." instance=ExtResource("51")]
+z_index = 1209
+z_as_relative = false
+position = Vector2(3226.74, 2419.98)
+
+[node name="roseau9" parent="." instance=ExtResource("51")]
+z_index = 1256
+z_as_relative = false
+position = Vector2(3281.98, 2512.63)
+
+[node name="roseau10" parent="." instance=ExtResource("51")]
+z_index = 1562
+z_as_relative = false
+position = Vector2(2576.39, 3125.57)
+
+[node name="roseau11" parent="." instance=ExtResource("51")]
+z_index = 1589
+z_as_relative = false
+position = Vector2(2774.17, 3179.03)
+
+[node name="roseau12" parent="." instance=ExtResource("51")]
+z_index = 1523
+z_as_relative = false
+position = Vector2(3012.93, 3047.17)

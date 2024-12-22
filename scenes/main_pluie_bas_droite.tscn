@@ -1,17 +1,17 @@
 [gd_scene load_steps=14 format=2]
 
-[ext_resource path="res://sprites/decor/fond_map.jpg" type="Texture" id=1]
+[ext_resource path="res://sprites/decor/fond_map.jpg" type="Texture2D" id=1]
 [ext_resource path="res://obj/popPluie.tscn" type="PackedScene" id=2]
 [ext_resource path="res://obj/camera box.tscn" type="PackedScene" id=3]
 [ext_resource path="res://obj/perso.tscn" type="PackedScene" id=4]
 [ext_resource path="res://obj/bords4Directions.tscn" type="PackedScene" id=5]
 [ext_resource path="res://obj/decor/fleur jaune grosse.tscn" type="PackedScene" id=6]
 [ext_resource path="res://obj/interactions/multi blop.tscn" type="PackedScene" id=7]
-[ext_resource path="res://sprites/monstres/lvlPluie_ mr parapluie/mrParapluie.png" type="Texture" id=8]
+[ext_resource path="res://sprites/monstres/lvlPluie_ mr parapluie/mrParapluie.png" type="Texture2D" id=8]
 [ext_resource path="res://obj/interactions/zone change pluie.tscn" type="PackedScene" id=9]
 [ext_resource path="res://obj/interactions/lapin.tscn" type="PackedScene" id=10]
 [ext_resource path="res://obj/UI.tscn" type="PackedScene" id=11]
-[ext_resource path="res://sprites/monstres/lvlPluie mouton jaune/monstres-mouton-jaune.png" type="Texture" id=12]
+[ext_resource path="res://sprites/monstres/lvlPluie mouton jaune/monstres-mouton-jaune.png" type="Texture2D" id=12]
 [ext_resource path="res://scripts/scene.gd" type="Script" id=13]
 
 [node name="scene" type="Node2D"]
@@ -25,11 +25,11 @@ num_scene = 4
 [node name="camera box" parent="." instance=ExtResource( 3 )]
 
 [node name="perso" parent="." instance=ExtResource( 4 )]
-position = Vector2( 3111.62, 554.258 )
+position = Vector2( 3361.07, 188.989 )
 
 [node name="bords" parent="." instance=ExtResource( 5 )]
 
-[node name="fond_map" type="Sprite" parent="."]
+[node name="fond_map" type="Sprite2D" parent="."]
 position = Vector2( 1990.51, 1987.57 )
 z_index = -4000
 texture = ExtResource( 1 )
@@ -49,14 +49,15 @@ deltaGouttesMax = 0.2
 position = Vector2( 3673.22, 612.652 )
 scale = Vector2( -1, 1 )
 
-[node name="mrParapluie" type="Sprite" parent="montres"]
-position = Vector2( 2665.8, 712.488 )
+[node name="mrParapluie" type="Sprite2D" parent="montres"]
+position = Vector2( 2323.7, 491.545 )
 texture = ExtResource( 8 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="montres"]
 position = Vector2( 3296.58, 229.074 )
 
-[node name="monstres-mouton-jaune" type="Sprite" parent="montres/StaticBody2D"]
+[node name="monstres-mouton-jaune" type="Sprite2D" parent="montres/StaticBody2D"]
+position = Vector2( -598.276, 516.138 )
 texture = ExtResource( 12 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="montres/StaticBody2D"]
@@ -97,4 +98,4 @@ _min = 0.1
 _max = 0.4
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="decor/zone change pluie"]
-polygon = PoolVector2Array( -339.542, 170.339, -93.9316, 346.538, 194.394, 442.647, 488.058, 405.271, 525.434, 175.679, 370.593, 20.8374, 92.946, -134.004, -141.986, -166.04, -366.239, -85.9497 )
+polygon = PackedVector2Array( -339.542, 170.339, -93.9316, 346.538, 194.394, 442.647, 488.058, 405.271, 525.434, 175.679, 370.593, 20.8374, 92.946, -134.004, -141.986, -166.04, -366.239, -85.9497 )

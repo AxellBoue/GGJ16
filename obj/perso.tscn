@@ -1,24 +1,189 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=33 format=3 uid="uid://ifpmleci5qhg"]
 
-[ext_resource path="res://scripts/perso.gd" type="Script" id=1]
-[ext_resource path="res://obj/sprite perso.tscn" type="PackedScene" id=2]
-[ext_resource path="res://obj/ParticlesFleurs.tscn" type="PackedScene" id=27]
+[ext_resource type="Script" path="res://scripts/perso.gd" id="1"]
+[ext_resource type="PackedScene" path="res://obj/sprite perso.tscn" id="2"]
+[ext_resource type="Shader" path="res://shaders/reflet.gdshader" id="3"]
+[ext_resource type="Texture2D" uid="uid://cey7edmb680pm" path="res://sprites/perso/coupPied1.png" id="4_u8vw7"]
+[ext_resource type="Texture2D" uid="uid://0k5io660r2yj" path="res://sprites/perso/coupPied2.png" id="5_84abm"]
+[ext_resource type="Texture2D" uid="uid://b8hat7khkmxb3" path="res://sprites/perso/coupPied3.png" id="6_cq8pn"]
+[ext_resource type="Texture2D" uid="uid://fs3g06ems16m" path="res://sprites/perso/dos.png" id="7_8wfku"]
+[ext_resource type="Texture2D" uid="uid://bgse1kxewcdv" path="res://sprites/perso/dos1.png" id="8_5v5u2"]
+[ext_resource type="Texture2D" uid="uid://xpdphuqmvr2p" path="res://sprites/perso/dos2.png" id="9_4tssd"]
+[ext_resource type="Texture2D" uid="uid://et6f0yjsrcig" path="res://sprites/perso/dos3.png" id="10_mdtbf"]
+[ext_resource type="Texture2D" uid="uid://ci3r4yxycc2di" path="res://sprites/perso/dos4.png" id="11_mw3fq"]
+[ext_resource type="Texture2D" uid="uid://bl1ia3okx0psq" path="res://sprites/perso/persosProfil.png" id="12_qbgin"]
+[ext_resource type="Texture2D" uid="uid://bcirisgfbadgm" path="res://sprites/perso/marcheProfil1.png" id="13_d61a2"]
+[ext_resource type="Texture2D" uid="uid://c3mot630a78v6" path="res://sprites/perso/marcheProfil2.png" id="14_2yx0a"]
+[ext_resource type="Texture2D" uid="uid://cx6hs8ly3ew1g" path="res://sprites/perso/marcheProfil3.png" id="15_gu4ga"]
+[ext_resource type="Texture2D" uid="uid://efwu31y1k2kg" path="res://sprites/perso/marcheProfil4.png" id="16_qyc14"]
+[ext_resource type="Texture2D" uid="uid://bw6s0w4r612b8" path="res://sprites/perso/persosFace.png" id="17_3xqah"]
+[ext_resource type="Texture2D" uid="uid://q8y0qrj7c25f" path="res://sprites/perso/marcheFace1.png" id="18_tspek"]
+[ext_resource type="Texture2D" uid="uid://d2cyg2r2sqbxu" path="res://sprites/perso/marcheFace2.png" id="19_ruyjw"]
+[ext_resource type="Texture2D" uid="uid://cnk2hspm38mm8" path="res://sprites/perso/marcheFace3.png" id="20_sr41c"]
+[ext_resource type="Texture2D" uid="uid://bcvh110wjek5u" path="res://sprites/perso/marcheFace4.png" id="21_jvoot"]
+[ext_resource type="Texture2D" uid="uid://eggu204va6g0" path="res://sprites/perso/saut1.png" id="22_qm1ww"]
+[ext_resource type="Texture2D" uid="uid://w4r27qrcdiwc" path="res://sprites/perso/saut2.png" id="23_bnfj2"]
+[ext_resource type="Texture2D" uid="uid://douaj4hkm11mc" path="res://sprites/perso/saut3.png" id="24_56048"]
+[ext_resource type="Texture2D" uid="uid://drm3aw35nrjsr" path="res://sprites/perso/saut4.png" id="25_af5ey"]
+[ext_resource type="Texture2D" uid="uid://bihtn4wrch4ep" path="res://sprites/perso/saut5.png" id="26_1uml3"]
+[ext_resource type="PackedScene" path="res://obj/ParticlesFleurs.tscn" id="27"]
+[ext_resource type="Texture2D" uid="uid://bmqibyboiiguj" path="res://sprites/perso/saut6.png" id="27_aajc7"]
+[ext_resource type="Texture2D" uid="uid://tvd7kwx7fkmf" path="res://sprites/perso/saut7.png" id="28_7oghw"]
 
-[sub_resource type="CircleShape2D" id=1]
+[sub_resource type="SpriteFrames" id="1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_u8vw7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_84abm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_cq8pn")
+}],
+"loop": false,
+"name": &"coupPied",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_8wfku")
+}],
+"loop": true,
+"name": &"dosIdle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_5v5u2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_4tssd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_mdtbf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_mw3fq")
+}],
+"loop": true,
+"name": &"dosMarche",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_qbgin")
+}],
+"loop": true,
+"name": &"droiteIdle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_d61a2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_2yx0a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_gu4ga")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_qyc14")
+}],
+"loop": true,
+"name": &"droiteMarche",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_3xqah")
+}],
+"loop": true,
+"name": &"faceIdle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_tspek")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_ruyjw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_sr41c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_jvoot")
+}],
+"loop": true,
+"name": &"faceMarche",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("22_qm1ww")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_bnfj2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_56048")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_af5ey")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_af5ey")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_1uml3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_1uml3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_aajc7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_7oghw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_7oghw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_7oghw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_7oghw")
+}],
+"loop": false,
+"name": &"saut",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8mqcg"]
 radius = 25.0
 
-[node name="perso" type="KinematicBody2D"]
-script = ExtResource( 1 )
-particules = ExtResource( 27 )
+[sub_resource type="ShaderMaterial" id="2"]
+shader = ExtResource("3")
 
-[node name="sprite perso" parent="." instance=ExtResource( 2 )]
+[node name="perso" type="CharacterBody2D"]
+script = ExtResource("1")
+vitesse = 500
+particules = ExtResource("27")
+
+[node name="sprite perso" parent="." instance=ExtResource("2")]
+sprite_frames = SubResource("1")
+animation = &"faceIdle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, -10 )
-shape = SubResource( 1 )
+position = Vector2(0, -10)
+shape = SubResource("CircleShape2D_8mqcg")
 
 [node name="popParicules" type="Node2D" parent="."]
-position = Vector2( 0, -121.436 )
+position = Vector2(0, -121.436)
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
@@ -26,17 +191,28 @@ one_shot = true
 [node name="zones pop lapins" type="Node2D" parent="."]
 
 [node name="pop1" type="Node2D" parent="zones pop lapins"]
-position = Vector2( -44.5953, -49.3522 )
+position = Vector2(-44.5953, -49.3522)
 
 [node name="pop2" type="Node2D" parent="zones pop lapins"]
-position = Vector2( 46.3792, -50.5414 )
+position = Vector2(46.3792, -50.5414)
 
 [node name="pop3" type="Node2D" parent="zones pop lapins"]
-position = Vector2( 58.2713, 10.7029 )
+position = Vector2(58.2713, 10.7029)
 
 [node name="pop4" type="Node2D" parent="zones pop lapins"]
-position = Vector2( -1.78381, 47.5684 )
+position = Vector2(-1.78381, 47.5684)
 
 [node name="pop5" type="Node2D" parent="zones pop lapins"]
-position = Vector2( -55.8928, 3.56763 )
+position = Vector2(-55.8928, 3.56763)
+
+[node name="reflet" parent="." instance=ExtResource("2")]
+visible = false
+light_mask = 2
+z_index = -2500
+z_as_relative = false
+material = SubResource("2")
+scale = Vector2(1, -1)
+sprite_frames = SubResource("1")
+animation = &"faceIdle"
+
 [connection signal="animation_finished" from="sprite perso" to="." method="fin_anim"]

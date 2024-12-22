@@ -1,18 +1,18 @@
 [gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://scripts/monstres/multiBlop.gd" type="Script" id=1]
-[ext_resource path="res://sprites/monstres/lvlPluie multiblob/monstre-multi-blop01.png" type="Texture" id=2]
-[ext_resource path="res://sprites/monstres/lvlPluie multiblob/monstre-multi-blop07.png" type="Texture" id=3]
-[ext_resource path="res://sprites/monstres/lvlPluie multiblob/monstre-multi-blop04.png" type="Texture" id=4]
-[ext_resource path="res://sprites/monstres/lvlPluie multiblob/monstre-multi-blop11.png" type="Texture" id=5]
-[ext_resource path="res://sprites/monstres/lvlPluie multiblob/monstre-multi-blop05.png" type="Texture" id=6]
-[ext_resource path="res://sprites/monstres/lvlPluie multiblob/monstre-multi-blop09.png" type="Texture" id=7]
-[ext_resource path="res://sprites/monstres/lvlPluie multiblob/monstre-multi-blop03.png" type="Texture" id=8]
-[ext_resource path="res://sprites/monstres/lvlPluie multiblob/monstre-multi-blop10.png" type="Texture" id=9]
-[ext_resource path="res://sprites/monstres/lvlPluie multiblob/monstre-multi-blop11cligne.png" type="Texture" id=10]
-[ext_resource path="res://sprites/monstres/lvlPluie multiblob/monstre-multi-blop02.png" type="Texture" id=11]
-[ext_resource path="res://sprites/monstres/lvlPluie multiblob/monstre-multi-blop08.png" type="Texture" id=12]
-[ext_resource path="res://sprites/monstres/lvlPluie multiblob/monstre-multi-blop06.png" type="Texture" id=13]
+[ext_resource path="res://sprites/monstres/lvlPluie multiblob/monstre-multi-blop01.png" type="Texture2D" id=2]
+[ext_resource path="res://sprites/monstres/lvlPluie multiblob/monstre-multi-blop07.png" type="Texture2D" id=3]
+[ext_resource path="res://sprites/monstres/lvlPluie multiblob/monstre-multi-blop04.png" type="Texture2D" id=4]
+[ext_resource path="res://sprites/monstres/lvlPluie multiblob/monstre-multi-blop11.png" type="Texture2D" id=5]
+[ext_resource path="res://sprites/monstres/lvlPluie multiblob/monstre-multi-blop05.png" type="Texture2D" id=6]
+[ext_resource path="res://sprites/monstres/lvlPluie multiblob/monstre-multi-blop09.png" type="Texture2D" id=7]
+[ext_resource path="res://sprites/monstres/lvlPluie multiblob/monstre-multi-blop03.png" type="Texture2D" id=8]
+[ext_resource path="res://sprites/monstres/lvlPluie multiblob/monstre-multi-blop10.png" type="Texture2D" id=9]
+[ext_resource path="res://sprites/monstres/lvlPluie multiblob/monstre-multi-blop11cligne.png" type="Texture2D" id=10]
+[ext_resource path="res://sprites/monstres/lvlPluie multiblob/monstre-multi-blop02.png" type="Texture2D" id=11]
+[ext_resource path="res://sprites/monstres/lvlPluie multiblob/monstre-multi-blop08.png" type="Texture2D" id=12]
+[ext_resource path="res://sprites/monstres/lvlPluie multiblob/monstre-multi-blop06.png" type="Texture2D" id=13]
 
 [sub_resource type="SpriteFrames" id=3]
 animations = [ {
@@ -26,11 +26,11 @@ animations = [ {
 radius = 26.4347
 height = 126.187
 
-[node name="multi blop" type="KinematicBody2D"]
+[node name="multi blop" type="CharacterBody2D"]
 position = Vector2( 2904.59, 432.855 )
 script = ExtResource( 1 )
 
-[node name="multi-blob" type="AnimatedSprite" parent="."]
+[node name="multi-blob" type="AnimatedSprite2D" parent="."]
 frames = SubResource( 3 )
 frame = 8
 playing = true
@@ -45,4 +45,4 @@ shape = SubResource( 2 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
 visible = false
-polygon = PoolVector2Array( 6.1897, -83.8896, 99.8462, -80.7148, 145.087, -37.0613, 141.119, 34.3717, 70.4792, 53.4205, -88.2607, 48.6583, -133.502, 17.704, -136.677, -45.792, -77.1489, -80.7148 )
+polygon = PackedVector2Array( 6.1897, -83.8896, 99.8462, -80.7148, 145.087, -37.0613, 141.119, 34.3717, 70.4792, 53.4205, -88.2607, 48.6583, -133.502, 17.704, -136.677, -45.792, -77.1489, -80.7148 )

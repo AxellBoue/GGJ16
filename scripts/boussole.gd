@@ -1,10 +1,10 @@
 extends TextureRect
 
 var aiguille 
-onready var aiguille_1 = $"aiguille 1"
-onready var aiguille_double = $"aiguille double"
-onready var aiguille_etoile = $"aiguille etoile"
-onready var aiguille_rond = $"aiguille rond"
+@onready var aiguille_1 = $"aiguille 1"
+@onready var aiguille_double = $"aiguille double"
+@onready var aiguille_etoile = $"aiguille etoile"
+@onready var aiguille_rond = $"aiguille rond"
 var aiguille_array : Array
 var direction
 var rand = RandomNumberGenerator.new()
@@ -18,12 +18,12 @@ var tour_compte = false
 var sens_possible = [1,-1]
 var sens = 1
 
-onready var player = get_node("/root/scene/perso")
+@onready var player = get_node("/root/scene/perso")
 var cibles : Array
 var cible
 var look_at_cible = false
-export var temps_change_cible_min = 25
-export var temps_change_cible_max = 30
+@export var temps_change_cible_min = 25
+@export var temps_change_cible_max = 30
 var feedback = preload("res://obj/ParticlesEtoiles.tscn")
 
 
@@ -32,7 +32,7 @@ func _ready():
 	aiguille = aiguille_1
 	aiguille_array = [aiguille_1,aiguille_1,aiguille_1,aiguille_1,aiguille_double,aiguille_etoile,aiguille_rond]
 	rand.randomize()
-	$Timer.connect("timeout",self,"commence_a_tourner")
+	$Timer.connect("timeout", Callable(self, "commence_a_tourner"))
 	$Timer.wait_time = rand.randi_range(10,15)
 	$Timer.one_shot = true
 	cibles = get_tree().get_nodes_in_group("cibleBoussole")
@@ -41,11 +41,11 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if look_at_cible :
-		direction = rad2deg( atan2(cible.global_position.x - player.global_position.x,player.global_position.y - cible.global_position.y) )
-		aiguille.rect_rotation = direction
+		direction = rad_to_deg( atan2(cible.global_position.x - player.global_position.x,player.global_position.y - cible.global_position.y) )
+		aiguille.rotation = direction
 		if player.global_position.distance_to(cible.global_position) < 10:
 			$Timer.stop()
-			var f = feedback.instance()
+			var f = feedback.instantiate()
 			cible.add_child(f)
 			commence_a_tourner()
 	
@@ -56,12 +56,12 @@ func _process(delta):
 				vitesse_rot = - vitesse_max
 			if vitesse_rot >= vitesse_max :
 				vitesse_rot = vitesse_max
-		aiguille.rect_rotation += sens * delta * vitesse_rot
-		if aiguille.rect_rotation > 360 :
-			aiguille.rect_rotation = aiguille.rect_rotation - 360
-		if aiguille.rect_rotation < 0 :
-			aiguille.rect_rotation = 360 + aiguille.rect_rotation 
-		if !tour_compte && aiguille.rect_rotation >= direction - 2 && aiguille.rect_rotation <= direction + 2 :
+		aiguille.rotation += sens * delta * vitesse_rot
+		if aiguille.rotation > 360 :
+			aiguille.rotation = aiguille.rotation - 360
+		if aiguille.rotation < 0 :
+			aiguille.rotation = 360 + aiguille.rotation 
+		if !tour_compte && aiguille.rotation >= direction - 2 && aiguille.rotation <= direction + 2 :
 			if nombre_tour_faits >= nombre_tour :
 				if ralenti :
 					ralenti = false
@@ -75,7 +75,7 @@ func _process(delta):
 			else :
 				nombre_tour_faits += 1
 			tour_compte = true
-		if tour_compte && aiguille.rect_rotation < direction - 2 || aiguille.rect_rotation > direction + 2 :
+		if tour_compte && aiguille.rotation < direction - 2 || aiguille.rotation > direction + 2 :
 			tour_compte = false
 			
 func active():
@@ -87,7 +87,7 @@ func commence_a_tourner() :
 	look_at_cible = false
 	vitesse_rot = vitesse_max
 	cible = cibles[rand.randi_range(0,cibles.size()-1)]
-	direction = rad2deg(atan2(cible.global_position.x - player.global_position.x,player.global_position.y - cible.global_position.y) )
+	direction = rad_to_deg(atan2(cible.global_position.x - player.global_position.x,player.global_position.y - cible.global_position.y) )
 	if direction > 360 : 
 		direction -= 360
 	if direction < 0 :
@@ -108,5 +108,5 @@ func change_aiguille():
 	aiguille = aiguille_array[r]
 	if r >= 5 : #numéro de l'aiguille étoile ou rond
 		look_at_cible = false
-		aiguille.rect_rotation = 0
+		aiguille.rotation = 0
 		aiguille = aiguille_1

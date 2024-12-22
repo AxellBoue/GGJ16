@@ -1,66 +1,131 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=30 format=3 uid="uid://djmo8reibxxrv"]
 
-[ext_resource path="res://sprites/decor/sapin_bouge/sapin_bouge0014.png" type="Texture" id=1]
-[ext_resource path="res://sprites/decor/sapin_bouge/sapin_bouge0011.png" type="Texture" id=2]
-[ext_resource path="res://sprites/decor/sapin_bouge/sapin_bouge0004.png" type="Texture" id=3]
-[ext_resource path="res://sprites/decor/sapin_bouge/sapin_bouge0013.png" type="Texture" id=4]
-[ext_resource path="res://sprites/decor/sapin_bouge/sapin_bouge0016.png" type="Texture" id=5]
-[ext_resource path="res://sprites/decor/sapin_bouge/sapin_bouge0006.png" type="Texture" id=6]
-[ext_resource path="res://sprites/decor/sapin_bouge/sapin_bouge0002.png" type="Texture" id=7]
-[ext_resource path="res://sprites/decor/sapin_bouge/sapin_bouge0001.png" type="Texture" id=8]
-[ext_resource path="res://sprites/decor/sapin_bouge/sapin_bouge0005.png" type="Texture" id=9]
-[ext_resource path="res://sprites/decor/sapin_bouge/sapin_bouge0007.png" type="Texture" id=10]
-[ext_resource path="res://sprites/decor/sapin_bouge/sapin_bouge0009.png" type="Texture" id=11]
-[ext_resource path="res://sprites/decor/sapin_bouge/sapin_bouge0000.png" type="Texture" id=12]
-[ext_resource path="res://sprites/decor/sapin_plantation/sapin0002.png" type="Texture" id=13]
-[ext_resource path="res://sprites/decor/sapin_bouge/sapin_bouge0008.png" type="Texture" id=14]
-[ext_resource path="res://sprites/decor/sapin_plantation/sapin0001.png" type="Texture" id=15]
-[ext_resource path="res://sprites/decor/sapin_plantation/sapin0004.png" type="Texture" id=16]
-[ext_resource path="res://sprites/decor/sapin_bouge/sapin_bouge0015.png" type="Texture" id=17]
-[ext_resource path="res://sprites/decor/sapin_bouge/sapin_bouge0010.png" type="Texture" id=18]
-[ext_resource path="res://sprites/decor/sapin_bouge/sapin_bouge0012.png" type="Texture" id=19]
-[ext_resource path="res://sprites/decor/sapin_plantation/sapin0005.png" type="Texture" id=20]
-[ext_resource path="res://sprites/decor/sapin_plantation/sapin0003.png" type="Texture" id=21]
-[ext_resource path="res://sprites/decor/sapin_bouge/sapin_bouge0003.png" type="Texture" id=22]
-[ext_resource path="res://sprites/decor/brume_texture.jpg" type="Texture" id=23]
-[ext_resource path="res://scripts/arbreBrume.gd" type="Script" id=24]
-[ext_resource path="res://brumeObjetsVerticaux.shader" type="Shader" id=25]
-[ext_resource path="res://sprites/decor/brume-map.png" type="Texture" id=26]
+[ext_resource type="Texture2D" uid="uid://daymuqjt3ppx" path="res://sprites/decor/sapin_bouge/sapin_bouge0014.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://dqvl046ipa7p0" path="res://sprites/decor/sapin_bouge/sapin_bouge0011.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://c7lliqtaqjj50" path="res://sprites/decor/sapin_bouge/sapin_bouge0004.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://du3wd3y00bgl7" path="res://sprites/decor/sapin_bouge/sapin_bouge0013.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://dr7lu0700t4sr" path="res://sprites/decor/sapin_bouge/sapin_bouge0016.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://er8oenusnlyy" path="res://sprites/decor/sapin_bouge/sapin_bouge0006.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://bk4qwn7w3hitl" path="res://sprites/decor/sapin_bouge/sapin_bouge0002.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://dohhprbvhc5co" path="res://sprites/decor/sapin_bouge/sapin_bouge0001.png" id="8"]
+[ext_resource type="Texture2D" uid="uid://b62sfs7slg5jc" path="res://sprites/decor/sapin_bouge/sapin_bouge0005.png" id="9"]
+[ext_resource type="Texture2D" uid="uid://b7oskxatx626d" path="res://sprites/decor/sapin_bouge/sapin_bouge0007.png" id="10"]
+[ext_resource type="Texture2D" uid="uid://bci1gpljtqtyq" path="res://sprites/decor/sapin_bouge/sapin_bouge0009.png" id="11"]
+[ext_resource type="Texture2D" uid="uid://dnvlloeaxlutg" path="res://sprites/decor/sapin_bouge/sapin_bouge0000.png" id="12"]
+[ext_resource type="Texture2D" uid="uid://b2s7xcglpjqpe" path="res://sprites/decor/sapin_plantation/sapin0002.png" id="13"]
+[ext_resource type="Texture2D" uid="uid://xqund6fcrj20" path="res://sprites/decor/sapin_bouge/sapin_bouge0008.png" id="14"]
+[ext_resource type="Texture2D" uid="uid://dhldd8w6mra5m" path="res://sprites/decor/sapin_plantation/sapin0001.png" id="15"]
+[ext_resource type="Texture2D" uid="uid://clkrnpotutnc0" path="res://sprites/decor/sapin_plantation/sapin0004.png" id="16"]
+[ext_resource type="Texture2D" uid="uid://cmyvhh0v2wodb" path="res://sprites/decor/sapin_bouge/sapin_bouge0015.png" id="17"]
+[ext_resource type="Texture2D" uid="uid://8q07ax3ogj3" path="res://sprites/decor/sapin_bouge/sapin_bouge0010.png" id="18"]
+[ext_resource type="Texture2D" uid="uid://dbo3h427dtovh" path="res://sprites/decor/sapin_bouge/sapin_bouge0012.png" id="19"]
+[ext_resource type="Texture2D" uid="uid://muj6hd3jumkn" path="res://sprites/decor/sapin_plantation/sapin0005.png" id="20"]
+[ext_resource type="Texture2D" uid="uid://0blx82katp8w" path="res://sprites/decor/sapin_plantation/sapin0003.png" id="21"]
+[ext_resource type="Texture2D" uid="uid://beasgxdtbvxps" path="res://sprites/decor/sapin_bouge/sapin_bouge0003.png" id="22"]
+[ext_resource type="Texture2D" uid="uid://cgpnmr0st0apw" path="res://sprites/decor/brume_texture.jpg" id="23"]
+[ext_resource type="Script" path="res://scripts/arbreBrume.gd" id="24"]
+[ext_resource type="Shader" path="res://brumeObjetsVerticaux.gdshader" id="25"]
+[ext_resource type="Texture2D" uid="uid://duvyp6p4iy31h" path="res://sprites/decor/brume-map.png" id="26"]
 
-[sub_resource type="ShaderMaterial" id=1]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8eieo"]
 resource_local_to_scene = true
-shader = ExtResource( 25 )
-shader_param/distancePlayer = 425.06
-shader_param/global_transform = null
-shader_param/brumeTex = ExtResource( 23 )
-shader_param/brume_intensity_tex = ExtResource( 26 )
+shader = ExtResource("25")
+shader_parameter/distancePlayer = 425.06
+shader_parameter/global_transform = null
+shader_parameter/brumeTex = ExtResource("23")
+shader_parameter/brume_intensity_tex = ExtResource("26")
 
-[sub_resource type="SpriteFrames" id=2]
-animations = [ {
-"frames": [ ExtResource( 12 ), ExtResource( 8 ), ExtResource( 7 ), ExtResource( 22 ), ExtResource( 3 ), ExtResource( 9 ), ExtResource( 6 ), ExtResource( 10 ), ExtResource( 14 ), ExtResource( 11 ), ExtResource( 18 ), ExtResource( 2 ), ExtResource( 19 ), ExtResource( 4 ), ExtResource( 1 ), ExtResource( 17 ), ExtResource( 5 ) ],
+[sub_resource type="SpriteFrames" id="2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5")
+}],
 "loop": true,
-"name": "default",
+"name": &"default",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 15 ), ExtResource( 13 ), ExtResource( 21 ), ExtResource( 16 ), ExtResource( 20 ) ],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20")
+}],
 "loop": false,
-"name": "pousse",
+"name": &"pousse",
 "speed": 0.1
-} ]
+}]
 
-[sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 12.8543, 10 )
+[sub_resource type="RectangleShape2D" id="3"]
+size = Vector2(25.7086, 20)
 
-[node name="sapin brume" type="AnimatedSprite"]
-material = SubResource( 1 )
-frames = SubResource( 2 )
+[node name="sapin brume" type="AnimatedSprite2D"]
+material = SubResource("ShaderMaterial_8eieo")
+sprite_frames = SubResource("2")
 frame = 15
-playing = true
-offset = Vector2( -1.08839, -168.898 )
-script = ExtResource( 24 )
+offset = Vector2(-1.08839, -168.898)
+script = ExtResource("24")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( -0.707092, -6.36395 )
-shape = SubResource( 3 )
+position = Vector2(-0.707092, -6.36395)
+shape = SubResource("3")

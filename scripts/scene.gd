@@ -1,7 +1,7 @@
 extends Node2D
 
 
-export var num_scene = 1
+@export var num_scene = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

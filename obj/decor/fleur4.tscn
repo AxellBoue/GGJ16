@@ -1,9 +1,9 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://scripts/z_index.gd" type="Script" id=1]
-[ext_resource path="res://sprites/decor/décors_fleurs/fleur4.png" type="Texture" id=2]
+[ext_resource path="res://sprites/decor/décors_fleurs/fleur4.png" type="Texture2D" id=2]
 
-[node name="fleur4" type="Sprite"]
+[node name="fleur4" type="Sprite2D"]
 position = Vector2( 542.622, 395.811 )
 texture = ExtResource( 2 )
 offset = Vector2( -1.41791, -37.8331 )

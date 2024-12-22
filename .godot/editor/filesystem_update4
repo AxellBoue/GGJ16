@@ -1,0 +1,7 @@
+res://default_env.tres
+res://obj/decor/sapin brume.tscn
+res://shaders/pluie.gdshader
+res://shaders/reflet.gdshader
+res://shaders/lampadaire_brume.gdshader
+res://shaders/brume_sol.gdshader
+res://shaders/brumeObjetsVerticaux.gdshader

@@ -1,241 +1,343 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=53 format=3 uid="uid://cwxhugxk5ilb2"]
 
-[ext_resource path="res://obj/camera box.tscn" type="PackedScene" id=1]
-[ext_resource path="res://obj/perso.tscn" type="PackedScene" id=2]
-[ext_resource path="res://sprites/decor/fond_map.jpg" type="Texture" id=3]
-[ext_resource path="res://obj/bords4Directions.tscn" type="PackedScene" id=4]
-[ext_resource path="res://obj/decor/sapin brume.tscn" type="PackedScene" id=5]
-[ext_resource path="res://sprites/decor/brume_texture.jpg" type="Texture" id=6]
-[ext_resource path="res://obj/popPluie.tscn" type="PackedScene" id=7]
-[ext_resource path="res://obj/interactions/lampadaire petit.tscn" type="PackedScene" id=8]
-[ext_resource path="res://obj/interactions/lampadaire grand.tscn" type="PackedScene" id=9]
-[ext_resource path="res://brumeObjetsVerticaux.shader" type="Shader" id=10]
-[ext_resource path="res://scripts/solBrume.gd" type="Script" id=11]
-[ext_resource path="res://shaders/brume_sol.shader" type="Shader" id=12]
-[ext_resource path="res://sprites/decor/brume-map.png" type="Texture" id=13]
-[ext_resource path="res://obj/UI.tscn" type="PackedScene" id=14]
-[ext_resource path="res://obj/interactions/lapin.tscn" type="PackedScene" id=15]
-[ext_resource path="res://sprites/decor/marais maison/maison-marais.png" type="Texture" id=16]
-[ext_resource path="res://sprites/decor/marais maison/maison-marais-barieres.png" type="Texture" id=17]
-[ext_resource path="res://sprites/decor/marais maison/maison-marais-bariere-gauche.png" type="Texture" id=18]
-[ext_resource path="res://obj/interactions/lampadaire rouge.tscn" type="PackedScene" id=19]
-[ext_resource path="res://scripts/scene.gd" type="Script" id=20]
+[ext_resource type="PackedScene" path="res://obj/camera box.tscn" id="1"]
+[ext_resource type="PackedScene" uid="uid://ifpmleci5qhg" path="res://obj/perso.tscn" id="2"]
+[ext_resource type="Texture2D" uid="uid://d3kjs3vkwr1jx" path="res://sprites/decor/fond_map.jpg" id="3"]
+[ext_resource type="PackedScene" path="res://obj/bords4Directions.tscn" id="4"]
+[ext_resource type="PackedScene" path="res://obj/decor/sapin brume.tscn" id="5"]
+[ext_resource type="Texture2D" uid="uid://cgpnmr0st0apw" path="res://sprites/decor/brume_texture.jpg" id="6"]
+[ext_resource type="PackedScene" path="res://obj/popPluie.tscn" id="7"]
+[ext_resource type="PackedScene" path="res://obj/interactions/lampadaire petit.tscn" id="8"]
+[ext_resource type="PackedScene" path="res://obj/interactions/lampadaire grand.tscn" id="9"]
+[ext_resource type="Shader" path="res://brumeObjetsVerticaux.gdshader" id="10"]
+[ext_resource type="Script" path="res://scripts/solBrume.gd" id="11"]
+[ext_resource type="Shader" path="res://shaders/brume_sol.gdshader" id="12"]
+[ext_resource type="Texture2D" uid="uid://duvyp6p4iy31h" path="res://sprites/decor/brume-map.png" id="13"]
+[ext_resource type="PackedScene" path="res://obj/UI.tscn" id="14"]
+[ext_resource type="Texture2D" uid="uid://dnvlloeaxlutg" path="res://sprites/decor/sapin_bouge/sapin_bouge0000.png" id="14_rph7v"]
+[ext_resource type="PackedScene" path="res://obj/interactions/lapin.tscn" id="15"]
+[ext_resource type="Texture2D" uid="uid://dohhprbvhc5co" path="res://sprites/decor/sapin_bouge/sapin_bouge0001.png" id="15_2botr"]
+[ext_resource type="Texture2D" uid="uid://c2g8m4l5wlar2" path="res://sprites/decor/marais maison/maison-marais.png" id="16"]
+[ext_resource type="Texture2D" uid="uid://bk4qwn7w3hitl" path="res://sprites/decor/sapin_bouge/sapin_bouge0002.png" id="16_giadc"]
+[ext_resource type="Texture2D" uid="uid://spb1il1vffmv" path="res://sprites/decor/marais maison/maison-marais-barieres.png" id="17"]
+[ext_resource type="Texture2D" uid="uid://beasgxdtbvxps" path="res://sprites/decor/sapin_bouge/sapin_bouge0003.png" id="17_7hw6f"]
+[ext_resource type="Texture2D" uid="uid://bmpnmq21xg4kd" path="res://sprites/decor/marais maison/maison-marais-bariere-gauche.png" id="18"]
+[ext_resource type="Texture2D" uid="uid://c7lliqtaqjj50" path="res://sprites/decor/sapin_bouge/sapin_bouge0004.png" id="18_4jyp7"]
+[ext_resource type="PackedScene" path="res://obj/interactions/lampadaire rouge.tscn" id="19"]
+[ext_resource type="Texture2D" uid="uid://b62sfs7slg5jc" path="res://sprites/decor/sapin_bouge/sapin_bouge0005.png" id="19_dt7xw"]
+[ext_resource type="Script" path="res://scripts/scene.gd" id="20"]
+[ext_resource type="Texture2D" uid="uid://er8oenusnlyy" path="res://sprites/decor/sapin_bouge/sapin_bouge0006.png" id="20_xwjni"]
+[ext_resource type="Texture2D" uid="uid://b7oskxatx626d" path="res://sprites/decor/sapin_bouge/sapin_bouge0007.png" id="21_fx4ye"]
+[ext_resource type="Texture2D" uid="uid://xqund6fcrj20" path="res://sprites/decor/sapin_bouge/sapin_bouge0008.png" id="22_euslg"]
+[ext_resource type="Texture2D" uid="uid://bci1gpljtqtyq" path="res://sprites/decor/sapin_bouge/sapin_bouge0009.png" id="23_s82gb"]
+[ext_resource type="Texture2D" uid="uid://8q07ax3ogj3" path="res://sprites/decor/sapin_bouge/sapin_bouge0010.png" id="24_gvsmh"]
+[ext_resource type="Texture2D" uid="uid://dqvl046ipa7p0" path="res://sprites/decor/sapin_bouge/sapin_bouge0011.png" id="25_fpmpl"]
+[ext_resource type="Texture2D" uid="uid://dbo3h427dtovh" path="res://sprites/decor/sapin_bouge/sapin_bouge0012.png" id="26_8ccua"]
+[ext_resource type="Texture2D" uid="uid://du3wd3y00bgl7" path="res://sprites/decor/sapin_bouge/sapin_bouge0013.png" id="27_bkuw2"]
+[ext_resource type="Texture2D" uid="uid://daymuqjt3ppx" path="res://sprites/decor/sapin_bouge/sapin_bouge0014.png" id="28_uw6vm"]
+[ext_resource type="Texture2D" uid="uid://cmyvhh0v2wodb" path="res://sprites/decor/sapin_bouge/sapin_bouge0015.png" id="29_ydhy6"]
+[ext_resource type="Texture2D" uid="uid://dr7lu0700t4sr" path="res://sprites/decor/sapin_bouge/sapin_bouge0016.png" id="30_w064e"]
+[ext_resource type="Texture2D" uid="uid://dhldd8w6mra5m" path="res://sprites/decor/sapin_plantation/sapin0001.png" id="31_u120k"]
+[ext_resource type="Texture2D" uid="uid://b2s7xcglpjqpe" path="res://sprites/decor/sapin_plantation/sapin0002.png" id="32_cm2dn"]
+[ext_resource type="Texture2D" uid="uid://0blx82katp8w" path="res://sprites/decor/sapin_plantation/sapin0003.png" id="33_8jenl"]
+[ext_resource type="Texture2D" uid="uid://clkrnpotutnc0" path="res://sprites/decor/sapin_plantation/sapin0004.png" id="34_hx2rn"]
+[ext_resource type="Texture2D" uid="uid://muj6hd3jumkn" path="res://sprites/decor/sapin_plantation/sapin0005.png" id="35_s5ver"]
 
-[sub_resource type="ShaderMaterial" id=1]
-shader = ExtResource( 12 )
-shader_param/player_pos = Vector2( 360, 226 )
-shader_param/global_transform = Transform2D( 1, 0, 0, 1, 1990.51, 1987.57 )
-shader_param/brume_tex = ExtResource( 6 )
-shader_param/brume_intensity_tex = ExtResource( 13 )
+[sub_resource type="ShaderMaterial" id="1"]
+shader = ExtResource("12")
+shader_parameter/player_pos = Vector2(360, 226)
+shader_parameter/global_transform = null
+shader_parameter/brume_tex = ExtResource("6")
+shader_parameter/brume_intensity_tex = ExtResource("13")
 
-[sub_resource type="ShaderMaterial" id=10]
-shader = ExtResource( 10 )
-shader_param/distancePlayer = 409.615
-shader_param/global_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1000, 1000, 0 )
-shader_param/brumeTex = ExtResource( 6 )
-shader_param/brume_intensity_tex = ExtResource( 13 )
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bpogn"]
+shader = ExtResource("10")
+shader_parameter/distancePlayer = 409.615
+shader_parameter/global_transform = null
+shader_parameter/brumeTex = ExtResource("6")
+shader_parameter/brume_intensity_tex = ExtResource("13")
 
-[sub_resource type="ShaderMaterial" id=11]
-shader = ExtResource( 10 )
-shader_param/distancePlayer = 128.511
-shader_param/global_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1000, 1000, 0 )
-shader_param/brumeTex = ExtResource( 6 )
-shader_param/brume_intensity_tex = ExtResource( 13 )
+[sub_resource type="SpriteFrames" id="2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_rph7v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_2botr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_giadc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_7hw6f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_4jyp7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_dt7xw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_xwjni")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_fx4ye")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_euslg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_s82gb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_gvsmh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_fpmpl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_8ccua")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_bkuw2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_uw6vm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_ydhy6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_w064e")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("31_u120k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_cm2dn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_8jenl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_hx2rn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_s5ver")
+}],
+"loop": false,
+"name": &"pousse",
+"speed": 0.1
+}]
 
-[sub_resource type="ShaderMaterial" id=12]
-shader = ExtResource( 10 )
-shader_param/distancePlayer = 760.725
-shader_param/global_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1000, 1000, 0 )
-shader_param/brumeTex = ExtResource( 6 )
-shader_param/brume_intensity_tex = ExtResource( 13 )
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xdd0m"]
+shader = ExtResource("10")
+shader_parameter/distancePlayer = 128.511
+shader_parameter/global_transform = null
+shader_parameter/brumeTex = ExtResource("6")
+shader_parameter/brume_intensity_tex = ExtResource("13")
 
-[sub_resource type="ShaderMaterial" id=13]
-shader = ExtResource( 10 )
-shader_param/distancePlayer = 763.447
-shader_param/global_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1000, 1000, 0 )
-shader_param/brumeTex = ExtResource( 6 )
-shader_param/brume_intensity_tex = ExtResource( 13 )
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7ms17"]
+shader = ExtResource("10")
+shader_parameter/distancePlayer = 760.725
+shader_parameter/global_transform = null
+shader_parameter/brumeTex = ExtResource("6")
+shader_parameter/brume_intensity_tex = ExtResource("13")
 
-[sub_resource type="ShaderMaterial" id=14]
-shader = ExtResource( 10 )
-shader_param/distancePlayer = 989.971
-shader_param/global_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1000, 1000, 0 )
-shader_param/brumeTex = ExtResource( 6 )
-shader_param/brume_intensity_tex = ExtResource( 13 )
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_watxl"]
+shader = ExtResource("10")
+shader_parameter/distancePlayer = 763.447
+shader_parameter/global_transform = null
+shader_parameter/brumeTex = ExtResource("6")
+shader_parameter/brume_intensity_tex = ExtResource("13")
 
-[sub_resource type="ShaderMaterial" id=7]
-shader = ExtResource( 12 )
-shader_param/player_pos = Vector2( 360, 226 )
-shader_param/global_transform = Transform2D( 1, 0, 0, 1, 2763.72, 308.312 )
-shader_param/brume_tex = ExtResource( 6 )
-shader_param/brume_intensity_tex = ExtResource( 13 )
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4cbkv"]
+shader = ExtResource("10")
+shader_parameter/distancePlayer = 989.971
+shader_parameter/global_transform = null
+shader_parameter/brumeTex = ExtResource("6")
+shader_parameter/brume_intensity_tex = ExtResource("13")
 
-[sub_resource type="ShaderMaterial" id=8]
-shader = ExtResource( 12 )
-shader_param/player_pos = Vector2( 360, 226 )
-shader_param/global_transform = Transform2D( 1, 0, 0, 1, 2545, 518.91 )
-shader_param/brume_tex = ExtResource( 6 )
-shader_param/brume_intensity_tex = ExtResource( 13 )
+[sub_resource type="ShaderMaterial" id="7"]
+shader = ExtResource("12")
+shader_parameter/player_pos = Vector2(360, 226)
+shader_parameter/global_transform = null
+shader_parameter/brume_tex = ExtResource("6")
+shader_parameter/brume_intensity_tex = ExtResource("13")
 
-[sub_resource type="ShaderMaterial" id=9]
-shader = ExtResource( 12 )
-shader_param/player_pos = Vector2( 360, 226 )
-shader_param/global_transform = Transform2D( 1, 0, 0, 1, 2193, 545.91 )
-shader_param/brume_tex = ExtResource( 6 )
-shader_param/brume_intensity_tex = ExtResource( 13 )
+[sub_resource type="ShaderMaterial" id="8"]
+shader = ExtResource("12")
+shader_parameter/player_pos = Vector2(360, 226)
+shader_parameter/global_transform = null
+shader_parameter/brume_tex = ExtResource("6")
+shader_parameter/brume_intensity_tex = ExtResource("13")
+
+[sub_resource type="ShaderMaterial" id="9"]
+shader = ExtResource("12")
+shader_parameter/player_pos = Vector2(360, 226)
+shader_parameter/global_transform = null
+shader_parameter/brume_tex = ExtResource("6")
+shader_parameter/brume_intensity_tex = ExtResource("13")
 
 [node name="scene" type="Node2D"]
-script = ExtResource( 20 )
+script = ExtResource("20")
 num_scene = 2
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="UI" parent="CanvasLayer" instance=ExtResource( 14 )]
+[node name="UI" parent="CanvasLayer" instance=ExtResource("14")]
+layout_mode = 3
+anchors_preset = 15
 
-[node name="camera box" parent="." instance=ExtResource( 1 )]
+[node name="camera box" parent="." instance=ExtResource("1")]
 
-[node name="perso" parent="." instance=ExtResource( 2 )]
-position = Vector2( 536.258, 633.542 )
+[node name="perso" parent="." instance=ExtResource("2")]
+position = Vector2(117.492, 578.043)
 
-[node name="bords" parent="." instance=ExtResource( 4 )]
+[node name="bords" parent="." instance=ExtResource("4")]
 scene_nord = 3
 scene_sud = 3
 
-[node name="popPluie" parent="." instance=ExtResource( 7 )]
+[node name="popPluie" parent="." instance=ExtResource("7")]
 deltaGouttesMin = 1.0
 deltaGouttesMax = 3.0
 
-[node name="fond_map" type="Sprite" parent="."]
-material = SubResource( 1 )
-position = Vector2( 1990.51, 1987.57 )
+[node name="fond_map" type="Sprite2D" parent="."]
 z_index = -4000
-texture = ExtResource( 3 )
-script = ExtResource( 11 )
-__meta__ = {
-"_edit_lock_": true
-}
+material = SubResource("1")
+position = Vector2(1990.51, 1987.57)
+texture = ExtResource("3")
+script = ExtResource("11")
 
-[node name="fond_map" type="Sprite" parent="fond_map"]
+[node name="fond_map" type="Sprite2D" parent="fond_map"]
 visible = false
-position = Vector2( 12.5863, 6.64636 )
-texture = ExtResource( 3 )
+position = Vector2(12.5863, 6.64636)
+texture = ExtResource("3")
 
 [node name="decor" type="Node2D" parent="."]
 
-[node name="sapin brume2" parent="decor" instance=ExtResource( 5 )]
-material = SubResource( 10 )
-position = Vector2( 736.235, 387.963 )
+[node name="sapin brume2" parent="decor" instance=ExtResource("5")]
 z_index = 193
+material = SubResource("ShaderMaterial_bpogn")
+position = Vector2(736.235, 387.963)
+sprite_frames = SubResource("2")
 frame = 10
-playing = false
 
-[node name="sapin brume3" parent="decor" instance=ExtResource( 5 )]
-material = SubResource( 11 )
-position = Vector2( 270.235, 317.963 )
+[node name="sapin brume3" parent="decor" instance=ExtResource("5")]
 z_index = 158
+material = SubResource("ShaderMaterial_xdd0m")
+position = Vector2(270.235, 317.963)
+sprite_frames = SubResource("2")
 frame = 10
-playing = false
 
-[node name="sapin brume4" parent="decor" instance=ExtResource( 5 )]
-material = SubResource( 12 )
-position = Vector2( 1088.23, 445.963 )
+[node name="sapin brume4" parent="decor" instance=ExtResource("5")]
 z_index = 222
+material = SubResource("ShaderMaterial_7ms17")
+position = Vector2(1088.23, 445.963)
+sprite_frames = SubResource("2")
 frame = 10
-playing = false
 
-[node name="sapin brume5" parent="decor" instance=ExtResource( 5 )]
-material = SubResource( 13 )
-position = Vector2( 608.235, 947.963 )
+[node name="sapin brume5" parent="decor" instance=ExtResource("5")]
 z_index = 473
+material = SubResource("ShaderMaterial_watxl")
+position = Vector2(608.235, 947.963)
+sprite_frames = SubResource("2")
 frame = 10
-playing = false
 
-[node name="sapin brume6" parent="decor" instance=ExtResource( 5 )]
-material = SubResource( 14 )
-position = Vector2( 1056.74, 929.275 )
+[node name="sapin brume6" parent="decor" instance=ExtResource("5")]
 z_index = 464
+material = SubResource("ShaderMaterial_4cbkv")
+position = Vector2(1056.74, 929.275)
+sprite_frames = SubResource("2")
 frame = 10
-playing = false
 
-[node name="lampadaire-grand" parent="decor" instance=ExtResource( 9 )]
-position = Vector2( 943.787, 392.017 )
-z_index = 196
+[node name="lampadaire-grand" parent="decor" instance=ExtResource("9")]
+z_index = 246
+position = Vector2(789.062, 492.925)
 
-[node name="lampadaire grand" parent="decor" instance=ExtResource( 9 )]
-position = Vector2( 832.535, 718.541 )
-z_index = 359
+[node name="lampadaire grand" parent="decor" instance=ExtResource("9")]
+z_index = 390
+position = Vector2(691.264, 780.767)
 
-[node name="lampadaire petit" parent="decor" instance=ExtResource( 8 )]
-position = Vector2( 935.763, 735.436 )
-z_index = 367
+[node name="lampadaire grand2" parent="decor" instance=ExtResource("9")]
+z_index = 836
+position = Vector2(2240.2, 1672.12)
 
-[node name="lampadaire rouge" parent="decor" instance=ExtResource( 19 )]
-position = Vector2( 2314.13, 846.558 )
+[node name="lampadaire petit" parent="decor" instance=ExtResource("8")]
+z_index = 603
+position = Vector2(1362.94, 1206.34)
+
+[node name="lampadaire rouge" parent="decor" instance=ExtResource("19")]
 z_index = 423
+position = Vector2(2314.13, 846.558)
 
-[node name="lampadaire rouge2" parent="decor" instance=ExtResource( 19 )]
-position = Vector2( 2624.51, 851.315 )
+[node name="lampadaire rouge2" parent="decor" instance=ExtResource("19")]
 z_index = 425
+position = Vector2(2624.51, 851.315)
 
-[node name="maison-marais" type="Sprite" parent="decor"]
-material = SubResource( 7 )
-position = Vector2( 2763.72, 308.312 )
+[node name="maison-marais" type="Sprite2D" parent="decor"]
 z_index = 154
 z_as_relative = false
-texture = ExtResource( 16 )
-offset = Vector2( -242.201, 24.225 )
-script = ExtResource( 11 )
-__meta__ = {
-"_edit_group_": true
-}
+material = SubResource("7")
+position = Vector2(2763.72, 308.312)
+texture = ExtResource("16")
+offset = Vector2(-242.201, 24.225)
+script = ExtResource("11")
 do_z_index = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="decor/maison-marais"]
-position = Vector2( -242.201, 24.225 )
+position = Vector2(-242.201, 24.225)
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="decor/maison-marais/StaticBody2D"]
-polygon = PoolVector2Array( 13.4602, 298.965, 10.0686, 154.721, 334.185, 152.505, 337.75, -22.1114, 232.625, -18.5478, 234.406, 73.2147, -127.299, 81.2328, -130.864, 67.8692, -219.954, 75.8873, -239.161, 125.658, -323.918, 150.026, -316.502, 135.194, -255.053, 120.361, -246.577, 102.35, -248.727, -17.4344, -215.614, -23.8885, -139.848, -32.5876, -142.705, -161.552, 223.709, -170.896, 233.515, -34.584, 354.678, -38.1476, 353.785, 150.723, 352.896, 221.995, 21.0283, 229.17, 22.71, 298.965 )
+polygon = PackedVector2Array(13.4602, 298.965, 10.0686, 154.721, 334.185, 152.505, 337.75, -22.1114, 232.625, -18.5478, 234.406, 73.2147, -127.299, 81.2328, -130.864, 67.8692, -219.954, 75.8873, -239.161, 125.658, -323.918, 150.026, -316.502, 135.194, -255.053, 120.361, -246.577, 102.35, -248.727, -17.4344, -215.614, -23.8885, -139.848, -32.5876, -142.705, -161.552, 223.709, -170.896, 233.515, -34.584, 354.678, -38.1476, 353.785, 150.723, 352.896, 221.995, 21.0283, 229.17, 22.71, 298.965)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="decor/maison-marais/StaticBody2D"]
-polygon = PoolVector2Array( -357.017, 220.129, -216.858, 175.411, -112.741, 154.721, -116.038, 290.556, -126.129, 293.079, -128.092, 222.798, -361.021, 229.472 )
+polygon = PackedVector2Array(-357.017, 220.129, -216.858, 175.411, -112.741, 154.721, -116.038, 290.556, -126.129, 293.079, -128.092, 222.798, -361.021, 229.472)
 
-[node name="maison-marais-barieres" type="Sprite" parent="decor/maison-marais"]
-material = SubResource( 8 )
-position = Vector2( -218.718, 210.598 )
+[node name="maison-marais-barieres" type="Sprite2D" parent="decor/maison-marais"]
 z_index = 259
 z_as_relative = false
-texture = ExtResource( 17 )
-offset = Vector2( -23.4829, -186.373 )
-script = ExtResource( 11 )
+material = SubResource("8")
+position = Vector2(-218.718, 210.598)
+texture = ExtResource("17")
+offset = Vector2(-23.4829, -186.373)
+script = ExtResource("11")
 do_z_index = true
 
-[node name="maison-marais-bariere-gauche" type="Sprite" parent="decor/maison-marais"]
-material = SubResource( 9 )
-position = Vector2( -570.718, 237.598 )
+[node name="maison-marais-bariere-gauche" type="Sprite2D" parent="decor/maison-marais"]
 z_index = 272
 z_as_relative = false
-texture = ExtResource( 18 )
-offset = Vector2( 328.517, -213.373 )
-script = ExtResource( 11 )
+material = SubResource("9")
+position = Vector2(-570.718, 237.598)
+texture = ExtResource("18")
+offset = Vector2(328.517, -213.373)
+script = ExtResource("11")
 do_z_index = true
 
 [node name="monstres" type="Node2D" parent="."]
 
-[node name="lapin" parent="monstres" instance=ExtResource( 15 )]
-position = Vector2( -666.939, 729.858 )
+[node name="lapin" parent="monstres" instance=ExtResource("15")]
+position = Vector2(-666.939, 729.858)
 
-[node name="lapin2" parent="monstres" instance=ExtResource( 15 )]
-position = Vector2( -880.513, 740.536 )
+[node name="lapin2" parent="monstres" instance=ExtResource("15")]
+position = Vector2(-880.513, 740.536)
 num_pr_save = 2
 
-[node name="lapin3" parent="monstres" instance=ExtResource( 15 )]
-position = Vector2( 1252.96, 1229.46 )
+[node name="lapin3" parent="monstres" instance=ExtResource("15")]
+visible = false
+position = Vector2(1251.28, 1229.46)
 num_pr_save = 3
 
-[node name="lapin4" parent="monstres" instance=ExtResource( 15 )]
-position = Vector2( -988.456, 746.886 )
+[node name="lapin4" parent="monstres" instance=ExtResource("15")]
+position = Vector2(-988.456, 746.886)
 num_pr_save = 4
 
-[node name="lapin5" parent="monstres" instance=ExtResource( 15 )]
-position = Vector2( -774.737, 729.858 )
+[node name="lapin5" parent="monstres" instance=ExtResource("15")]
+position = Vector2(-774.737, 729.858)
 num_pr_save = 5

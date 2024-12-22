@@ -1,13 +1,14 @@
 [remap]
 
 importer="wav"
-type="AudioStreamSample"
-path="res://.import/Unexpected Story_Music_Day.wav-a08ff4508ebb3e7249b915d391b20696.sample"
+type="AudioStreamWAV"
+uid="uid://2ttlgpiooui3"
+path="res://.godot/imported/Unexpected Story_Music_Day.wav-a08ff4508ebb3e7249b915d391b20696.sample"
 
 [deps]
 
 source_file="res://sons/Unexpected Story_Music_Day.wav"
-dest_files=[ "res://.import/Unexpected Story_Music_Day.wav-a08ff4508ebb3e7249b915d391b20696.sample" ]
+dest_files=["res://.godot/imported/Unexpected Story_Music_Day.wav-a08ff4508ebb3e7249b915d391b20696.sample"]
 
 [params]
 
@@ -17,5 +18,7 @@ force/max_rate=false
 force/max_rate_hz=44100
 edit/trim=false
 edit/normalize=false
-edit/loop=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
 compress/mode=0

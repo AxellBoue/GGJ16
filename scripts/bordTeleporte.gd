@@ -1,13 +1,13 @@
 extends Area2D
 
-export (String) var directionPop
+@export var directionPop : String
 var lieuPop
-onready var perso = get_node("/root/scene/perso")
+@onready var perso = get_node("/root/scene/perso")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	lieuPop = get_node("../zoneTeleporte"+directionPop+"/zonePop")
-	connect("body_entered",self,"_on_body_entered")
+	connect("body_entered", Callable(self, "_on_body_entered"))
 
 func _on_body_entered(body):
 	if body.name == "perso":

@@ -1,20 +1,20 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=5 format=3 uid="uid://w4ddjknwk2jp"]
 
-[ext_resource path="res://sprites/decor/zone_plantation_arbre.PNG" type="Texture" id=1]
-[ext_resource path="res://scripts/monstres/zone_plantation_monstre_losange.gd" type="Script" id=2]
-[ext_resource path="res://obj/decor/sapin.tscn" type="PackedScene" id=3]
+[ext_resource type="Texture2D" uid="uid://clre6og0t5ubu" path="res://sprites/decor/zone_plantation_arbres.png" id="1_4tr81"]
+[ext_resource type="Script" path="res://scripts/monstres/zone_plantation_monstre_losange.gd" id="2"]
+[ext_resource type="PackedScene" path="res://obj/decor/sapin.tscn" id="3"]
 
-[sub_resource type="CircleShape2D" id=1]
+[sub_resource type="CircleShape2D" id="1"]
 radius = 69.719
 
-[node name="zone_plantation_monstre_losange" type="Sprite"]
-position = Vector2( -182.093, 202.006 )
+[node name="zone_plantation_monstre_losange" type="Sprite2D"]
 z_index = -3000
-texture = ExtResource( 1 )
-script = ExtResource( 2 )
-plante = ExtResource( 3 )
+position = Vector2(-182.093, 202.006)
+texture = ExtResource("1_4tr81")
+script = ExtResource("2")
+plante = ExtResource("3")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource( 1 )
+shape = SubResource("1")

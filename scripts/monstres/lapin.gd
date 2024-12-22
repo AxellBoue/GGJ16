@@ -1,11 +1,11 @@
-extends KinematicBody2D
+extends CharacterBody2D
 
 enum states {depart,follow,totem}
-export var state = states.depart
-export var num_pr_save = 1
-export var reflet = false
+@export var state = states.depart
+@export var num_pr_save = 1
+@export var reflet = false
 
-onready var perso = get_node("/root/scene/perso")
+@onready var perso = get_node("/root/scene/perso")
 
 var target
 var suit = false
@@ -16,7 +16,7 @@ var en_lair = false
 var proche = false
 
 var area_sizes : Array = [50,90,130,170,210] 
-onready var area_follow = get_node("AreaFollow")
+@onready var area_follow = get_node("AreaFollow")
 var num = 0
 
 var depose = false
@@ -25,12 +25,12 @@ var arrive = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var area = get_node("Area2D")
-	area.connect("body_entered",self,"on_area_body_entered")
-	area.connect("body_exited",self,"on_area_body_exited")
-	area_follow.connect("body_entered",self,"on_area_follow_body_entered")
-	area_follow.connect("body_exited",self,"on_area_follow_body_exited")
+	area.connect("body_entered", Callable(self, "on_area_body_entered"))
+	area.connect("body_exited", Callable(self, "on_area_body_exited"))
+	area_follow.connect("body_entered", Callable(self, "on_area_follow_body_entered"))
+	area_follow.connect("body_exited", Callable(self, "on_area_follow_body_exited"))
 	area_follow.get_node("CollisionShape2D").shape = area_follow.get_node("CollisionShape2D").shape.duplicate()
-	$AnimationPlayer.connect("animation_finished",self,"on_fin_anim")
+	$AnimationPlayer.connect("animation_finished", Callable(self, "on_fin_anim"))
 	# initialise la position et l'etat
 	set_reflet(reflet)
 	var a = get_node("/root/Autoload")
@@ -46,11 +46,12 @@ func _ready():
 			global_position = Vector2(-600,200)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _physics_process(delta):
+func _physics_process(_delta):
 	if (suit && en_lair && !proche) || (depose && en_lair):  # position.distance_to(perso.position) > distanceMin :
 		mouvement = target.global_position - position
 		mouvement = mouvement.normalized() * vitesse
-		move_and_slide(mouvement)
+		set_velocity(mouvement)
+		move_and_slide()
 		z_index = position.y/2
 		if depose && target.global_position.distance_to(position) < 10 :
 			depose = false

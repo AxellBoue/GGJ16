@@ -1,14 +1,14 @@
 [gd_scene load_steps=17 format=2]
 
-[ext_resource path="res://sprites/objets/lampadaire rouge/lampadaires-rouge-sans-losanges.png" type="Texture" id=1]
-[ext_resource path="res://sprites/decor/brume-map.png" type="Texture" id=2]
-[ext_resource path="res://sprites/decor/brume_texture.jpg" type="Texture" id=3]
-[ext_resource path="res://sprites/objets/lampadaire rouge/lampadaires-rouge-halo.png" type="Texture" id=4]
-[ext_resource path="res://sprites/objets/lampadaire rouge/lampadaires-rouge-losanges.png" type="Texture" id=5]
+[ext_resource path="res://sprites/objets/lampadaire rouge/lampadaires-rouge-sans-losanges.png" type="Texture2D" id=1]
+[ext_resource path="res://sprites/decor/brume-map.png" type="Texture2D" id=2]
+[ext_resource path="res://sprites/decor/brume_texture.jpg" type="Texture2D" id=3]
+[ext_resource path="res://sprites/objets/lampadaire rouge/lampadaires-rouge-halo.png" type="Texture2D" id=4]
+[ext_resource path="res://sprites/objets/lampadaire rouge/lampadaires-rouge-losanges.png" type="Texture2D" id=5]
 [ext_resource path="res://scripts/interactions/lampadaire.gd" type="Script" id=6]
-[ext_resource path="res://brumeObjetsVerticaux.shader" type="Shader" id=7]
-[ext_resource path="res://shaders/lampadaire_brume.shader" type="Shader" id=8]
-[ext_resource path="res://sprites/objets/lampadaire rouge/lampadaires-rouge-eteint.png" type="Texture" id=9]
+[ext_resource path="res://brumeObjetsVerticaux.gdshader" type="Shader" id=7]
+[ext_resource path="res://shaders/lampadaire_brume.gdshader" type="Shader" id=8]
+[ext_resource path="res://sprites/objets/lampadaire rouge/lampadaires-rouge-eteint.png" type="Texture2D" id=9]
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 8 )
@@ -28,8 +28,8 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0.1 ),
-"transitions": PoolRealArray( 1 ),
+"times": PackedFloat32Array( 0.1 ),
+"transitions": PackedFloat32Array( 1 ),
 "update": 1,
 "values": [ true ]
 }
@@ -40,8 +40,8 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0.1 ),
-"transitions": PoolRealArray( 1 ),
+"times": PackedFloat32Array( 0.1 ),
+"transitions": PackedFloat32Array( 1 ),
 "update": 1,
 "values": [ false ]
 }
@@ -54,8 +54,8 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0.1 ),
-"transitions": PoolRealArray( 1 ),
+"times": PackedFloat32Array( 0.1 ),
+"transitions": PackedFloat32Array( 1 ),
 "update": 1,
 "values": [ false ]
 }
@@ -66,8 +66,8 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0.1 ),
-"transitions": PoolRealArray( 1 ),
+"times": PackedFloat32Array( 0.1 ),
+"transitions": PackedFloat32Array( 1 ),
 "update": 1,
 "values": [ true ]
 }
@@ -108,7 +108,7 @@ anims/eteint = SubResource( 4 )
 position = Vector2( 0, -8.73071 )
 shape = SubResource( 5 )
 
-[node name="lampadaire-allume" type="Sprite" parent="."]
+[node name="lampadaire-allume" type="Sprite2D" parent="."]
 visible = false
 material = SubResource( 6 )
 texture = ExtResource( 1 )
@@ -117,21 +117,21 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="lampadaire-petit-lumiere" type="Sprite" parent="lampadaire-allume"]
+[node name="lampadaire-petit-lumiere" type="Sprite2D" parent="lampadaire-allume"]
 self_modulate = Color( 1, 1, 1, 0.768627 )
 position = Vector2( -0.629959, -1.25992 )
 z_index = -1
 texture = ExtResource( 4 )
 offset = Vector2( 0.372681, -136.071 )
 
-[node name="lampadaire-losanges" type="Sprite" parent="lampadaire-allume"]
+[node name="lampadaire-losanges" type="Sprite2D" parent="lampadaire-allume"]
 self_modulate = Color( 1, 1, 1, 0.768627 )
 position = Vector2( -0.629959, -72.5363 )
 z_index = -1
 texture = ExtResource( 5 )
 offset = Vector2( 0.372681, -136.071 )
 
-[node name="lampadaire-eteint" type="Sprite" parent="."]
+[node name="lampadaire-eteint" type="Sprite2D" parent="."]
 material = SubResource( 7 )
 texture = ExtResource( 9 )
 offset = Vector2( -0.148743, -137.775 )

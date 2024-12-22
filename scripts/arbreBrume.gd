@@ -1,13 +1,13 @@
-tool
-extends AnimatedSprite
+@tool
+extends AnimatedSprite2D
 
-onready var perso = get_node("/root/scene/perso")
+@onready var perso = get_node("/root/scene/perso")
 
 
 func _draw():
-	if Engine.editor_hint:
+	if Engine.is_editor_hint():
 		z_index = global_position.y/2
-		material.set_shader_param("distancePlayer", global_position.distance_to(Vector2(360,226)))
+		material.set_shader_parameter("distancePlayer", global_position.distance_to(Vector2(360,226)))
 		
 		
 # Called when the node enters the scene tree for the first time.
@@ -17,6 +17,6 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if not Engine.editor_hint:
-		material.set_shader_param("global_transform", get_global_transform())
-		material.set_shader_param("distancePlayer", global_position.distance_to(perso.global_position))
+	if not Engine.is_editor_hint():
+		material.set_shader_parameter("global_transform", get_global_transform())
+		material.set_shader_parameter("distancePlayer", global_position.distance_to(perso.global_position))

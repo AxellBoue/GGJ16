@@ -8,7 +8,7 @@ var num_note = 0
 func _ready():
 	z_index = global_position.y/2
 	$Timer.wait_time = 10
-	$Timer.connect("timeout",self,"rejoue")
+	$Timer.connect("timeout", Callable(self, "rejoue"))
 
 
 func joue_note(i : int):

@@ -1,19 +1,19 @@
-extends Sprite
+extends Sprite2D
 
 
-export var plante : PackedScene
+@export var plante : PackedScene
 var libre = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$Area2D.connect("body_entered",self,"on_body_entered")
-	$Area2D.connect("body_exited",self,"on_body_exited")
+	$Area2D.connect("body_entered", Callable(self, "on_body_entered"))
+	$Area2D.connect("body_exited", Callable(self, "on_body_exited"))
 
 
-func area_action(var action):
+func area_action(action):
 	if action == "fleur" && libre:
 		libre = false
-		var p = plante.instance()
+		var p = plante.instantiate()
 		if p.has_method("pousse_finished"):
 			p.pousse = true
 		add_child(p)

@@ -1,4 +1,4 @@
-extends KinematicBody2D
+extends CharacterBody2D
 
 
 # Declare member variables here. Examples:
@@ -10,8 +10,8 @@ extends KinematicBody2D
 func _ready():
 	z_index = global_position.y/2
 	z_as_relative = false
-	$Area2D.connect("body_entered",self,"on_body_entered")
-	$Area2D.connect("body_exited",self,"on_body_exited")
+	$Area2D.connect("body_entered", Callable(self, "on_body_entered"))
+	$Area2D.connect("body_exited", Callable(self, "on_body_exited"))
 
 
 func on_body_entered(body):
@@ -24,6 +24,6 @@ func on_body_exited(body):
 		body.sort_zone_interactive(self)
 
 
-func area_action(var action):
+func area_action(action):
 	if action == "saut" :
 		pass

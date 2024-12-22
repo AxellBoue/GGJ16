@@ -1,6 +1,6 @@
-extends KinematicBody2D
+extends CharacterBody2D
 
-onready var perso = get_node("/root/scene/perso")
+@onready var perso = get_node("/root/scene/perso")
 var fuis = false
 var fuis_vers_init = false
 var retour = false
@@ -13,21 +13,22 @@ var position_debut_fuite
 func _ready():
 	z_index = global_position.y/2
 	z_as_relative = false
-	$Area2D.connect("body_entered",self,"on_body_entered")
-	$Area2D.connect("body_exited",self,"on_body_exited")
+	$Area2D.connect("body_entered", Callable(self, "on_body_entered"))
+	$Area2D.connect("body_exited", Callable(self, "on_body_exited"))
 	position_initiale = global_position
 	$anim.play("default")
 	$Timer.wait_time = 10
-	$Timer.connect("timeout",self,"retour")
+	$Timer.connect("timeout", Callable(self, "retour"))
 	$Timer.one_shot = true
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if fuis :
 		var mouvement = global_position - perso.position
 		if fuis_vers_init :
 			mouvement = position_initiale - global_position
 		mouvement = mouvement.normalized()
-		move_and_slide(mouvement * vitesse)
+		set_velocity(mouvement * vitesse)
+		move_and_slide()
 		z_index = global_position.y/2
 		if position_debut_fuite.distance_to(global_position) > 200 :
 			fuis = false
@@ -36,7 +37,8 @@ func _physics_process(delta):
 	elif retour :
 		var mouvement = position_initiale - global_position
 		mouvement = mouvement.normalized()
-		move_and_slide(mouvement * vitesse)
+		set_velocity(mouvement * vitesse)
+		move_and_slide()
 		z_index = global_position.y/2
 		if position_initiale.distance_to(global_position) < 10 :
 			retour = false
@@ -52,7 +54,7 @@ func on_body_exited(body):
 		body.sort_zone_interactive(self)
 
 
-func area_action(var action):
+func area_action(action):
 	if action == "saut" || action == "pied":
 		retour = false
 		$Timer.stop()
@@ -64,6 +66,6 @@ func area_action(var action):
 		print("feedback positif")
 		
 		
-func retour():
+func start_retour():
 	retour = true
 	fuis = false

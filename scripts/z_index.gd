@@ -1,4 +1,4 @@
-tool
+@tool
 extends Node2D
 
 
@@ -14,5 +14,5 @@ func _ready():
 
 
 func _draw():
-	if Engine.editor_hint:
+	if Engine.is_editor_hint():
 		z_index = global_position.y/2

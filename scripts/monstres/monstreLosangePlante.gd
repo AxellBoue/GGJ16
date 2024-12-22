@@ -1,9 +1,9 @@
-extends KinematicBody2D
+extends CharacterBody2D
 
 var vitesse = 80
 var va_planter = false
 var target : Array
-onready var zones_plantation : Array = [
+@onready var zones_plantation : Array = [
 	get_node("/root/scene/decor/interactions/zone monstre losange/plante monstre losange"),
 	get_node("/root/scene/decor/interactions/zone monstre losange/plante monstre losange2"),
 	get_node("/root/scene/decor/interactions/zone monstre losange/plante monstre losange3"),
@@ -12,24 +12,25 @@ onready var zones_plantation : Array = [
 ]
 var arbre = preload("res://obj/decor/arbre02.tscn")
 var arbres_plantes = 0
-onready var centre = get_node("/root/scene/decor/interactions/zone monstre losange/centre")
+@onready var centre = get_node("/root/scene/decor/interactions/zone monstre losange/centre")
 var va_au_centre = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	z_as_relative = false
-	$Timer.connect("timeout",self,"next_target")
+	$Timer.connect("timeout", Callable(self, "next_target"))
 	$Timer.one_shot = true
-	$TimerCentre.connect("timeout",self,"retour_au_centre")
+	$TimerCentre.connect("timeout", Callable(self, "retour_au_centre"))
 	$TimerCentre.one_shot = true
 	$TimerCentre.wait_time = 10
 
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if va_planter && target.size() > 0:
 		var mouvement = target[0].global_position - global_position
 		mouvement = mouvement.normalized()
-		move_and_slide(mouvement * vitesse)
+		set_velocity(mouvement * vitesse)
+		move_and_slide()
 		z_index = global_position.y/2
 		if global_position.distance_to(target[0].global_position) < 5:
 			va_planter = false
@@ -43,7 +44,7 @@ func _physics_process(delta):
 				$TimerCentre.stop()
 				$TimerCentre.start()
 				print("start")
-			target.remove(0)
+			target.remove_at(0)
 			if target.size() > 0 :
 				$Timer.start()
 				
@@ -55,7 +56,7 @@ func new_target(num_target):
 	va_au_centre = false
 	target.append(zones_plantation[num_target])
 	if target.has(centre):
-		target.remove(target.find(centre))
+		target.remove_at(target.find(centre))
 	va_planter = true
 	print("stop")
 	
@@ -65,7 +66,7 @@ func next_target ():
 	$TimerCentre.stop()
 
 func plante():
-	var p = arbre.instance()
+	var p = arbre.instantiate()
 	p.pousse = true
 	target[0].add_child(p)
 	p.z_as_relative = false

@@ -3,8 +3,8 @@ extends StaticBody2D
 
 # Declare member variables here. Examples:
 # var a = 2
-onready var boussole = get_node("/root/scene/CanvasLayer/UI/boussole")
-onready var aiguille = $aiguille
+@onready var boussole = get_node("/root/scene/CanvasLayer/UI/boussole")
+@onready var aiguille = $aiguille
 var direction
 var rand = RandomNumberGenerator.new()
 var tourne = false
@@ -20,12 +20,12 @@ var sens = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$Area2D.connect("body_entered",self,"on_body_entered")
-	$Area2D.connect("body_exited",self,"on_body_exited")
+	$Area2D.connect("body_entered", Callable(self, "on_body_entered"))
+	$Area2D.connect("body_exited", Callable(self, "on_body_exited"))
 	z_index = global_position.y / 2
 	z_as_relative = false
 	rand.randomize()
-	$Timer.connect("timeout",self,"commence_a_tourner")
+	$Timer.connect("timeout", Callable(self, "commence_a_tourner"))
 	$Timer.wait_time = rand.randi_range(2,6)
 	$Timer.one_shot = true
 	$Timer.start()
@@ -81,6 +81,6 @@ func on_body_exited(body):
 		body.sort_zone_interactive(self)
 
 
-func area_action(var action):
+func area_action(action):
 	if action == "saut":
 		boussole.active()
